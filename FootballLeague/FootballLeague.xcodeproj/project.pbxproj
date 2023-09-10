@@ -25,6 +25,7 @@
 		D3A9C8002AAE48740080CF0E /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A9C7FF2AAE48740080CF0E /* EndPoint.swift */; };
 		D3A9C8022AAE4A960080CF0E /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A9C8012AAE4A960080CF0E /* HTTPMethod.swift */; };
 		D3A9C8042AAE4EF50080CF0E /* URLSessionNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A9C8032AAE4EF50080CF0E /* URLSessionNetworkService.swift */; };
+		D3A9C8062AAE51A00080CF0E /* LeaguesNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A9C8052AAE51A00080CF0E /* LeaguesNetworkService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		D3A9C7FF2AAE48740080CF0E /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
 		D3A9C8012AAE4A960080CF0E /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		D3A9C8032AAE4EF50080CF0E /* URLSessionNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionNetworkService.swift; sourceTree = "<group>"; };
+		D3A9C8052AAE51A00080CF0E /* LeaguesNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaguesNetworkService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -227,6 +229,7 @@
 				D3A9C7FF2AAE48740080CF0E /* EndPoint.swift */,
 				D3A9C8012AAE4A960080CF0E /* HTTPMethod.swift */,
 				D3A9C8032AAE4EF50080CF0E /* URLSessionNetworkService.swift */,
+				D3A9C8052AAE51A00080CF0E /* LeaguesNetworkService.swift */,
 			);
 			path = NetworkServices;
 			sourceTree = "<group>";
@@ -372,6 +375,7 @@
 				D386F5EB2AAD2C61005BBCDB /* Persistence.swift in Sources */,
 				D3A9C8022AAE4A960080CF0E /* HTTPMethod.swift in Sources */,
 				D386F61B2AAD3FE8005BBCDB /* LeagueRaw.swift in Sources */,
+				D3A9C8062AAE51A00080CF0E /* LeaguesNetworkService.swift in Sources */,
 				D386F5EE2AAD2C61005BBCDB /* FootballLeague.xcdatamodeld in Sources */,
 				D3A9C7FE2AAE46700080CF0E /* NetworkService.swift in Sources */,
 				D386F5E42AAD2C60005BBCDB /* ContentView.swift in Sources */,
