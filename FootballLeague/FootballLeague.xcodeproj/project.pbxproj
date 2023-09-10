@@ -17,6 +17,9 @@
 		D386F6022AAD2C61005BBCDB /* FootballLeagueUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D386F6012AAD2C61005BBCDB /* FootballLeagueUITests.swift */; };
 		D386F6042AAD2C61005BBCDB /* FootballLeagueUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D386F6032AAD2C61005BBCDB /* FootballLeagueUITestsLaunchTests.swift */; };
 		D386F6172AAD3345005BBCDB /* LeaguesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D386F6162AAD3345005BBCDB /* LeaguesView.swift */; };
+		D386F61B2AAD3FE8005BBCDB /* LeagueRaw.swift in Sources */ = {isa = PBXBuildFile; fileRef = D386F61A2AAD3FE8005BBCDB /* LeagueRaw.swift */; };
+		D386F61D2AAD402C005BBCDB /* LeaguesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D386F61C2AAD402C005BBCDB /* LeaguesModel.swift */; };
+		D386F61F2AAD44F1005BBCDB /* LeaguesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D386F61E2AAD44F1005BBCDB /* LeaguesResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +53,9 @@
 		D386F6012AAD2C61005BBCDB /* FootballLeagueUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FootballLeagueUITests.swift; sourceTree = "<group>"; };
 		D386F6032AAD2C61005BBCDB /* FootballLeagueUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FootballLeagueUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		D386F6162AAD3345005BBCDB /* LeaguesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaguesView.swift; sourceTree = "<group>"; };
+		D386F61A2AAD3FE8005BBCDB /* LeagueRaw.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeagueRaw.swift; sourceTree = "<group>"; };
+		D386F61C2AAD402C005BBCDB /* LeaguesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaguesModel.swift; sourceTree = "<group>"; };
+		D386F61E2AAD44F1005BBCDB /* LeaguesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaguesResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +155,8 @@
 		D386F6112AAD2FF3005BBCDB /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				D386F61C2AAD402C005BBCDB /* LeaguesModel.swift */,
+				D386F61E2AAD44F1005BBCDB /* LeaguesResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -174,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				D386F6162AAD3345005BBCDB /* LeaguesView.swift */,
+				D386F61A2AAD3FE8005BBCDB /* LeagueRaw.swift */,
 			);
 			path = Leages;
 			sourceTree = "<group>";
@@ -330,9 +339,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D386F61D2AAD402C005BBCDB /* LeaguesModel.swift in Sources */,
 				D386F5EB2AAD2C61005BBCDB /* Persistence.swift in Sources */,
+				D386F61B2AAD3FE8005BBCDB /* LeagueRaw.swift in Sources */,
 				D386F5EE2AAD2C61005BBCDB /* FootballLeague.xcdatamodeld in Sources */,
 				D386F5E42AAD2C60005BBCDB /* ContentView.swift in Sources */,
+				D386F61F2AAD44F1005BBCDB /* LeaguesResponse.swift in Sources */,
 				D386F5E22AAD2C60005BBCDB /* FootballLeagueApp.swift in Sources */,
 				D386F6172AAD3345005BBCDB /* LeaguesView.swift in Sources */,
 			);
@@ -501,6 +513,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -530,6 +543,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
