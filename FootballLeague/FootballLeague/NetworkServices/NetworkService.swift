@@ -16,5 +16,5 @@ enum NetworkError: Error {
 protocol NetworkService {
     typealias ResultCallback<T> = (Result<T, NetworkError>) -> Void
     
-    func performRequest<T: Decodable>(url: Endpoint, completion: @escaping ResultCallback<T>)
+    func performRequest<T: Decodable>(endPoint: Endpoint, completion: @escaping ResultCallback<T>)
 }

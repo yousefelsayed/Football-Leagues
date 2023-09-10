@@ -24,6 +24,7 @@
 		D3A9C7FE2AAE46700080CF0E /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A9C7FD2AAE46700080CF0E /* NetworkService.swift */; };
 		D3A9C8002AAE48740080CF0E /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A9C7FF2AAE48740080CF0E /* EndPoint.swift */; };
 		D3A9C8022AAE4A960080CF0E /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A9C8012AAE4A960080CF0E /* HTTPMethod.swift */; };
+		D3A9C8042AAE4EF50080CF0E /* URLSessionNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A9C8032AAE4EF50080CF0E /* URLSessionNetworkService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		D3A9C7FD2AAE46700080CF0E /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		D3A9C7FF2AAE48740080CF0E /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
 		D3A9C8012AAE4A960080CF0E /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		D3A9C8032AAE4EF50080CF0E /* URLSessionNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionNetworkService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -224,6 +226,7 @@
 				D3A9C7FD2AAE46700080CF0E /* NetworkService.swift */,
 				D3A9C7FF2AAE48740080CF0E /* EndPoint.swift */,
 				D3A9C8012AAE4A960080CF0E /* HTTPMethod.swift */,
+				D3A9C8032AAE4EF50080CF0E /* URLSessionNetworkService.swift */,
 			);
 			path = NetworkServices;
 			sourceTree = "<group>";
@@ -375,6 +378,7 @@
 				D386F61F2AAD44F1005BBCDB /* LeaguesResponse.swift in Sources */,
 				D386F5E22AAD2C60005BBCDB /* FootballLeagueApp.swift in Sources */,
 				D386F6172AAD3345005BBCDB /* LeaguesView.swift in Sources */,
+				D3A9C8042AAE4EF50080CF0E /* URLSessionNetworkService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
