@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct LeagueRaw: View {
     let league: League
@@ -13,35 +14,10 @@ struct LeagueRaw: View {
     var body: some View {
         HStack {
             if let imageURL = URL(string: league.leagueLogo) {
-                if #available(iOS 15.0, *) {
-                    AsyncImage(url: imageURL) { phase in
-                        switch phase {
-                        case .empty:
-                            Image("placeholder-image")
-                                .resizable()
-                                .frame(width: 40, height: 40)
-                            
-                        case .success(let image):
-                            // Display the loaded image
-                            image
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 40, height: 40)
-                            
-                        case .failure(let error):
-                            // Handle image loading error
-                            Text("Error: \(error.localizedDescription)")
-                        }
-                    }
-                } else {
-                    // Fallback on earlier versions
-                    Image(imageURL)
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 40, height: 40)
-                }
-            } else {
-                Image("placeholder-image")
+                KFImage.url(imageURL)
+                     .placeholder({ _ in
+                         Image(systemName:"placeholder-image")
+                     })
                     .resizable()
                     .frame(width: 40, height: 40)
             }
@@ -58,4 +34,5 @@ struct LeagueRaw: View {
     }
     
 }
+
 

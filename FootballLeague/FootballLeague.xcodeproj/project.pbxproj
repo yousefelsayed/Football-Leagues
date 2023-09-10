@@ -20,6 +20,10 @@
 		D386F61B2AAD3FE8005BBCDB /* LeagueRaw.swift in Sources */ = {isa = PBXBuildFile; fileRef = D386F61A2AAD3FE8005BBCDB /* LeagueRaw.swift */; };
 		D386F61D2AAD402C005BBCDB /* LeaguesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D386F61C2AAD402C005BBCDB /* LeaguesModel.swift */; };
 		D386F61F2AAD44F1005BBCDB /* LeaguesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D386F61E2AAD44F1005BBCDB /* LeaguesResponse.swift */; };
+		D386F6222AAD4C3E005BBCDB /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = D386F6212AAD4C3E005BBCDB /* Kingfisher */; };
+		D3A9C7FE2AAE46700080CF0E /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A9C7FD2AAE46700080CF0E /* NetworkService.swift */; };
+		D3A9C8002AAE48740080CF0E /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A9C7FF2AAE48740080CF0E /* EndPoint.swift */; };
+		D3A9C8022AAE4A960080CF0E /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A9C8012AAE4A960080CF0E /* HTTPMethod.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +60,9 @@
 		D386F61A2AAD3FE8005BBCDB /* LeagueRaw.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeagueRaw.swift; sourceTree = "<group>"; };
 		D386F61C2AAD402C005BBCDB /* LeaguesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaguesModel.swift; sourceTree = "<group>"; };
 		D386F61E2AAD44F1005BBCDB /* LeaguesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaguesResponse.swift; sourceTree = "<group>"; };
+		D3A9C7FD2AAE46700080CF0E /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		D3A9C7FF2AAE48740080CF0E /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
+		D3A9C8012AAE4A960080CF0E /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D386F6222AAD4C3E005BBCDB /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,6 +114,7 @@
 		D386F5E02AAD2C60005BBCDB /* FootballLeague */ = {
 			isa = PBXGroup;
 			children = (
+				D3A9C7FC2AAE46490080CF0E /* NetworkServices */,
 				D386F6132AAD301C005BBCDB /* Features */,
 				D386F6122AAD2FFE005BBCDB /* Repositeries */,
 				D386F6112AAD2FF3005BBCDB /* Models */,
@@ -209,6 +218,16 @@
 			path = TeamMatches;
 			sourceTree = "<group>";
 		};
+		D3A9C7FC2AAE46490080CF0E /* NetworkServices */ = {
+			isa = PBXGroup;
+			children = (
+				D3A9C7FD2AAE46700080CF0E /* NetworkService.swift */,
+				D3A9C7FF2AAE48740080CF0E /* EndPoint.swift */,
+				D3A9C8012AAE4A960080CF0E /* HTTPMethod.swift */,
+			);
+			path = NetworkServices;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -225,6 +244,9 @@
 			dependencies = (
 			);
 			name = FootballLeague;
+			packageProductDependencies = (
+				D386F6212AAD4C3E005BBCDB /* Kingfisher */,
+			);
 			productName = FootballLeague;
 			productReference = D386F5DE2AAD2C60005BBCDB /* FootballLeague.app */;
 			productType = "com.apple.product-type.application";
@@ -297,6 +319,9 @@
 				Base,
 			);
 			mainGroup = D386F5D52AAD2C60005BBCDB;
+			packageReferences = (
+				D386F6202AAD4C3E005BBCDB /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = D386F5DF2AAD2C60005BBCDB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -340,9 +365,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				D386F61D2AAD402C005BBCDB /* LeaguesModel.swift in Sources */,
+				D3A9C8002AAE48740080CF0E /* EndPoint.swift in Sources */,
 				D386F5EB2AAD2C61005BBCDB /* Persistence.swift in Sources */,
+				D3A9C8022AAE4A960080CF0E /* HTTPMethod.swift in Sources */,
 				D386F61B2AAD3FE8005BBCDB /* LeagueRaw.swift in Sources */,
 				D386F5EE2AAD2C61005BBCDB /* FootballLeague.xcdatamodeld in Sources */,
+				D3A9C7FE2AAE46700080CF0E /* NetworkService.swift in Sources */,
 				D386F5E42AAD2C60005BBCDB /* ContentView.swift in Sources */,
 				D386F61F2AAD44F1005BBCDB /* LeaguesResponse.swift in Sources */,
 				D386F5E22AAD2C60005BBCDB /* FootballLeagueApp.swift in Sources */,
@@ -673,6 +701,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D386F6202AAD4C3E005BBCDB /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D386F6212AAD4C3E005BBCDB /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D386F6202AAD4C3E005BBCDB /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		D386F5EC2AAD2C61005BBCDB /* FootballLeague.xcdatamodeld */ = {
