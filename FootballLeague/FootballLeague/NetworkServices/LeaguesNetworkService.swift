@@ -7,17 +7,28 @@
 
 import Foundation
 
-typealias ResultCallback<T> = Result<T, NetworkError>
-
-
-
-struct LeaguesEndPoint: Endpoint {
-    var path: String {
-        return "competitions"
+class EndPoint {
+    static let shared = EndPoint()
+    
+    private init() {
     }
     
-    var method: HTTPMethod {
-        return .get
-    }
+    static let baseURL = "https://api.football-data.org/v4/"
+    static let header: [String: String] = ["X-Auth-Token":"d9367a4c6c0e421eaaf871ec900c83d4"]
     
+    func createCustomURL(path: String, method: HTTPMethod) throws ->  URLRequest {
+        let components = URLComponents(string: EndPoint.baseURL + path)
+        
+        
+        guard let url = components?.url else {
+            throw NetworkError.invalidURL
+        }
+        print("Call End Point: ",url.absoluteString)
+        var request = URLRequest(url: url)
+        request.httpMethod = method.rawValue
+        request.allHTTPHeaderFields = EndPoint.header
+        
+        return request
+    }
 }
+

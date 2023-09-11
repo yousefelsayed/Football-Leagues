@@ -15,33 +15,13 @@ class URLSessionNetworkService: NetworkService {
         self.session = session
     }
     
-    func performRequest<T: Decodable>(endPoint: Endpoint) async throws -> Result<T, NetworkError> {
-        
-        var components = URLComponents(string: endPoint.base + endPoint.path)
+    func performRequest<T: Decodable>(endPoint: String, method: HTTPMethod) async throws -> Result<T, NetworkError> {
         
         
-        guard let url = components?.url else {
-            throw NetworkError.invalidURL
-        }
-        print("Call End Point: ",url.absoluteString)
-        var testrequest = URLRequest(url: url)
-        testrequest.httpMethod = endPoint.method.rawValue
-        testrequest.allHTTPHeaderFields = endPoint.header
+        let request = try EndPoint.shared.createCustomURL(path: endPoint, method: method)
         
-//        var urlComponents = URLComponents()
-//        urlComponents.host = endPoint.base
-//        urlComponents.path = endPoint.path
-//
-//        guard let url = urlComponents.url else {
-//            throw NetworkError.invalidURL
-//        }
-//
-//        var request = URLRequest(url: url)
-//        request.httpMethod = endPoint.method.rawValue
-//        request.allHTTPHeaderFields = endPoint.header
-        print(testrequest)
         return try await withCheckedThrowingContinuation { continuation in
-            let task = session.dataTask(with: testrequest) { data, response, error in
+            let task = session.dataTask(with: request) { data, response, error in
                 if let error = error {
                     continuation.resume(with: .failure(NetworkError.requestFailed(error)))
                     return

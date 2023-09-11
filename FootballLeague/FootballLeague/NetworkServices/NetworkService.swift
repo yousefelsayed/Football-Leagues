@@ -7,6 +7,8 @@
 
 import Foundation
 
+typealias ResultCallback<T> = Result<T, NetworkError>
+
 enum NetworkError: Error {
     case invalidURL
     case requestFailed(Error)
@@ -15,5 +17,5 @@ enum NetworkError: Error {
 
 protocol NetworkService {
     
-    func performRequest<T: Decodable>(endPoint: Endpoint) async throws -> ResultCallback<T>
+    func performRequest<T: Decodable>(endPoint: String, method: HTTPMethod) async throws -> Result<T, NetworkError> 
 }

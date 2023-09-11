@@ -14,12 +14,3 @@ protocol Endpoint {
     var header: [String: String]? { get }
 }
 
-extension Endpoint {
-    var base: String {
-        return "https://api.football-data.org/v4/"
-    }
-    
-    var header: [String:String]? {
-        return ["X-Auth-Token":"d9367a4c6c0e421eaaf871ec900c83d4"]
-    }
-}

@@ -19,9 +19,9 @@ class LeaguesRepository: LeaguesDataRepository {
     
     //MARK: - get leagues response and return complition
     func getLeagues() async throws -> ResultCallback<LeaguesResponse> {
-        let endPoint = LeaguesEndPoint()
+        let endPoint = "competitions"
         
-        return try await networkService.performRequest(endPoint: endPoint)
+        return try await networkService.performRequest(endPoint: endPoint, method: .get)
     }
     
     
