@@ -28,6 +28,8 @@
 		D3A9C8062AAE51A00080CF0E /* LeaguesNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A9C8052AAE51A00080CF0E /* LeaguesNetworkService.swift */; };
 		D3A9C8082AAE5A100080CF0E /* LeaguesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A9C8072AAE5A100080CF0E /* LeaguesRepository.swift */; };
 		D3A9C80D2AAE5D3E0080CF0E /* LeaguesDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A9C80C2AAE5D3E0080CF0E /* LeaguesDataRepository.swift */; };
+		D3A9C8132AAE6EA30080CF0E /* LeaguesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A9C8122AAE6EA30080CF0E /* LeaguesUseCase.swift */; };
+		D3A9C8152AAE7CB00080CF0E /* LeaguesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A9C8142AAE7CB00080CF0E /* LeaguesViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +73,9 @@
 		D3A9C8052AAE51A00080CF0E /* LeaguesNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaguesNetworkService.swift; sourceTree = "<group>"; };
 		D3A9C8072AAE5A100080CF0E /* LeaguesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaguesRepository.swift; sourceTree = "<group>"; };
 		D3A9C80C2AAE5D3E0080CF0E /* LeaguesDataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaguesDataRepository.swift; sourceTree = "<group>"; };
+		D3A9C8122AAE6EA30080CF0E /* LeaguesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaguesUseCase.swift; sourceTree = "<group>"; };
+		D3A9C8142AAE7CB00080CF0E /* LeaguesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaguesViewModel.swift; sourceTree = "<group>"; };
+		D3A9C8162AAE83830080CF0E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +127,8 @@
 		D386F5E02AAD2C60005BBCDB /* FootballLeague */ = {
 			isa = PBXGroup;
 			children = (
+				D3A9C8162AAE83830080CF0E /* Info.plist */,
+				D3A9C8102AAE6DE10080CF0E /* Domain */,
 				D3A9C7FC2AAE46490080CF0E /* NetworkServices */,
 				D386F6132AAD301C005BBCDB /* Presentation */,
 				D3A9C80A2AAE5B9A0080CF0E /* Data */,
@@ -201,6 +208,7 @@
 			children = (
 				D386F6162AAD3345005BBCDB /* LeaguesView.swift */,
 				D386F61A2AAD3FE8005BBCDB /* LeagueRaw.swift */,
+				D3A9C8142AAE7CB00080CF0E /* LeaguesViewModel.swift */,
 			);
 			path = Leages;
 			sourceTree = "<group>";
@@ -254,6 +262,22 @@
 				D3A9C80C2AAE5D3E0080CF0E /* LeaguesDataRepository.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		D3A9C8102AAE6DE10080CF0E /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				D3A9C8112AAE6E5C0080CF0E /* UseCases */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		D3A9C8112AAE6E5C0080CF0E /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				D3A9C8122AAE6EA30080CF0E /* LeaguesUseCase.swift */,
+			);
+			path = UseCases;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -394,6 +418,7 @@
 			files = (
 				D386F61D2AAD402C005BBCDB /* LeaguesModel.swift in Sources */,
 				D3A9C8002AAE48740080CF0E /* EndPoint.swift in Sources */,
+				D3A9C8152AAE7CB00080CF0E /* LeaguesViewModel.swift in Sources */,
 				D386F5EB2AAD2C61005BBCDB /* Persistence.swift in Sources */,
 				D3A9C80D2AAE5D3E0080CF0E /* LeaguesDataRepository.swift in Sources */,
 				D3A9C8022AAE4A960080CF0E /* HTTPMethod.swift in Sources */,
@@ -404,6 +429,7 @@
 				D386F5E42AAD2C60005BBCDB /* ContentView.swift in Sources */,
 				D386F61F2AAD44F1005BBCDB /* LeaguesResponse.swift in Sources */,
 				D386F5E22AAD2C60005BBCDB /* FootballLeagueApp.swift in Sources */,
+				D3A9C8132AAE6EA30080CF0E /* LeaguesUseCase.swift in Sources */,
 				D386F6172AAD3345005BBCDB /* LeaguesView.swift in Sources */,
 				D3A9C8082AAE5A100080CF0E /* LeaguesRepository.swift in Sources */,
 				D3A9C8042AAE4EF50080CF0E /* URLSessionNetworkService.swift in Sources */,
@@ -568,6 +594,7 @@
 				DEVELOPMENT_TEAM = 7QVHT6489F;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FootballLeague/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -598,6 +625,7 @@
 				DEVELOPMENT_TEAM = 7QVHT6489F;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FootballLeague/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

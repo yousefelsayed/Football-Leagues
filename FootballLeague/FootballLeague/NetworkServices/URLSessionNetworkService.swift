@@ -15,48 +15,60 @@ class URLSessionNetworkService: NetworkService {
         self.session = session
     }
     
-    func performRequest<T: Decodable>(endPoint: Endpoint, completion: @escaping ResultCallback<T>) {
+    func performRequest<T: Decodable>(endPoint: Endpoint) async throws -> Result<T, NetworkError> {
+        
+        var components = URLComponents(string: endPoint.base + endPoint.path)
         
         
-        var urlComponents = URLComponents()
-        urlComponents.host = endPoint.base
-        urlComponents.path = endPoint.path
+        guard let url = components?.url else {
+            throw NetworkError.invalidURL
+        }
+        print("Call End Point: ",url.absoluteString)
+        var testrequest = URLRequest(url: url)
+        testrequest.httpMethod = endPoint.method.rawValue
+        testrequest.allHTTPHeaderFields = endPoint.header
         
-        guard let url = urlComponents.url else {
-            completion(.failure(.invalidURL))
-            return
+//        var urlComponents = URLComponents()
+//        urlComponents.host = endPoint.base
+//        urlComponents.path = endPoint.path
+//
+//        guard let url = urlComponents.url else {
+//            throw NetworkError.invalidURL
+//        }
+//
+//        var request = URLRequest(url: url)
+//        request.httpMethod = endPoint.method.rawValue
+//        request.allHTTPHeaderFields = endPoint.header
+        print(testrequest)
+        return try await withCheckedThrowingContinuation { continuation in
+            let task = session.dataTask(with: testrequest) { data, response, error in
+                if let error = error {
+                    continuation.resume(with: .failure(NetworkError.requestFailed(error)))
+                    return
+                }
+                
+                guard let httpResponse = response as? HTTPURLResponse,
+                      (200...299).contains(httpResponse.statusCode) else {
+                    continuation.resume(with: .failure(NetworkError.invalidResponse))
+                    return
+                }
+                
+                guard let data1 = data else {
+                    continuation.resume(with: .failure(NetworkError.invalidResponse))
+                    return
+                }
+                
+                do {
+                    let decodedData = try JSONDecoder().decode(T.self, from: data1)
+                    continuation.resume(returning: .success(decodedData))
+                } catch {
+                    continuation.resume(with: .failure(NetworkError.requestFailed(error)))
+                }
+            }
+            
+            task.resume()
         }
         
-        var request = URLRequest(url: url)
-        request.httpMethod = endPoint.method.rawValue
-        request.allHTTPHeaderFields = endPoint.header
-        
-        let task = session.dataTask(with: url) { data, response, error in
-            if let error = error {
-                completion(.failure(.requestFailed(error)))
-                return
-            }
-            
-            guard let httpResponse = response as? HTTPURLResponse,
-                  (200...299).contains(httpResponse.statusCode) else {
-                completion(.failure(.invalidResponse))
-                return
-            }
-            
-            guard let data = data else {
-                completion(.failure(.invalidResponse))
-                return
-            }
-            
-            do {
-                let decodedData = try JSONDecoder().decode(T.self, from: data)
-                completion(.success(decodedData))
-            } catch {
-                completion(.failure(.requestFailed(error)))
-            }
-        }
-        
-        task.resume()
     }
     
 

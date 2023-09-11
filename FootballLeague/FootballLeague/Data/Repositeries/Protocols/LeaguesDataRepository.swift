@@ -9,5 +9,6 @@ import Foundation
 
 
 protocol LeaguesDataRepository {
-    func getLeagues(completion: @escaping (Result<LeaguesResponse, NetworkError>) -> Void)
+    func getLeagues() async throws -> ResultCallback<LeaguesResponse>
+    //TODO : - get cached leagues
 }

@@ -11,7 +11,7 @@ struct Leagues {
     var leagues: [League]
 }
 
-struct League : Identifiable {
+struct League : Identifiable,Hashable {
     let id = UUID()
 
     var leagueId: Int

@@ -9,20 +9,20 @@ import Foundation
 
 
 class LeaguesRepository: LeaguesDataRepository {
+    
 
-    
-    
-    private let networkService: LeaguesURLSessionsNetworkService
-    
-    init(networkService: LeaguesURLSessionsNetworkService) {
+    private let networkService: NetworkService
+    //TODO: - cached layer
+    init(networkService: NetworkService) {
         self.networkService = networkService
     }
     
     //MARK: - get leagues response and return complition
-    func getLeagues(completion: @escaping (Result<LeaguesResponse, NetworkError>) -> Void) {
-        networkService.fetchData { result in
-            completion(result)
-        }
+    func getLeagues() async throws -> ResultCallback<LeaguesResponse> {
+        let endPoint = LeaguesEndPoint()
+        
+        return try await networkService.performRequest(endPoint: endPoint)
     }
-
+    
+    
 }

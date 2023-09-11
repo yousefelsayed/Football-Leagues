@@ -16,7 +16,10 @@ struct FootballLeagueApp: App {
         WindowGroup {
 //            ContentView()
 //                .environment(\.managedObjectContext, persistenceController.container.viewContext)
-            LeaguesView()
+            let repo = LeaguesRepository(networkService: URLSessionNetworkService())
+            let useCase = LeaguesUseCase(repository: repo)
+            let leaguesViewModel = LeaguesViewModel(leaguesUseCase: useCase)
+            LeaguesView(viewModel: leaguesViewModel)
         }
     }
 }
