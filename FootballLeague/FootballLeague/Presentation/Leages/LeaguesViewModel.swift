@@ -23,22 +23,41 @@ class LeaguesViewModel: ObservableObject {
     
     
     func getLeagues() {
-        Task {            
+        Task {
             do {
-                let resultResponse = try await leaguesUseCase.fetchData()
-                switch resultResponse {
-                    
-                case .success(let response):
-                    //TODO: - map leagues response to leagues
+                let result =  try await leaguesUseCase.getCachedLeagues()
+                switch result {
+                case .success(let success):
+                    print(success)
                     break
-                    
-                case .failure(let error):
-                    throw error
+                case .failure(let failure):
+                    break
                 }
-            } catch {
-                print("Error fetching leagues: \(error)")
-
             }
+            catch {
+                print("Error fetching leagues: \(error)")
+            }
+//            do {
+//                let resultResponse = try await leaguesUseCase.fetchData()
+//                switch resultResponse {
+//
+//                case .success(let response):
+//                    //TODO: - map leagues response to leagues
+//                    let leagues = response.competitions.map { competitions in
+//                        competitions.map({ competition in
+//                            return League(competition)
+//                        })
+//                    }
+//
+//                    try leaguesUseCase.saveCurrentLeagues(Leagues(leagues: leagues!))
+//
+//                case .failure(let error):
+//                    throw error
+//                }
+//            } catch {
+//                print("Error fetching leagues: \(error)")
+//
+//            }
         }
     }
     

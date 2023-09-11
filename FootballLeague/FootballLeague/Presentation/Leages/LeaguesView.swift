@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct LeaguesView: View {
-    var leagues = [League(leagueId: 0, leagueName: "Egyptian league", leagueCode: "0", leagueLogo: "https://crests.football-data.org/762.png", leagueAreaName: "test", numberOfTeams: "20", numberOfGames: "100"),League(leagueId: 2, leagueName: "Egyptian league", leagueCode: "0", leagueLogo: "https://crests.football-data.org/762.png", leagueAreaName: "test", numberOfTeams: "20", numberOfGames: "100"),League(leagueId: 1, leagueName: "Egyptian league", leagueCode: "0", leagueLogo: "https://crests.football-data.org/762.png", leagueAreaName: "test", numberOfTeams: "20", numberOfGames: "100")]
+ 
     
     @StateObject private var viewModel: LeaguesViewModel
 

@@ -10,13 +10,12 @@ import SwiftUI
 @available(iOS 14.0, *)
 @main
 struct FootballLeagueApp: App {
-    let persistenceController = PersistenceController.shared
 
     var body: some Scene {
         WindowGroup {
 //            ContentView()
 //                .environment(\.managedObjectContext, persistenceController.container.viewContext)
-            let repo = LeaguesRepository(networkService: URLSessionNetworkService())
+            let repo = LeaguesRepository(networkService: URLSessionNetworkService(), coreDataManager: CoreDataManager.shared)
             let useCase = LeaguesUseCase(repository: repo)
             let leaguesViewModel = LeaguesViewModel(leaguesUseCase: useCase)
             LeaguesView(viewModel: leaguesViewModel)
