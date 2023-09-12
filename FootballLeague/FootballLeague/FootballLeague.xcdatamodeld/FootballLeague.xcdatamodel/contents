@@ -9,4 +9,12 @@
         <attribute name="numberOfGames" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="numberOfTeams" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
     </entity>
+    <entity name="LeagueTeamsEntity" representedClassName="LeagueTeamsEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="leagueId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="teamCode" optional="YES" attributeType="String"/>
+        <attribute name="teamId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="teamLogo" optional="YES" attributeType="String"/>
+        <attribute name="teamName" optional="YES" attributeType="String"/>
+        <attribute name="teamShortName" optional="YES" attributeType="String"/>
+    </entity>
 </model>

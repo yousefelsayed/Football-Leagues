@@ -6,9 +6,23 @@
 //
 
 import Foundation
+import CoreData
 
 struct LeagueTeams {
     var teams: [LeagueTeamsModel]
+    
+    func toEntity(in context: NSManagedObjectContext) -> LeagueTeamsEntity {
+        var entity: LeagueTeamsEntity = .init(context: context)
+        teams.forEach({ model in
+            entity = LeagueTeamsEntity(context: context)
+            entity.teamId = Int32(model.teamId)
+            entity.teamName = model.teamName
+            entity.teamShortName = model.teamShortName
+            entity.teamCode = model.teamCode
+            entity.teamLogo = model.teamLogo
+        })
+        return entity
+    }
 }
 
 struct LeagueTeamsModel {
@@ -18,11 +32,11 @@ struct LeagueTeamsModel {
     var teamCode: String
     var teamLogo: String
     
-    init(teamId: Int, teamName: String, teamShortName: String, teamCode: String, teamLogo: String) {
-        self.teamId = teamId
-        self.teamName = teamName
-        self.teamShortName = teamShortName
-        self.teamCode = teamCode
-        self.teamLogo = teamLogo
+    init(_ entity: LeagueTeamsEntity) {
+        self.teamId = Int(entity.teamId)
+        self.teamName = entity.teamName ?? ""
+        self.teamShortName = entity.teamShortName ?? ""
+        self.teamCode = entity.teamCode ?? ""
+        self.teamLogo = entity.teamLogo ?? ""
     }
 }
