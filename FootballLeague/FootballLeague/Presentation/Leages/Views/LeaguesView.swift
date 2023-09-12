@@ -11,6 +11,8 @@ struct LeaguesView: View {
  
     
     @StateObject private var viewModel: LeaguesViewModel
+    @State private var selectedLeague: League?
+    @EnvironmentObject var coordinator: AppCoordinator
 
        init(viewModel: LeaguesViewModel) {
            _viewModel = StateObject(wrappedValue: viewModel)
@@ -28,9 +30,17 @@ struct LeaguesView: View {
         ZStack {
             List{
                 ForEach(viewModel.leagues, id:\.id){ league in
-                    LeagueRaw(league: league)
+                    Button(action: {
+                        // Set the selected league when tapped
+                        selectedLeague = league
+
+                    }) {
+                        LeagueRaw(league: league)
+                    }
+                    
                 }
             }
+
             .onAppear(perform: viewModel.getLeagues )
             .navigationTitle("Football Leagues")
             .listStyle(PlainListStyle())
@@ -42,5 +52,12 @@ struct LeaguesView: View {
         
     }
     
+    func navigateToLeagueTeamsView(league: League) -> some View {
+        let repo = LeagueTeamsRepository(networkService: URLSessionNetworkService(), coreDataManager: CoreDataManager.shared)
+        let useCase = LeagueTeamsUseCase(repository: repo)
+        let leagueTeamsViewModel = LeagueTeamsViewModel(leaguesUseCase: useCase, league: league)
+        
+       return TeamsView(league: league, viewModel: leagueTeamsViewModel)
+    }
 }
 

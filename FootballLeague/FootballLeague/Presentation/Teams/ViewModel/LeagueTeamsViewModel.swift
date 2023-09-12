@@ -16,12 +16,16 @@ class LeagueTeamsViewModel: ObservableObject {
     @Published var teams: [LeagueTeamsIModel] = []
     @Published var isLoading: Bool = false
     @Published var errorMessage: String = ""
-    init(leaguesUseCase: LeagueTeamsDataUseCase) {
+    
+    var league: League?
+    
+    init(leaguesUseCase: LeagueTeamsDataUseCase, league: League) {
         self.leagueTeamUseCase = leaguesUseCase
+        self.league = league
     }
     
     
-    func getLeagueTeams(_ leagueID: Int?) {
+    func getLeagueTeams() {
         Task {
             // Show the progress indicator
             DispatchQueue.main.async {
@@ -29,10 +33,10 @@ class LeagueTeamsViewModel: ObservableObject {
             }
             
             // First, try to fetch cached leagues
-            await getCachedLeagueTeams(leagueID: leagueID)
+            await getCachedLeagueTeams(leagueID: self.league?.leagueId)
             
             // If there are no cached leagues, fetch from the server
-            await getLeagueTeamsFromServer(leagueID ?? 0)
+            await getLeagueTeamsFromServer(self.league?.leagueId ?? 0)
             
             
             // Hide the progress indicator

@@ -12,6 +12,6 @@ struct ContentView: View {
     @EnvironmentObject var coordinator: AppCoordinator
 
     var body: some View {
-        coordinator.currentView
+        coordinator.navigateToLeaguesView()
     }
 }
