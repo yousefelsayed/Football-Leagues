@@ -12,6 +12,18 @@ enum CachDataError: Error {
     case onSaveError(Error)
     case onReadError(Error)
     case onDeleteError(Error)
+    case onError(String)
+    
+    var localizedDescription: String {
+            switch self {
+            case .onSaveError(let error),
+                 .onReadError(let error),
+                 .onDeleteError(let error):
+                return error.localizedDescription
+            case .onError(let message):
+                return message
+            }
+        }
 }
 
 class CoreDataManager {

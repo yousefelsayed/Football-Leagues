@@ -25,7 +25,9 @@ struct LeagueTeams {
     }
 }
 
-struct LeagueTeamsIModel {
+struct LeagueTeamsIModel: Codable,Hashable,Identifiable  {
+    var id = UUID()
+    
     var teamId: Int
     var teamName: String
     var teamShortName: String
@@ -38,5 +40,13 @@ struct LeagueTeamsIModel {
         self.teamShortName = entity.teamShortName ?? ""
         self.teamCode = entity.teamCode ?? ""
         self.teamLogo = entity.teamLogo ?? ""
+    }
+    
+    init(_ team: TeamsModel) {
+        self.teamId = team.id ?? 0
+        self.teamName = team.name ?? ""
+        self.teamShortName = team.shortName  ?? ""
+        self.teamCode = team.tla ?? ""
+        self.teamLogo = team.crest ?? ""
     }
 }
