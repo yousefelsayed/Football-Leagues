@@ -28,7 +28,9 @@ struct Leagues: Codable {
     
 }
 
-struct League : Codable,Hashable {
+struct League : Codable,Hashable,Identifiable {
+    var id = UUID() // Unique identifier
+
     var leagueId: Int
     var leagueName: String
     var leagueCode: String
@@ -51,7 +53,7 @@ struct League : Codable,Hashable {
         let teams = competition.currentSeason?.currentMatchday ?? 0
         let numberOfTeams = (teams / 2) + 1
         
-        self.leagueId = competition.id ?? 0
+        self.leagueId = Int.random(in: 0 ... 1000)
         self.leagueName = competition.name ?? ""
         self.leagueCode = competition.code ?? ""
         self.leagueLogo = competition.emblem ?? ""

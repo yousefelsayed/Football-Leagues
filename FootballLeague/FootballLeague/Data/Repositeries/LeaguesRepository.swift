@@ -38,6 +38,8 @@ class LeaguesRepository: LeaguesDataRepository {
         let request = NSFetchRequest<LeaguesEntity>(entityName: "LeaguesEntity")
         do {
             let cachedLeagues = try coreDataManager.managedObjectContext.fetch(request)
+            print("cached data retrieved", cachedLeagues)
+
             return .success(cachedLeagues.map({League($0)})
 )
         } catch {
@@ -48,6 +50,8 @@ class LeaguesRepository: LeaguesDataRepository {
 
     //MARK: - Save new leagues data
     func cacheLeaguesData(_ leagues: Leagues?) throws {
+        try deleteAllLeagues()
+        print("save data to cache", leagues?.leagues ?? [])
         let context = coreDataManager.managedObjectContext
         let _ =  leagues?.toEntity(in: context)
         
@@ -58,5 +62,16 @@ class LeaguesRepository: LeaguesDataRepository {
         }
     }
 
+    func deleteAllLeagues() throws {
+        let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "LeaguesEntity")
+        let batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+        
+        do {
+            try coreDataManager.managedObjectContext.execute(batchDeleteRequest)
+            try coreDataManager.managedObjectContext.save()
+        } catch {
+            throw CachDataError.onDeleteError(error)
+        }
+    }
 
 }

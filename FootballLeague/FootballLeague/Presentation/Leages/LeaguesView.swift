@@ -23,13 +23,19 @@ struct LeaguesView: View {
   
     
     fileprivate func renderLeaguesList() -> some View{
-        List{
-            ForEach(viewModel.leagues, id:\.self){ league in
-                LeagueRaw(league: league)
+        ZStack {
+            List{
+                ForEach(viewModel.leagues, id:\.id){ league in
+                    LeagueRaw(league: league)
+                }
+            }
+            .onAppear(perform: viewModel.getLeagues )
+            .navigationTitle("Football Leagues")
+            if (viewModel.isLoading && viewModel.leagues.isEmpty) {
+                ProgressView()
             }
         }
-        .onAppear(perform: viewModel.getLeagues )
-        .navigationTitle("Football Leagues")
+        
     }
     
 }

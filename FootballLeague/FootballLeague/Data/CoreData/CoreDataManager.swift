@@ -11,6 +11,7 @@ import CoreData
 enum CachDataError: Error {
     case onSaveError(Error)
     case onReadError(Error)
+    case onDeleteError(Error)
 }
 
 class CoreDataManager {

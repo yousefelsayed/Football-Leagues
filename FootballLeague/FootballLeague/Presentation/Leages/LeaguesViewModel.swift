@@ -24,42 +24,69 @@ class LeaguesViewModel: ObservableObject {
     
     func getLeagues() {
         Task {
-            do {
-                let result =  try await leaguesUseCase.getCachedLeagues()
-                switch result {
-                case .success(let success):
-                    print(success)
-                    break
-                case .failure(let failure):
-                    break
-                }
+            // Show the progress indicator
+            DispatchQueue.main.async {
+                self.isLoading = true
             }
-            catch {
-                print("Error fetching leagues: \(error)")
+            
+            // First, try to fetch cached leagues
+            await getCachedLeagues()
+            
+            // If there are no cached leagues, fetch from the server
+            await getLeaguesFromServer()
+            
+            
+            // Hide the progress indicator
+            DispatchQueue.main.async {
+                self.isLoading = false
             }
-//            do {
-//                let resultResponse = try await leaguesUseCase.fetchData()
-//                switch resultResponse {
-//
-//                case .success(let response):
-//                    //TODO: - map leagues response to leagues
-//                    let leagues = response.competitions.map { competitions in
-//                        competitions.map({ competition in
-//                            return League(competition)
-//                        })
-//                    }
-//
-//                    try leaguesUseCase.saveCurrentLeagues(Leagues(leagues: leagues!))
-//
-//                case .failure(let error):
-//                    throw error
-//                }
-//            } catch {
-//                print("Error fetching leagues: \(error)")
-//
-//            }
+            
         }
     }
+    
+    func getLeaguesFromServer() async {
+        do {
+            let resultResponse = try await leaguesUseCase.fetchData()
+            switch resultResponse {
+                
+            case .success(let response):
+                
+                let leagues = response.competitions?.compactMap({ competition in
+                    return League(competition)
+                })
+                let sortedLeagues = leagues?.sorted{ $0.leagueName < $1.leagueName} ?? []
+
+                DispatchQueue.main.async {
+                    self.leagues = sortedLeagues
+                }
+                
+                try leaguesUseCase.saveCurrentLeagues(Leagues(leagues: sortedLeagues))
+                
+            case .failure(let error):
+                self.errorMessage = error.localizedDescription
+            }
+        } catch {
+            self.errorMessage = error.localizedDescription
+        }
+    }
+    
+    func getCachedLeagues() async {
+        do {
+            let result =  try await leaguesUseCase.getCachedLeagues()
+            switch result {
+            case .success(let cachedLeagues):
+                DispatchQueue.main.async {
+                    self.leagues = cachedLeagues
+                }
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+        catch {
+            print(error.localizedDescription)
+        }
+    }
+    
     
 }
 
