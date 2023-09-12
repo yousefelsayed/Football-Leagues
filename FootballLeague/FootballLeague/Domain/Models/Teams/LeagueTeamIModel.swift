@@ -9,7 +9,7 @@ import Foundation
 import CoreData
 
 struct LeagueTeams {
-    var teams: [LeagueTeamsModel]
+    var teams: [LeagueTeamsIModel]
     
     func toEntity(in context: NSManagedObjectContext) -> LeagueTeamsEntity {
         var entity: LeagueTeamsEntity = .init(context: context)
@@ -25,7 +25,7 @@ struct LeagueTeams {
     }
 }
 
-struct LeagueTeamsModel {
+struct LeagueTeamsIModel {
     var teamId: Int
     var teamName: String
     var teamShortName: String

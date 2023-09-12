@@ -12,6 +12,9 @@
 		D373F2C02AB10971005C5621 /* TeamsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D373F2BF2AB10971005C5621 /* TeamsView.swift */; };
 		D373F2C62AB10A31005C5621 /* LeagueTeams.swift in Sources */ = {isa = PBXBuildFile; fileRef = D373F2C52AB10A31005C5621 /* LeagueTeams.swift */; };
 		D373F2C82AB10AD7005C5621 /* LeagueTeamIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D373F2C72AB10AD7005C5621 /* LeagueTeamIModel.swift */; };
+		D373F2CA2AB10E24005C5621 /* LeagueTeamsDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D373F2C92AB10E24005C5621 /* LeagueTeamsDataRepository.swift */; };
+		D373F2CC2AB10F09005C5621 /* LeagueTeamsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D373F2CB2AB10F09005C5621 /* LeagueTeamsRepository.swift */; };
+		D373F2CE2AB114EC005C5621 /* LeagueTeamsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D373F2CD2AB114EC005C5621 /* LeagueTeamsUseCase.swift */; };
 		D386F5E22AAD2C60005BBCDB /* FootballLeagueApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D386F5E12AAD2C60005BBCDB /* FootballLeagueApp.swift */; };
 		D386F5E62AAD2C61005BBCDB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D386F5E52AAD2C61005BBCDB /* Assets.xcassets */; };
 		D386F5E92AAD2C61005BBCDB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D386F5E82AAD2C61005BBCDB /* Preview Assets.xcassets */; };
@@ -58,6 +61,9 @@
 		D373F2BF2AB10971005C5621 /* TeamsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsView.swift; sourceTree = "<group>"; };
 		D373F2C52AB10A31005C5621 /* LeagueTeams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeagueTeams.swift; sourceTree = "<group>"; };
 		D373F2C72AB10AD7005C5621 /* LeagueTeamIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeagueTeamIModel.swift; sourceTree = "<group>"; };
+		D373F2C92AB10E24005C5621 /* LeagueTeamsDataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeagueTeamsDataRepository.swift; sourceTree = "<group>"; };
+		D373F2CB2AB10F09005C5621 /* LeagueTeamsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeagueTeamsRepository.swift; sourceTree = "<group>"; };
+		D373F2CD2AB114EC005C5621 /* LeagueTeamsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeagueTeamsUseCase.swift; sourceTree = "<group>"; };
 		D386F5DE2AAD2C60005BBCDB /* FootballLeague.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FootballLeague.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D386F5E12AAD2C60005BBCDB /* FootballLeagueApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FootballLeagueApp.swift; sourceTree = "<group>"; };
 		D386F5E52AAD2C61005BBCDB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -171,6 +177,7 @@
 		D373F2C42AB109B1005C5621 /* Teams */ = {
 			isa = PBXGroup;
 			children = (
+				D373F2CD2AB114EC005C5621 /* LeagueTeamsUseCase.swift */,
 			);
 			path = Teams;
 			sourceTree = "<group>";
@@ -259,6 +266,7 @@
 			children = (
 				D3A9C80B2AAE5CEE0080CF0E /* Protocols */,
 				D3A9C8072AAE5A100080CF0E /* LeaguesRepository.swift */,
+				D373F2CB2AB10F09005C5621 /* LeagueTeamsRepository.swift */,
 			);
 			path = Repositeries;
 			sourceTree = "<group>";
@@ -331,6 +339,7 @@
 			isa = PBXGroup;
 			children = (
 				D3A9C80C2AAE5D3E0080CF0E /* LeaguesDataRepository.swift */,
+				D373F2C92AB10E24005C5621 /* LeagueTeamsDataRepository.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -507,10 +516,12 @@
 			files = (
 				D386F61D2AAD402C005BBCDB /* LeaguesModel.swift in Sources */,
 				D3A9C8002AAE48740080CF0E /* EndPoint.swift in Sources */,
+				D373F2CE2AB114EC005C5621 /* LeagueTeamsUseCase.swift in Sources */,
 				D3A9C8152AAE7CB00080CF0E /* LeaguesViewModel.swift in Sources */,
 				D3A9C80D2AAE5D3E0080CF0E /* LeaguesDataRepository.swift in Sources */,
 				D373F2C62AB10A31005C5621 /* LeagueTeams.swift in Sources */,
 				D373F2C82AB10AD7005C5621 /* LeagueTeamIModel.swift in Sources */,
+				D373F2CA2AB10E24005C5621 /* LeagueTeamsDataRepository.swift in Sources */,
 				D373F2B62AB105BE005C5621 /* AppCoordinator.swift in Sources */,
 				D3A9C8022AAE4A960080CF0E /* HTTPMethod.swift in Sources */,
 				D3A9C8192AAFA15A0080CF0E /* CoreDataManager.swift in Sources */,
@@ -519,6 +530,7 @@
 				D373F2C02AB10971005C5621 /* TeamsView.swift in Sources */,
 				D386F5EE2AAD2C61005BBCDB /* FootballLeague.xcdatamodeld in Sources */,
 				D3A9C7FE2AAE46700080CF0E /* NetworkService.swift in Sources */,
+				D373F2CC2AB10F09005C5621 /* LeagueTeamsRepository.swift in Sources */,
 				D386F61F2AAD44F1005BBCDB /* LeaguesResponse.swift in Sources */,
 				D386F5E22AAD2C60005BBCDB /* FootballLeagueApp.swift in Sources */,
 				D3A9C8132AAE6EA30080CF0E /* LeaguesUseCase.swift in Sources */,
