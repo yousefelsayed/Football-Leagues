@@ -17,7 +17,9 @@ struct LeaguesView: View {
        }
     
     var body: some View {
-        renderLeaguesList()
+        NavigationView {
+            renderLeaguesList()
+        }
     }
     
   
@@ -31,6 +33,8 @@ struct LeaguesView: View {
             }
             .onAppear(perform: viewModel.getLeagues )
             .navigationTitle("Football Leagues")
+            .listStyle(PlainListStyle())
+
             if (viewModel.isLoading && viewModel.leagues.isEmpty) {
                 ProgressView()
             }
