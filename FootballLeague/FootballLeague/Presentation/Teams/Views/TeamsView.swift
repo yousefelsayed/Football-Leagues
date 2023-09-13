@@ -24,7 +24,7 @@ struct TeamsView: View {
                 }
                 
                 Section(header: Text("Teams")) {
-                    ForEach(viewModel.teams, id:\.teamId){ team in
+                    ForEach(viewModel.teams, id:\.id){ team in
                         TeamRaw(team: team)
 
                     }

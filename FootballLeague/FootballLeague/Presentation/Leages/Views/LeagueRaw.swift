@@ -43,6 +43,18 @@ struct LeagueRaw: View {
                     
                     
                     HStack(spacing: 40) {
+                       
+                        
+                        VStack(spacing: 5) {
+                            
+                            Image("footballIcon")
+                                .scaledToFit()
+                                .frame(width: 20, height: 20)
+                            
+                            Text(league.numberOfGames)
+                                .font(.subheadline)
+                        }
+                        
                         VStack(spacing: 5) {
                             Image("team")
                                 .scaledToFit()
@@ -56,15 +68,6 @@ struct LeagueRaw: View {
                             
                         }
                         
-                        VStack(spacing: 5) {
-                            
-                            Image("footballIcon")
-                                .scaledToFit()
-                                .frame(width: 20, height: 20)
-                            
-                            Text(league.numberOfGames)
-                                .font(.subheadline)
-                        }
                         Spacer()
                         
                     }

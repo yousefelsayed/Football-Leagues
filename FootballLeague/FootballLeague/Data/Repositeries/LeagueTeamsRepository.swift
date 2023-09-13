@@ -31,7 +31,7 @@ class LeagueTeamsRepository: LeagueTeamsDataRepository {
             let cachedLeagues = try coreDataManager.managedObjectContext.fetch(request)
             print("cached data retrieved", cachedLeagues)
 
-            return .success(cachedLeagues.map({LeagueTeamsIModel($0)}))
+            return .success(cachedLeagues.map({LeagueTeamsIModel($0)}).sorted(by: {$0.teamName.lowercased() < $1.teamName.lowercased()}))
 
         } catch {
             return .failure(CachDataError.onReadError(error))
@@ -40,29 +40,18 @@ class LeagueTeamsRepository: LeagueTeamsDataRepository {
     }
 
     //MARK: - Save new league Teams data
-    func cacheLeagueTeamsData(_ teams: LeagueTeams?, leagueCode: String) throws {
-        let context = coreDataManager.managedObjectContext
-
-        // Fetch the existing league entity by leagueCode
-        let fetchRequest: NSFetchRequest<LeagueTeamsEntity> = LeagueTeamsEntity.fetchRequest()
-        fetchRequest.predicate = NSPredicate(format: "leagueCode == %@", leagueCode)
-
-        if var existingLeagueEntity = try context.fetch(fetchRequest).first {
-            // Update the existing league entity with new teams
-            existingLeagueEntity = (teams?.toEntity(in: context))!
-        } else {
-            // Create a new league entity if it doesn't exist
-            var leagueEntity = LeagueTeamsEntity(context: context)
-            leagueEntity.leagueCode = leagueCode
-            leagueEntity = (teams?.toEntity(in: context))!
-        }
-
-        do {
-            try context.save()
-        } catch {
-            throw CachDataError.onSaveError(error)
-        }
-    }
+       func cacheLeagueTeamsData(_ teams: LeagueTeams?, leagueCode: String) throws {
+           try deleteAllTeams(leagueCode)
+           print("save data to cache", teams?.teams ?? [])
+           let context = coreDataManager.managedObjectContext
+           let _ =  teams?.toEntity(in: context)
+           
+           do {
+               try context.save()
+           } catch {
+               throw CachDataError.onSaveError(error)
+           }
+       }
 
     func deleteAllTeams(_ leagueCode: String) throws {
         let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "LeagueTeamsEntity")
