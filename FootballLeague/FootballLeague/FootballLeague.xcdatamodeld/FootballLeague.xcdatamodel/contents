@@ -18,4 +18,16 @@
         <attribute name="teamName" optional="YES" attributeType="String"/>
         <attribute name="teamShortName" optional="YES" attributeType="String"/>
     </entity>
+    <entity name="TeamMatchesEntity" representedClassName="TeamMatchesEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="awayTeamLogo" optional="YES" attributeType="String"/>
+        <attribute name="awayTeamName" optional="YES" attributeType="String"/>
+        <attribute name="awayTeamScore" optional="YES" attributeType="String"/>
+        <attribute name="homeTeamLogo" optional="YES" attributeType="String"/>
+        <attribute name="homeTeamName" optional="YES" attributeType="String"/>
+        <attribute name="homeTeamScore" optional="YES" attributeType="String"/>
+        <attribute name="matchDate" optional="YES" attributeType="String"/>
+        <attribute name="matchId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="matchStatus" optional="YES" attributeType="String"/>
+        <attribute name="teamId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+    </entity>
 </model>

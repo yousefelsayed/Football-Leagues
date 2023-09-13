@@ -19,6 +19,8 @@
 		D373F2D22AB22A6A005C5621 /* TeamRaw.swift in Sources */ = {isa = PBXBuildFile; fileRef = D373F2D12AB22A6A005C5621 /* TeamRaw.swift */; };
 		D373F2D72AB2638C005C5621 /* TeamMatchesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D373F2D62AB2638C005C5621 /* TeamMatchesView.swift */; };
 		D373F2D92AB263A3005C5621 /* TeamMatchesRaw.swift in Sources */ = {isa = PBXBuildFile; fileRef = D373F2D82AB263A3005C5621 /* TeamMatchesRaw.swift */; };
+		D373F2DC2AB26467005C5621 /* TeamMatches.swift in Sources */ = {isa = PBXBuildFile; fileRef = D373F2DB2AB26467005C5621 /* TeamMatches.swift */; };
+		D373F2DE2AB2666D005C5621 /* TeamMatchesIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D373F2DD2AB2666D005C5621 /* TeamMatchesIModel.swift */; };
 		D386F5E22AAD2C60005BBCDB /* FootballLeagueApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D386F5E12AAD2C60005BBCDB /* FootballLeagueApp.swift */; };
 		D386F5E62AAD2C61005BBCDB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D386F5E52AAD2C61005BBCDB /* Assets.xcassets */; };
 		D386F5E92AAD2C61005BBCDB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D386F5E82AAD2C61005BBCDB /* Preview Assets.xcassets */; };
@@ -72,6 +74,8 @@
 		D373F2D12AB22A6A005C5621 /* TeamRaw.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamRaw.swift; sourceTree = "<group>"; };
 		D373F2D62AB2638C005C5621 /* TeamMatchesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamMatchesView.swift; sourceTree = "<group>"; };
 		D373F2D82AB263A3005C5621 /* TeamMatchesRaw.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamMatchesRaw.swift; sourceTree = "<group>"; };
+		D373F2DB2AB26467005C5621 /* TeamMatches.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamMatches.swift; sourceTree = "<group>"; };
+		D373F2DD2AB2666D005C5621 /* TeamMatchesIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamMatchesIModel.swift; sourceTree = "<group>"; };
 		D386F5DE2AAD2C60005BBCDB /* FootballLeague.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FootballLeague.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D386F5E12AAD2C60005BBCDB /* FootballLeagueApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FootballLeagueApp.swift; sourceTree = "<group>"; };
 		D386F5E52AAD2C61005BBCDB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -206,6 +210,15 @@
 				D373F2D82AB263A3005C5621 /* TeamMatchesRaw.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		D373F2DA2AB26438005C5621 /* Matches */ = {
+			isa = PBXGroup;
+			children = (
+				D373F2DB2AB26467005C5621 /* TeamMatches.swift */,
+				D373F2DD2AB2666D005C5621 /* TeamMatchesIModel.swift */,
+			);
+			path = Matches;
 			sourceTree = "<group>";
 		};
 		D386F5D52AAD2C60005BBCDB = {
@@ -393,6 +406,7 @@
 		D3A9C8172AAFA13B0080CF0E /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				D373F2DA2AB26438005C5621 /* Matches */,
 				D373F2C22AB10996005C5621 /* Teams */,
 				D373F2C12AB1098D005C5621 /* Leagues */,
 			);
@@ -546,6 +560,7 @@
 				D3A9C8002AAE48740080CF0E /* EndPoint.swift in Sources */,
 				D373F2CE2AB114EC005C5621 /* LeagueTeamsUseCase.swift in Sources */,
 				D373F2D72AB2638C005C5621 /* TeamMatchesView.swift in Sources */,
+				D373F2DC2AB26467005C5621 /* TeamMatches.swift in Sources */,
 				D3A9C8152AAE7CB00080CF0E /* LeaguesViewModel.swift in Sources */,
 				D3A9C80D2AAE5D3E0080CF0E /* LeaguesDataRepository.swift in Sources */,
 				D373F2C62AB10A31005C5621 /* LeagueTeams.swift in Sources */,
@@ -568,6 +583,7 @@
 				D3A9C8132AAE6EA30080CF0E /* LeaguesUseCase.swift in Sources */,
 				D386F6172AAD3345005BBCDB /* LeaguesView.swift in Sources */,
 				D3A9C8082AAE5A100080CF0E /* LeaguesRepository.swift in Sources */,
+				D373F2DE2AB2666D005C5621 /* TeamMatchesIModel.swift in Sources */,
 				D3A9C8042AAE4EF50080CF0E /* URLSessionNetworkService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
