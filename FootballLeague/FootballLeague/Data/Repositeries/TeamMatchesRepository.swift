@@ -32,7 +32,7 @@ class TeamMatchesRepository: TeamMatchesDataRepository {
             let cachedTeamMatches = try coreDataManager.managedObjectContext.fetch(request)
             print("cached data retrieved", cachedTeamMatches)
             
-            return .success(cachedTeamMatches.map({TeamMatchesIModel($0)}).sorted(by:{convertStringToDate($0.matchDate) < convertStringToDate($1.matchDate)} ))
+            return .success(cachedTeamMatches.map({TeamMatchesIModel($0)}).sorted(by:{$0.matchDate.convertStringToDate() < $1.matchDate.convertStringToDate()} ))
 
         } catch {
             return .failure(CachDataError.onReadError(error))
@@ -82,14 +82,5 @@ class TeamMatchesRepository: TeamMatchesDataRepository {
         return try self.fetchCachedTeamsMatchesData(teamId)
     }
     
-  
-    private func convertStringToDate(_ string: String) -> Date {
-        // Create a date formatter
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss'Z'"
-        dateFormatter.timeZone = TimeZone(abbreviation: "GMT")
-        
-        return dateFormatter.date(from: string) ?? Date()
-    }
     
 }

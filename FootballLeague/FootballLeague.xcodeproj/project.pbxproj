@@ -24,6 +24,8 @@
 		D373F2E12AB26D0B005C5621 /* TeamMatchesDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D373F2E02AB26D0B005C5621 /* TeamMatchesDataRepository.swift */; };
 		D373F2E32AB26E71005C5621 /* TeamMatchesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D373F2E22AB26E71005C5621 /* TeamMatchesRepository.swift */; };
 		D373F2E52AB2742C005C5621 /* TeamMatchesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D373F2E42AB2742C005C5621 /* TeamMatchesUseCase.swift */; };
+		D373F2E72AB27552005C5621 /* MatchesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D373F2E62AB27552005C5621 /* MatchesViewModel.swift */; };
+		D373F2E92AB2775D005C5621 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D373F2E82AB2775D005C5621 /* Extensions.swift */; };
 		D386F5E22AAD2C60005BBCDB /* FootballLeagueApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D386F5E12AAD2C60005BBCDB /* FootballLeagueApp.swift */; };
 		D386F5E62AAD2C61005BBCDB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D386F5E52AAD2C61005BBCDB /* Assets.xcassets */; };
 		D386F5E92AAD2C61005BBCDB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D386F5E82AAD2C61005BBCDB /* Preview Assets.xcassets */; };
@@ -82,6 +84,8 @@
 		D373F2E02AB26D0B005C5621 /* TeamMatchesDataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamMatchesDataRepository.swift; sourceTree = "<group>"; };
 		D373F2E22AB26E71005C5621 /* TeamMatchesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamMatchesRepository.swift; sourceTree = "<group>"; };
 		D373F2E42AB2742C005C5621 /* TeamMatchesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamMatchesUseCase.swift; sourceTree = "<group>"; };
+		D373F2E62AB27552005C5621 /* MatchesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesViewModel.swift; sourceTree = "<group>"; };
+		D373F2E82AB2775D005C5621 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		D386F5DE2AAD2C60005BBCDB /* FootballLeague.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FootballLeague.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D386F5E12AAD2C60005BBCDB /* FootballLeagueApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FootballLeagueApp.swift; sourceTree = "<group>"; };
 		D386F5E52AAD2C61005BBCDB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -205,6 +209,7 @@
 		D373F2D42AB26362005C5621 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				D373F2E62AB27552005C5621 /* MatchesViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -269,6 +274,7 @@
 				D386F6152AAD30BC005BBCDB /* Resources */,
 				D386F5EC2AAD2C61005BBCDB /* FootballLeague.xcdatamodeld */,
 				D386F5E72AAD2C61005BBCDB /* Preview Content */,
+				D373F2E82AB2775D005C5621 /* Extensions.swift */,
 			);
 			path = FootballLeague;
 			sourceTree = "<group>";
@@ -594,6 +600,7 @@
 				D373F2C02AB10971005C5621 /* TeamsView.swift in Sources */,
 				D373F2D02AB11D89005C5621 /* LeagueTeamsViewModel.swift in Sources */,
 				D373F2E12AB26D0B005C5621 /* TeamMatchesDataRepository.swift in Sources */,
+				D373F2E72AB27552005C5621 /* MatchesViewModel.swift in Sources */,
 				D386F5EE2AAD2C61005BBCDB /* FootballLeague.xcdatamodeld in Sources */,
 				D3A9C7FE2AAE46700080CF0E /* NetworkService.swift in Sources */,
 				D373F2CC2AB10F09005C5621 /* LeagueTeamsRepository.swift in Sources */,
@@ -603,6 +610,7 @@
 				D3A9C8132AAE6EA30080CF0E /* LeaguesUseCase.swift in Sources */,
 				D386F6172AAD3345005BBCDB /* LeaguesView.swift in Sources */,
 				D3A9C8082AAE5A100080CF0E /* LeaguesRepository.swift in Sources */,
+				D373F2E92AB2775D005C5621 /* Extensions.swift in Sources */,
 				D373F2DE2AB2666D005C5621 /* TeamMatchesIModel.swift in Sources */,
 				D3A9C8042AAE4EF50080CF0E /* URLSessionNetworkService.swift in Sources */,
 			);
