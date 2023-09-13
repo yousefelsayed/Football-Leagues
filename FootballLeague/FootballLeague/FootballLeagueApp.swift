@@ -14,8 +14,7 @@ struct FootballLeagueApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .environmentObject(coordinator)
+            LeaguesConfugurator.configureLeaguesView()
         }
     }
 }

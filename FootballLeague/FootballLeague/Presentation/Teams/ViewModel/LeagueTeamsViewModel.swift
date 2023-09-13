@@ -33,10 +33,10 @@ class LeagueTeamsViewModel: ObservableObject {
             }
             
             // First, try to fetch cached leagues
-            await getCachedLeagueTeams(leagueID: self.league?.leagueId)
+            await getCachedLeagueTeams(leagueCode: self.league?.leagueCode)
             
             // If there are no cached leagues, fetch from the server
-            await getLeagueTeamsFromServer(self.league?.leagueId ?? 0)
+            await getLeagueTeamsFromServer(self.league?.leagueCode ?? "")
             
             
             // Hide the progress indicator
@@ -47,15 +47,15 @@ class LeagueTeamsViewModel: ObservableObject {
         }
     }
     
-    func getLeagueTeamsFromServer(_ leagueID: Int) async {
+    func getLeagueTeamsFromServer(_ leagueCode: String) async {
         do {
-            let resultResponse = try await leagueTeamUseCase.getLeagueTeams(leagueID)
+            let resultResponse = try await leagueTeamUseCase.getLeagueTeams(leagueCode)
             switch resultResponse {
                 
             case .success(let response):
                 
                 let teams = response.teams?.compactMap({ team in
-                    return LeagueTeamsIModel(team)
+                    return LeagueTeamsIModel(team,competition: response.competition)
                 })
                 let sortedTeams = teams?.sorted{($0.teamName.lowercased()) < ($1.teamName.lowercased())} ?? []
                
@@ -64,22 +64,26 @@ class LeagueTeamsViewModel: ObservableObject {
                     self.teams = sortedTeams
                 }
                 
-                try leagueTeamUseCase.cacheLeagueTeamsData( LeagueTeams(teams: teams ?? []), leagueID: leagueID)
+                try leagueTeamUseCase.cacheLeagueTeamsData( LeagueTeams(teams: teams ?? []), leagueCode: leagueCode)
                 
             case .failure(let error):
-                self.errorMessage = error.localizedDescription
+                DispatchQueue.main.async {
+                    self.errorMessage = error.localizedDescription
+                }
             }
         } catch {
-            self.errorMessage = error.localizedDescription
+            DispatchQueue.main.async {
+                self.errorMessage = error.localizedDescription
+            }
         }
     }
     
-    func getCachedLeagueTeams(leagueID: Int?) async {
+    func getCachedLeagueTeams(leagueCode: String?) async {
         do {
-            guard let leagueID = leagueID else {
-                throw CachDataError.onError("Error no league id to retreive cached teams")
+            guard let leagueCode = leagueCode else {
+                throw CachDataError.onError("Error no league code to retreive cached teams")
             }
-            let result =  try await leagueTeamUseCase.getCachedLeagueTeams(leagueID)
+            let result =  try await leagueTeamUseCase.getCachedLeagueTeams(leagueCode)
             switch result {
             case .success(let cachedLeagueTeams):
                 DispatchQueue.main.async {

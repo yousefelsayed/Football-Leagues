@@ -12,15 +12,20 @@ struct LeagueRaw: View {
     let league: League
     
     var body: some View {
-        VStack {
+        ZStack {
+          
+            
             HStack{
                 if let imageURL = URL(string: league.leagueLogo) {
                     KFImage.url(imageURL)
                         .placeholder({ _ in
                             Image(systemName:"photo")
+                                .resizable()
+                                .frame(width: 40, height: 40) 
                         })
                         .resizable()
                         .frame(width: 40, height: 40)
+                        .scaledToFit()
                         .padding()
                     
                 }
@@ -61,6 +66,12 @@ struct LeagueRaw: View {
                         
                     }
                 }
+            }
+            
+            NavigationLink(
+                destination: LeaguesCoordinator.destinationForTappedLeague(league: league)
+            ) {
+                EmptyView()
             }
         }
     

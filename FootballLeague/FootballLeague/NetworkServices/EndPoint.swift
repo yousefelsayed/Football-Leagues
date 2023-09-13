@@ -14,7 +14,7 @@ class EndPoint {
     }
     
     static let baseURL = "https://api.football-data.org/v4/"
-    static let header: [String: String] = ["X-Auth-Token":"d9367a4c6c0e421eaaf871ec900c83d4"]
+    static let header: [String: String] = ["X-Auth-Token":"90deab14f2c8494396b2ba6ebf0dc2ac"]
     
     func createCustomURL(path: String, method: HTTPMethod) throws ->  URLRequest {
         let components = URLComponents(string: EndPoint.baseURL + path)

@@ -20,6 +20,7 @@ struct LeagueTeams {
             entity.teamShortName = model.teamShortName
             entity.teamCode = model.teamCode
             entity.teamLogo = model.teamLogo
+            entity.leagueCode = model.leagueCode
         })
         return entity
     }
@@ -33,6 +34,7 @@ struct LeagueTeamsIModel: Codable,Hashable,Identifiable  {
     var teamShortName: String
     var teamCode: String
     var teamLogo: String
+    var leagueCode: String
     
     init(_ entity: LeagueTeamsEntity) {
         self.teamId = Int(entity.teamId)
@@ -40,13 +42,15 @@ struct LeagueTeamsIModel: Codable,Hashable,Identifiable  {
         self.teamShortName = entity.teamShortName ?? ""
         self.teamCode = entity.teamCode ?? ""
         self.teamLogo = entity.teamLogo ?? ""
+        self.leagueCode = entity.leagueCode ?? ""
     }
     
-    init(_ team: TeamsModel) {
+    init(_ team: TeamsModel, competition: CompetitionModel?) {
         self.teamId = team.id ?? 0
         self.teamName = team.name ?? ""
         self.teamShortName = team.shortName  ?? ""
         self.teamCode = team.tla ?? ""
         self.teamLogo = team.crest ?? ""
+        self.leagueCode = competition?.code ?? ""
     }
 }

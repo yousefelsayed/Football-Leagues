@@ -20,18 +20,20 @@ struct TeamsView: View {
      NavigationView {
          renderLeagueTeamsList()
      }
+     .navigationTitle(league.leagueName)
  }
  
     
     fileprivate func renderLeagueTeamsList() -> some View{
         ZStack {
             List{
-                ForEach(viewModel.teams, id:\.id){ team in
+                ForEach(viewModel.teams, id:\.teamId){ team in
                     Button(action: {
-                        // Set the selected league when tapped
+                        // Set the selected team when tapped
 
                     }) {
-                        LeagueRaw(league: league)
+                        TeamRaw(team: team)
+            
                     }
                     
                 }
@@ -39,7 +41,6 @@ struct TeamsView: View {
             .onAppear {
                 viewModel.getLeagueTeams()
             }
-            .navigationTitle("\(viewModel.league?.leagueName ?? "")")
             .listStyle(PlainListStyle())
 
             if (viewModel.isLoading && viewModel.teams.isEmpty) {

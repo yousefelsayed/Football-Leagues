@@ -21,10 +21,10 @@ class LeagueTeamsRepository: LeagueTeamsDataRepository {
     
     
     //MARK: - Get leagues data from entity
-    private func fetchCachedLeagueTeamsData(_ leagueID: Int) throws -> Result<[LeagueTeamsIModel], CachDataError> {
+    private func fetchCachedLeagueTeamsData(_ leagueCode: String) throws -> Result<[LeagueTeamsIModel], CachDataError> {
         let request = NSFetchRequest<LeagueTeamsEntity>(entityName: "LeagueTeamsEntity")
         do {
-            request.predicate = NSPredicate(format: "leagueId == %@", "\(leagueID)")
+            request.predicate = NSPredicate(format: "leagueCode == %@", "\(leagueCode)")
             
             request.returnsObjectsAsFaults = false
             
@@ -40,8 +40,8 @@ class LeagueTeamsRepository: LeagueTeamsDataRepository {
     }
 
     //MARK: - Save new league Teams data
-    func cacheLeagueTeamsData(_ teams: LeagueTeams?, leagueID: Int) throws {
-        try deleteAllTeams(leagueID)
+    func cacheLeagueTeamsData(_ teams: LeagueTeams?, leagueCode: String) throws {
+        try deleteAllTeams(leagueCode)
         print("save data to cache", teams?.teams ?? [])
         let context = coreDataManager.managedObjectContext
         let _ =  teams?.toEntity(in: context)
@@ -53,12 +53,12 @@ class LeagueTeamsRepository: LeagueTeamsDataRepository {
         }
     }
 
-    func deleteAllTeams(_ leagueID: Int) throws {
+    func deleteAllTeams(_ leagueCode: String) throws {
         let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "LeagueTeamsEntity")
         let batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
         
         do {
-            fetchRequest.predicate = NSPredicate(format: "leagueId == %@", "\(leagueID)")
+            fetchRequest.predicate = NSPredicate(format: "leagueCode == %@", "\(leagueCode)")
             
             fetchRequest.returnsObjectsAsFaults = false
             
@@ -70,15 +70,15 @@ class LeagueTeamsRepository: LeagueTeamsDataRepository {
     }
 
     //MARK: - get teams response and return complition
-    func getLeagueTeams(_ leagueID: Int) async throws -> ResultCallback<LeagueTeamsResponse> {
-        let endPoint = "competitions/\(leagueID)/teams"
+    func getLeagueTeams(_ leagueCode: String) async throws -> ResultCallback<LeagueTeamsResponse> {
+        let endPoint = "competitions/\(leagueCode)/teams"
         
         return try await networkService.performRequest(endPoint: endPoint, method: .get)
     }
     
     //MARK: - get cached leagues
-    func getCachedLeagueTeams(_ leagueID: Int)  async throws -> Result<[LeagueTeamsIModel], CachDataError> {
-        return try self.fetchCachedLeagueTeamsData(leagueID)
+    func getCachedLeagueTeams(_ leagueCode: String)  async throws -> Result<[LeagueTeamsIModel], CachDataError> {
+        return try self.fetchCachedLeagueTeamsData(leagueCode)
     }
     
     

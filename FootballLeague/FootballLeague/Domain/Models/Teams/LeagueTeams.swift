@@ -9,6 +9,7 @@ import Foundation
 
 struct LeagueTeamsResponse: Codable {
     let teams: [TeamsModel]?
+    let competition: CompetitionModel?
 }
 
 struct TeamsModel: Codable {

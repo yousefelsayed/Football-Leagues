@@ -19,45 +19,31 @@ struct LeaguesView: View {
        }
     
     var body: some View {
-        NavigationView {
-            renderLeaguesList()
-        }
+        renderLeaguesList()
     }
     
   
     
     fileprivate func renderLeaguesList() -> some View{
         ZStack {
-            List{
-                ForEach(viewModel.leagues, id:\.id){ league in
-                    Button(action: {
-                        // Set the selected league when tapped
-                        selectedLeague = league
-
-                    }) {
-                        LeagueRaw(league: league)
-                    }
+            NavigationView {
+                List(viewModel.leagues,id:\.id ) { league in
                     
-                }
-            }
+                    LeagueRaw(league: league)
 
-            .onAppear(perform: viewModel.getLeagues )
-            .navigationTitle("Football Leagues")
-            .listStyle(PlainListStyle())
+                    
+                }.navigationTitle("Football Leagues")
+                
+                    .listStyle(PlainListStyle())
 
+            }.onAppear(perform: {
+                viewModel.getLeagues()
+            })
             if (viewModel.isLoading && viewModel.leagues.isEmpty) {
                 ProgressView()
             }
         }
         
-    }
-    
-    func navigateToLeagueTeamsView(league: League) -> some View {
-        let repo = LeagueTeamsRepository(networkService: URLSessionNetworkService(), coreDataManager: CoreDataManager.shared)
-        let useCase = LeagueTeamsUseCase(repository: repo)
-        let leagueTeamsViewModel = LeagueTeamsViewModel(leaguesUseCase: useCase, league: league)
-        
-       return TeamsView(league: league, viewModel: leagueTeamsViewModel)
     }
 }
 

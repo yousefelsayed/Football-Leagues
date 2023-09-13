@@ -9,9 +9,9 @@ import Foundation
 
 
 protocol LeagueTeamsDataUseCase {
-    func getLeagueTeams(_ leagueID: Int) async throws -> ResultCallback<LeagueTeamsResponse>
-    func getCachedLeagueTeams(_ leagueID: Int) async throws -> Result<[LeagueTeamsIModel], CachDataError>
-    func cacheLeagueTeamsData(_ leagueTeams: LeagueTeams?, leagueID: Int) throws
+    func getLeagueTeams(_ leagueCode: String) async throws -> ResultCallback<LeagueTeamsResponse>
+    func getCachedLeagueTeams(_ leagueCode: String) async throws -> Result<[LeagueTeamsIModel], CachDataError>
+    func cacheLeagueTeamsData(_ leagueTeams: LeagueTeams?, leagueCode: String) throws
 }
 
 class LeagueTeamsUseCase: LeagueTeamsDataUseCase {
@@ -24,16 +24,16 @@ class LeagueTeamsUseCase: LeagueTeamsDataUseCase {
     
     
     
-    func getLeagueTeams(_ leagueID: Int) async throws -> ResultCallback<LeagueTeamsResponse> {
-        return try await repository.getLeagueTeams(leagueID)
+    func getLeagueTeams(_ leagueCode: String) async throws -> ResultCallback<LeagueTeamsResponse> {
+        return try await repository.getLeagueTeams(leagueCode)
     }
     
-    func getCachedLeagueTeams(_ leagueID: Int) async throws -> Result<[LeagueTeamsIModel], CachDataError> {
-        return try await repository.getCachedLeagueTeams(leagueID)
+    func getCachedLeagueTeams(_ leagueCode: String) async throws -> Result<[LeagueTeamsIModel], CachDataError> {
+        return try await repository.getCachedLeagueTeams(leagueCode)
     }
     
-    func cacheLeagueTeamsData(_ leagueTeams: LeagueTeams?, leagueID: Int) throws {
-        try self.repository.cacheLeagueTeamsData(leagueTeams, leagueID: leagueID)
+    func cacheLeagueTeamsData(_ leagueTeams: LeagueTeams?, leagueCode: String) throws {
+        try self.repository.cacheLeagueTeamsData(leagueTeams, leagueCode: leagueCode)
     }
     
 }
