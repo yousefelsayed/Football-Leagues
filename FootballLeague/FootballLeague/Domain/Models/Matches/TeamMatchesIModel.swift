@@ -8,8 +8,8 @@
 import Foundation
 import CoreData
 
-struct TeamGames {
-    var teams: [TeamGamesIModel]
+struct TeamMatches {
+    var teams: [TeamMatchesIModel]
     
     func toEntity(in context: NSManagedObjectContext) -> TeamMatchesEntity {
         var entity: TeamMatchesEntity = .init(context: context)
@@ -29,7 +29,7 @@ struct TeamGames {
     }
 }
 
-struct TeamGamesIModel: Codable,Hashable,Identifiable  {
+struct TeamMatchesIModel: Codable,Hashable,Identifiable  {
     var id = UUID()
     
     var matchId: Int
