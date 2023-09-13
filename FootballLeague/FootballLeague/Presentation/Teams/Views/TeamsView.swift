@@ -10,45 +10,38 @@ import SwiftUI
 struct TeamsView: View {
     var league: League
     @StateObject var viewModel: LeagueTeamsViewModel
-
+    
     init(league: League, viewModel: LeagueTeamsViewModel) {
         _viewModel = StateObject(wrappedValue: viewModel)
         self.league = league
     }
- 
- var body: some View {
-     NavigationView {
-         renderLeagueTeamsList()
-     }
-     .navigationTitle(league.leagueName)
- }
- 
     
-    fileprivate func renderLeagueTeamsList() -> some View{
-        ZStack {
-            List{
-                ForEach(viewModel.teams, id:\.teamId){ team in
-                    Button(action: {
-                        // Set the selected team when tapped
-
-                    }) {
+    var body: some View {
+        NavigationView {
+            List {
+                Section {
+                    LeagueRaw(league: league,isSelectable: false)
+                }
+                
+                Section(header: Text("Teams")) {
+                    ForEach(viewModel.teams, id:\.teamId){ team in
                         TeamRaw(team: team)
-            
+
                     }
-                    
+                }
+                if (viewModel.isLoading && viewModel.teams.isEmpty) {
+                    ProgressView()
                 }
             }
+
             .onAppear {
                 viewModel.getLeagueTeams()
             }
-            .listStyle(PlainListStyle())
 
-            if (viewModel.isLoading && viewModel.teams.isEmpty) {
-                ProgressView()
-            }
+            
         }
-        
+        .navigationTitle(league.leagueName)
     }
 }
-
+    
 

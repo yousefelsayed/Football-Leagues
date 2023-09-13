@@ -26,6 +26,9 @@ class LeagueTeamsViewModel: ObservableObject {
     
     
     func getLeagueTeams() {
+        if self.teams.isEmpty {
+            teams =  [LeagueTeamsIModel]()
+        }
         Task {
             // Show the progress indicator
             DispatchQueue.main.async {

@@ -16,11 +16,16 @@ struct TeamRaw: View {
         HStack{
             if let imageURL = URL(string: team.teamLogo) {
                 KFImage.url(imageURL)
+                    .startLoadingBeforeViewAppear()
                     .placeholder({ _ in
                         Image(systemName:"photo")
+                            .resizable()
+                            .frame(width: 30, height: 30)
+                            .onAppear()
                     })
                     .resizable()
                     .frame(width: 40, height: 40)
+                    .onAppear()
                     .padding()
                 
             }

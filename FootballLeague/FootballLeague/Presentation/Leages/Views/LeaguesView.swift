@@ -29,7 +29,7 @@ struct LeaguesView: View {
             NavigationView {
                 List(viewModel.leagues,id:\.id ) { league in
                     
-                    LeagueRaw(league: league)
+                    LeagueRaw(league: league,isSelectable: true)
 
                     
                 }.navigationTitle("Football Leagues")

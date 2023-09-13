@@ -10,21 +10,24 @@ import Kingfisher
 
 struct LeagueRaw: View {
     let league: League
-    
+    let isSelectable: Bool
     var body: some View {
         ZStack {
-          
+            
             
             HStack{
                 if let imageURL = URL(string: league.leagueLogo) {
                     KFImage.url(imageURL)
+                        .startLoadingBeforeViewAppear()
                         .placeholder({ _ in
                             Image(systemName:"photo")
                                 .resizable()
-                                .frame(width: 40, height: 40) 
+                                .frame(width: 30, height: 30)
+                                .onAppear()
                         })
                         .resizable()
                         .frame(width: 40, height: 40)
+                        .onAppear()
                         .scaledToFit()
                         .padding()
                     
@@ -67,13 +70,13 @@ struct LeagueRaw: View {
                     }
                 }
             }
-            
-            NavigationLink(
-                destination: LeaguesCoordinator.destinationForTappedLeague(league: league)
-            ) {
-                EmptyView()
-            }
-        }
+            if isSelectable {
+                NavigationLink(
+                    destination: LeaguesCoordinator.destinationForTappedLeague(league: league)
+                ) {
+                    EmptyView()
+                }
+            }} 
     
     }
     
