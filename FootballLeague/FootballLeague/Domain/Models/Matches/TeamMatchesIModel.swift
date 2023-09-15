@@ -30,8 +30,9 @@ struct TeamMatches {
 }
 
 enum MatchStatus: String {
-    case scheduled = "Scheduled"
-    case played = ""
+    case scheduled = "SCHEDULED"
+    case played = "FINISHED"
+    case timed = "TIMED"
 }
 
 struct TeamMatchesIModel: Codable,Hashable,Identifiable  {
@@ -67,7 +68,7 @@ struct TeamMatchesIModel: Codable,Hashable,Identifiable  {
         self.homeTeamName = match.homeTeam.name
         self.homeTeamLogo = match.homeTeam.crest
         self.homeTeamScore =  "\(match.score.fullTime?.home ?? 0)"
-        self.awayTeamLogo = match.homeTeam.crest
+        self.awayTeamLogo = match.awayTeam?.crest ?? ""
         self.awayTeamScore =  "\(match.score.fullTime?.away ?? 0)"
         self.awayTeamName = match.homeTeam.name
         self.matchStatus = match.status ?? ""

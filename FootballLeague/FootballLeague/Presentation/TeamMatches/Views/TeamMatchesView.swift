@@ -17,7 +17,6 @@ struct TeamMatchesView: View {
     }
     
     var body: some View {
-        NavigationView {
             List {
                 Section {
                     TeamRaw(team: team,isSelectable: false)
@@ -37,10 +36,9 @@ struct TeamMatchesView: View {
             .onAppear {
                 viewModel.getTeamMatches()
             }
+        
+            .navigationTitle(team.teamShortName)
 
-            
-        }
-        .navigationTitle(team.teamShortName)
 
     }
 }

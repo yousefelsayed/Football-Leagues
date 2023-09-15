@@ -90,7 +90,7 @@ class LeagueTeamsViewModel: ObservableObject {
             switch result {
             case .success(let cachedLeagueTeams):
                 DispatchQueue.main.async {
-                    self.teams = cachedLeagueTeams
+                    self.teams = cachedLeagueTeams.sorted(by: {($0.teamName.lowercased()) < ($1.teamName.lowercased())})
                 }
             case .failure(let error):
                 print(error.localizedDescription)

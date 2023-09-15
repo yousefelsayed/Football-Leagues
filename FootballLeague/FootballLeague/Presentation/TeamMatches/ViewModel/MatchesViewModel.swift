@@ -88,7 +88,7 @@ class TeamMatchesViewModel: ObservableObject {
             switch result {
             case .success(let cachedMatches):
                 DispatchQueue.main.async {
-                    self.matches = cachedMatches
+                    self.matches = cachedMatches.sorted(by: {($0.matchDate.convertStringToDate() == $1.matchDate.convertStringToDate())})
                 }
             case .failure(let error):
                 print(error.localizedDescription)
