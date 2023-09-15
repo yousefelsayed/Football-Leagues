@@ -46,6 +46,7 @@
 		D3A9C8132AAE6EA30080CF0E /* LeaguesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A9C8122AAE6EA30080CF0E /* LeaguesUseCase.swift */; };
 		D3A9C8152AAE7CB00080CF0E /* LeaguesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A9C8142AAE7CB00080CF0E /* LeaguesViewModel.swift */; };
 		D3A9C8192AAFA15A0080CF0E /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A9C8182AAFA15A0080CF0E /* CoreDataManager.swift */; };
+		D3B5179C2AB51159002BB9FB /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B5179B2AB51159002BB9FB /* SplashView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,6 +109,7 @@
 		D3A9C8142AAE7CB00080CF0E /* LeaguesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaguesViewModel.swift; sourceTree = "<group>"; };
 		D3A9C8162AAE83830080CF0E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		D3A9C8182AAFA15A0080CF0E /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		D3B5179B2AB51159002BB9FB /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -272,6 +274,7 @@
 				D386F5EC2AAD2C61005BBCDB /* FootballLeague.xcdatamodeld */,
 				D386F5E72AAD2C61005BBCDB /* Preview Content */,
 				D373F2E82AB2775D005C5621 /* Extensions.swift */,
+				D3B5179B2AB51159002BB9FB /* SplashView.swift */,
 			);
 			path = FootballLeague;
 			sourceTree = "<group>";
@@ -595,6 +598,7 @@
 				D386F61B2AAD3FE8005BBCDB /* LeagueRaw.swift in Sources */,
 				D373F2C02AB10971005C5621 /* TeamsView.swift in Sources */,
 				D373F2D02AB11D89005C5621 /* LeagueTeamsViewModel.swift in Sources */,
+				D3B5179C2AB51159002BB9FB /* SplashView.swift in Sources */,
 				D373F2E12AB26D0B005C5621 /* TeamMatchesDataRepository.swift in Sources */,
 				D373F2E72AB27552005C5621 /* MatchesViewModel.swift in Sources */,
 				D386F5EE2AAD2C61005BBCDB /* FootballLeague.xcdatamodeld in Sources */,

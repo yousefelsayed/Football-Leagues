@@ -13,7 +13,7 @@ struct FootballLeagueApp: App {
 
     var body: some Scene {
         WindowGroup {
-            LeaguesConfugurator.configureLeaguesView()
+            SplashView()
         }
     }
 }
