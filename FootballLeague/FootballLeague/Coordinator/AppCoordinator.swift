@@ -9,27 +9,6 @@ import Foundation
 import SwiftUI
 
 
-class AppCoordinator: ObservableObject {
-    @Published var currentView: AnyView?
-    
-  
-    
-    func navigateToLeaguesView() -> AnyView {
-        let repo = LeaguesRepository(networkService: URLSessionNetworkService(), coreDataManager: CoreDataManager.shared)
-        let useCase = LeaguesUseCase(repository: repo)
-        let leaguesViewModel = LeaguesViewModel(leaguesUseCase: useCase)
-        
-        return AnyView(LeaguesView(viewModel: leaguesViewModel))
-    }
-    
-    func navigateToLeagueTeamsView(league: League) -> AnyView {
-        let repo = LeagueTeamsRepository(networkService: URLSessionNetworkService(), coreDataManager: CoreDataManager.shared)
-        let useCase = LeagueTeamsUseCase(repository: repo)
-        let leagueTeamsViewModel = LeagueTeamsViewModel(leaguesUseCase: useCase, league: league)
-        
-        return AnyView(TeamsView(league: league, viewModel: leagueTeamsViewModel))
-    }
-}
 
 final class LeaguesConfugurator {
     
@@ -50,6 +29,12 @@ final class LeaguesCoordinator {
     }
 }
 
+final class TeamMatchesCoordinator {
+    
+    public static func destinationForTappedTeam(team: LeagueTeamsIModel) -> some View {
+        return TeamMatchesConfugurator.configureTeamMatchesView(team: team)
+    }
+}
 
 
 final class LeagueTeamsConfugurator {
@@ -61,5 +46,17 @@ final class LeagueTeamsConfugurator {
         let leagueTeamsViewModel = LeagueTeamsViewModel(leaguesUseCase: useCase, league: league)
         
         return TeamsView(league: league, viewModel: leagueTeamsViewModel)
+    }
+}
+
+final class TeamMatchesConfugurator {
+    
+    public static func configureTeamMatchesView(team: LeagueTeamsIModel) -> TeamMatchesView {
+        
+        let repo = TeamMatchesRepository(networkService: URLSessionNetworkService(), coreDataManager: CoreDataManager.shared)
+        let useCase = TeamMatchesUseCase(repository: repo)
+        let teamMatchesViewModel = TeamMatchesViewModel(teamMatchUseCase: useCase, team: team)
+        
+        return TeamMatchesView(team: team, viewModel: teamMatchesViewModel)
     }
 }

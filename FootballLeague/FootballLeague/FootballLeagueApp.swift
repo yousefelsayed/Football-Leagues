@@ -10,7 +10,6 @@ import SwiftUI
 @available(iOS 14.0, *)
 @main
 struct FootballLeagueApp: App {
-    @StateObject private var coordinator = AppCoordinator()
 
     var body: some Scene {
         WindowGroup {

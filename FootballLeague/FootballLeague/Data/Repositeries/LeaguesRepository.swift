@@ -39,9 +39,10 @@ class LeaguesRepository: LeaguesDataRepository {
         do {
             let cachedLeagues = try coreDataManager.managedObjectContext.fetch(request)
             print("cached data retrieved", cachedLeagues)
-
-            return .success(cachedLeagues.map({League($0)})
-)
+            let leagues = cachedLeagues.map({League($0)})
+            let sortedLegues = leagues.sorted(by: {$0.leagueName < $1.leagueName})
+            return .success(sortedLegues)
+            
         } catch {
             return .failure(CachDataError.onReadError(error))
         }

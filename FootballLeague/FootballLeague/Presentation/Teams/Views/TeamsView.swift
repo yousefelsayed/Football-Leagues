@@ -10,7 +10,6 @@ import SwiftUI
 struct TeamsView: View {
     var league: League
     @StateObject var viewModel: LeagueTeamsViewModel
-    
     init(league: League, viewModel: LeagueTeamsViewModel) {
         _viewModel = StateObject(wrappedValue: viewModel)
         self.league = league

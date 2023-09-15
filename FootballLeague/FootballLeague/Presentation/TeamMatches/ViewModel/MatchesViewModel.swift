@@ -16,9 +16,9 @@ class TeamMatchesViewModel: ObservableObject {
     @Published var isLoading: Bool = false
     @Published var errorMessage: String = ""
     
-    var team: TeamsModel?
+    var team: LeagueTeamsIModel
     
-    init(teamMatchUseCase: TeamMatchesUseCase, team: TeamsModel) {
+    init(teamMatchUseCase: TeamMatchesUseCase, team: LeagueTeamsIModel) {
         self.teamMatchesUseCase = teamMatchUseCase
         self.team = team
     }
@@ -33,10 +33,10 @@ class TeamMatchesViewModel: ObservableObject {
             }
             
             // First, try to fetch cached matches
-            await getCachedTeamMatches(teamId: team?.id)
+            await getCachedTeamMatches(teamId: team.teamId)
             
             // If there are no cached matches, fetch from the server
-            await getTeamMatchesFromServer(self.team?.id ?? 0)
+            await getTeamMatchesFromServer(self.team.teamId)
             
             
             // Hide the progress indicator
@@ -54,18 +54,18 @@ class TeamMatchesViewModel: ObservableObject {
                 
             case .success(let response):
                 
-                let matches = response.matches?.compactMap({ match in
-                    
-                    return TeamMatches(teams: match)
+                let teamMatches = response.matches?.compactMap({ match in
+                    return TeamMatchesIModel(match: match)
                 })
-                let sortedMatches = matches?.sorted{($0.utcDate?.convertStringToDate() < $1.utcDate?.convertStringToDate())} ?? []
-               
+        
 
-                DispatchQueue.main.async {
-                    self.matches = sortedMatches
-                }
+                let sortedMatches = teamMatches?.sorted(by: {($0.matchDate.convertStringToDate() == $1.matchDate.convertStringToDate())})
                 
-                try teamMatchesUseCase.cacheTeamMatches(sortedMatches, teamId: teamId)
+                DispatchQueue.main.async {
+                    self.matches = sortedMatches ?? []
+                }
+
+                try teamMatchesUseCase.cacheTeamMatches(TeamMatches(teams: sortedMatches ?? []), teamId: teamId)
                 
             case .failure(let error):
                 DispatchQueue.main.async {

@@ -8,13 +8,39 @@
 import SwiftUI
 
 struct TeamMatchesView: View {
-    var body: some View {
-        Text("Hello, World!")
+    var team: LeagueTeamsIModel
+    @StateObject var viewModel:TeamMatchesViewModel
+    
+    init(team: LeagueTeamsIModel, viewModel: TeamMatchesViewModel) {
+        _viewModel = StateObject(wrappedValue: viewModel)
+        self.team = team
     }
-}
+    
+    var body: some View {
+        NavigationView {
+            List {
+                Section {
+                    TeamRaw(team: team,isSelectable: false)
+                }
+                
+                Section(header: Text("Matches")) {
+                    ForEach(viewModel.matches, id:\.id){ match in
+                        TeamMatchesRaw(match: match)
 
-struct TeamMatchesView_Previews: PreviewProvider {
-    static var previews: some View {
-        TeamMatchesView()
+                    }
+                }
+                if (viewModel.isLoading && viewModel.matches.isEmpty) {
+                    ProgressView()
+                }
+            }
+
+            .onAppear {
+                viewModel.getTeamMatches()
+            }
+
+            
+        }
+        .navigationTitle(team.teamShortName)
+
     }
 }

@@ -76,7 +76,7 @@ class LeaguesViewModel: ObservableObject {
             switch result {
             case .success(let cachedLeagues):
                 DispatchQueue.main.async {
-                    self.leagues = cachedLeagues
+                    self.leagues = cachedLeagues.filter({$0.leagueId != 0})
                 }
             case .failure(let error):
                 print(error.localizedDescription)

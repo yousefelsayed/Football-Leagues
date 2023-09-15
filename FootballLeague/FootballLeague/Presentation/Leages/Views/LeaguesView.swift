@@ -12,7 +12,6 @@ struct LeaguesView: View {
     
     @StateObject private var viewModel: LeaguesViewModel
     @State private var selectedLeague: League?
-    @EnvironmentObject var coordinator: AppCoordinator
 
        init(viewModel: LeaguesViewModel) {
            _viewModel = StateObject(wrappedValue: viewModel)

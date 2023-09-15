@@ -29,7 +29,13 @@ struct TeamMatches {
     }
 }
 
+enum MatchStatus: String {
+    case scheduled = "Scheduled"
+    case played = ""
+}
+
 struct TeamMatchesIModel: Codable,Hashable,Identifiable  {
+    
     var id = UUID()
     
     var matchId: Int
@@ -55,5 +61,16 @@ struct TeamMatchesIModel: Codable,Hashable,Identifiable  {
         self.matchStatus = entity.matchStatus ?? ""
     }
 
+    init (match: MatchesModel) {
+        self.matchId = Int(match.id)
+        self.matchDate = match.utcDate ?? ""
+        self.homeTeamName = match.homeTeam.name
+        self.homeTeamLogo = match.homeTeam.crest
+        self.homeTeamScore =  "\(match.score.fullTime?.home ?? 0)"
+        self.awayTeamLogo = match.homeTeam.crest
+        self.awayTeamScore =  "\(match.score.fullTime?.away ?? 0)"
+        self.awayTeamName = match.homeTeam.name
+        self.matchStatus = match.status ?? ""
+    }
     
 }
