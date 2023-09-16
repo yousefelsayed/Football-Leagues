@@ -10,14 +10,19 @@ import Foundation
 
 class LeaguesRepositoryMocks: LeaguesDataRepository {
     var cacheLeaguesDataCalled = false
-
+    var isSuccess: Bool = true
+    
     func getLeagues() async throws -> FootballLeague.ResultCallback<FootballLeague.LeaguesResponse> {
-        
-        if let leaguesResponse = self.getMocksData() {
-            return .success(leaguesResponse)
-        } else {
+        if isSuccess {
+            if  let leaguesResponse = self.getMocksData() {
+                return .success(leaguesResponse)
+            }
+        }
+        else {
             return .failure(FootballLeague.NetworkError.invalidResponse)
         }
+        return .failure(FootballLeague.NetworkError.invalidResponse)
+
     }
     
     func getFailedLeagues() async throws -> ResultCallback<LeaguesResponse> {
@@ -59,14 +64,19 @@ class LeaguesRepositoryMocks: LeaguesDataRepository {
     
     //MARK: - Get dummy chached data on success
     func getCachedLeagues() async throws -> Result<[FootballLeague.League], FootballLeague.CachDataError> {
-        let league1 = try League(
-            leagueId: 0,
-            leagueName: "DummyLeague",
-            leagueLogo: "url", leagueCode: "DL",
-            leagueAreaName: "area",
-            numberOfTeams: "10",
-            numberOfGames: "20")
-        return .success([league1])
+        if isSuccess {
+            let league1 = League(
+                leagueId: 0,
+                leagueName: "DummyLeague",
+                leagueLogo: "url", leagueCode: "DL",
+                leagueAreaName: "area",
+                numberOfTeams: "10",
+                numberOfGames: "20")
+            return .success([league1])
+        } else {
+            return .failure(CachDataError.onError("No Data Found"))
+        }
+    
     }
     
     func cacheLeaguesData(_ leagues: FootballLeague.Leagues?) throws {
@@ -90,7 +100,7 @@ class LeaguesRepositoryMocks: LeaguesDataRepository {
     }
     
     func getCachedMockedLeagues() async throws -> Result<FootballLeague.Leagues, FootballLeague.CachDataError> {
-        let league1 = try League(
+        let league1 =  League(
             leagueId: 0,
             leagueName: "DummyLeague",
             leagueLogo: "url", leagueCode: "DL",

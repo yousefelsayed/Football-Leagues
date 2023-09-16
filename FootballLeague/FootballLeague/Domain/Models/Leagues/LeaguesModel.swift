@@ -39,7 +39,7 @@ struct League : Codable,Hashable,Identifiable {
     var numberOfTeams: String
     var numberOfGames: String
     
-    init(leagueId: Int, leagueName: String, leagueLogo: String, leagueCode: String, leagueAreaName: String, numberOfTeams: String, numberOfGames: String) throws {
+    init(leagueId: Int, leagueName: String, leagueLogo: String, leagueCode: String, leagueAreaName: String, numberOfTeams: String, numberOfGames: String) {
      
         self.leagueId = leagueId
         self.leagueName = leagueName

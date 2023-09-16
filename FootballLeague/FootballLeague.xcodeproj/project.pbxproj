@@ -52,6 +52,8 @@
 		D3C77CB92AB5DFCE00DF0FC5 /* Leagues.geojson in Resources */ = {isa = PBXBuildFile; fileRef = D3C77CB82AB5D1A800DF0FC5 /* Leagues.geojson */; };
 		D3C77CBD2AB5E67B00DF0FC5 /* MockNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C77CBC2AB5E67B00DF0FC5 /* MockNetworkService.swift */; };
 		D3C77CBF2AB5FCC500DF0FC5 /* MockCoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C77CBE2AB5FCC500DF0FC5 /* MockCoreDataManager.swift */; };
+		D3C77CC32AB607AE00DF0FC5 /* LeaguesUseCaseMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C77CC22AB607AE00DF0FC5 /* LeaguesUseCaseMocks.swift */; };
+		D3C77CC52AB60B4900DF0FC5 /* LeaguesUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C77CC42AB60B4900DF0FC5 /* LeaguesUseCaseTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -120,6 +122,8 @@
 		D3C77CB82AB5D1A800DF0FC5 /* Leagues.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = Leagues.geojson; sourceTree = "<group>"; };
 		D3C77CBC2AB5E67B00DF0FC5 /* MockNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkService.swift; sourceTree = "<group>"; };
 		D3C77CBE2AB5FCC500DF0FC5 /* MockCoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCoreDataManager.swift; sourceTree = "<group>"; };
+		D3C77CC22AB607AE00DF0FC5 /* LeaguesUseCaseMocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaguesUseCaseMocks.swift; sourceTree = "<group>"; };
+		D3C77CC42AB60B4900DF0FC5 /* LeaguesUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaguesUseCaseTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -300,9 +304,7 @@
 		D386F5F62AAD2C61005BBCDB /* FootballLeagueTests */ = {
 			isa = PBXGroup;
 			children = (
-				D3C77CB42AB5D09000DF0FC5 /* Mocks */,
-				D3C77CAE2AB5C94800DF0FC5 /* Data */,
-				D386F5F72AAD2C61005BBCDB /* FootballLeagueTests.swift */,
+				D3C77CC02AB606B200DF0FC5 /* LeaguesTests */,
 			);
 			path = FootballLeagueTests;
 			sourceTree = "<group>";
@@ -458,6 +460,7 @@
 		D3C77CAE2AB5C94800DF0FC5 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				D3C77CB42AB5D09000DF0FC5 /* Mocks */,
 				D3C77CAF2AB5C95000DF0FC5 /* Repositories */,
 			);
 			path = Data;
@@ -488,6 +491,25 @@
 				D3C77CBC2AB5E67B00DF0FC5 /* MockNetworkService.swift */,
 			);
 			path = MocksDataSource;
+			sourceTree = "<group>";
+		};
+		D3C77CC02AB606B200DF0FC5 /* LeaguesTests */ = {
+			isa = PBXGroup;
+			children = (
+				D3C77CC12AB6071600DF0FC5 /* Domain */,
+				D3C77CAE2AB5C94800DF0FC5 /* Data */,
+				D386F5F72AAD2C61005BBCDB /* FootballLeagueTests.swift */,
+			);
+			path = LeaguesTests;
+			sourceTree = "<group>";
+		};
+		D3C77CC12AB6071600DF0FC5 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				D3C77CC22AB607AE00DF0FC5 /* LeaguesUseCaseMocks.swift */,
+				D3C77CC42AB60B4900DF0FC5 /* LeaguesUseCaseTest.swift */,
+			);
+			path = Domain;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -672,7 +694,9 @@
 				D3C77CB32AB5CF3900DF0FC5 /* LeaguesRepositoryTests.swift in Sources */,
 				D3C77CBD2AB5E67B00DF0FC5 /* MockNetworkService.swift in Sources */,
 				D3C77CB62AB5D0BC00DF0FC5 /* LeaguesRepositoryMocks.swift in Sources */,
+				D3C77CC32AB607AE00DF0FC5 /* LeaguesUseCaseMocks.swift in Sources */,
 				D386F5F82AAD2C61005BBCDB /* FootballLeagueTests.swift in Sources */,
+				D3C77CC52AB60B4900DF0FC5 /* LeaguesUseCaseTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
