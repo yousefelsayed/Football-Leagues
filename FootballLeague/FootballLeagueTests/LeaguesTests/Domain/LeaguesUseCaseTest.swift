@@ -83,4 +83,36 @@ final class LeaguesUseCaseTest: XCTestCase {
             XCTAssertEqual(error.localizedDescription, "No Data Found")
         }
     }
+    
+    func test_cacheLeagues_OnSucess() async throws {
+       
+        repository.isSuccess = true
+        let result = try await repository.getCachedLeagues()
+        
+        switch result {
+            
+        case .success(let leagues):
+            let leagues = Leagues(leagues: leagues)
+            try sut.saveCurrentLeagues(leagues)
+            XCTAssertTrue(repository.cacheLeaguesDataCalled)
+        case .failure(_):
+            XCTFail("Caching leagues should not throw an error")
+            
+        }
+    }
+    
+    func test_cacheLeagues_OnFailure() async throws {
+        repository.isSuccess = false
+
+        let result = try await repository.getCachedLeagues()
+        
+        switch result {
+            
+        case .success(let leagues):
+            XCTFail("Caching leagues should not throw an error")
+        case .failure(_):
+            XCTAssertFalse(repository.cacheLeaguesDataCalled)
+            
+        }
+    }
 }

@@ -80,7 +80,7 @@ class LeaguesRepositoryMocks: LeaguesDataRepository {
     }
     
     func cacheLeaguesData(_ leagues: FootballLeague.Leagues?) throws {
-        if leagues?.leagues.isEmpty == false {
+        if (leagues?.leagues.isEmpty == false && isSuccess == true) {
             cacheLeaguesDataCalled = true
         } else {
             cacheLeaguesDataCalled = false
