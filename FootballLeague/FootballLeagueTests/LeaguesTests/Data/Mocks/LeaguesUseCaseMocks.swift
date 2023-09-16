@@ -9,7 +9,6 @@ import Foundation
 @testable import FootballLeague
 
 class LeaguesUseCaseMocks: FootballLeague.LeaguesDataUseCase {
-    var cacheLeaguesDataCalled = false
     var leaguesRepositoryMocks: LeaguesRepositoryMocks
     
     init(leaguesRepositoryMocks: LeaguesRepositoryMocks) {
@@ -29,36 +28,4 @@ class LeaguesUseCaseMocks: FootballLeague.LeaguesDataUseCase {
         try leaguesRepositoryMocks.cacheLeaguesData(leagues)
     }
     
-    //MARK: - Mocks leagues
-    private func getMocksData() -> LeaguesResponse? {
-        if let leaguesData = loadJSONData(fileName: "Leagues") {
-            
-            let leagues = parseJSONData(data: leaguesData)
-            
-            return leagues ?? nil
-        }
-        return nil
-    }
-    
-    private func parseJSONData(data: Data) ->  LeaguesResponse? {
-        do {
-            let items = try JSONDecoder().decode(LeaguesResponse.self, from: data)
-            return items
-        } catch {
-            print("Failed to decode JSON data: \(error.localizedDescription)")
-            return nil
-        }
-    }
-    
-    private  func loadJSONData(fileName: String) -> Data? {
-        if let path = Bundle.main.path(forResource: fileName, ofType: "geojson") {
-            do {
-                let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
-                return data
-            } catch {
-                print("Failed to read data from file: \(error.localizedDescription)")
-            }
-        }
-        return nil
-    }
 }

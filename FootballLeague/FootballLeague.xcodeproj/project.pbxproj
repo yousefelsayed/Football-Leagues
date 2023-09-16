@@ -57,6 +57,9 @@
 		D3C77CCA2AB61ADE00DF0FC5 /* LeaguesUseCaseMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C77CC92AB61ADE00DF0FC5 /* LeaguesUseCaseMocks.swift */; };
 		D3C77CCF2AB62E0000DF0FC5 /* TeamsRepositoryMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C77CCE2AB62E0000DF0FC5 /* TeamsRepositoryMocks.swift */; };
 		D3C77CD42AB6316400DF0FC5 /* TeamsRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C77CD32AB6316400DF0FC5 /* TeamsRepositoryTests.swift */; };
+		D3C77CD72AB6373A00DF0FC5 /* TeamsUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C77CD62AB6373A00DF0FC5 /* TeamsUseCaseTests.swift */; };
+		D3C77CD92AB6375A00DF0FC5 /* TeamsUseCaseMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C77CD82AB6375A00DF0FC5 /* TeamsUseCaseMocks.swift */; };
+		D3C77CDB2AB63F3100DF0FC5 /* Teams.geojson in Resources */ = {isa = PBXBuildFile; fileRef = D3C77CD52AB631F700DF0FC5 /* Teams.geojson */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -131,6 +134,8 @@
 		D3C77CCE2AB62E0000DF0FC5 /* TeamsRepositoryMocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsRepositoryMocks.swift; sourceTree = "<group>"; };
 		D3C77CD32AB6316400DF0FC5 /* TeamsRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsRepositoryTests.swift; sourceTree = "<group>"; };
 		D3C77CD52AB631F700DF0FC5 /* Teams.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = Teams.geojson; sourceTree = "<group>"; };
+		D3C77CD62AB6373A00DF0FC5 /* TeamsUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsUseCaseTests.swift; sourceTree = "<group>"; };
+		D3C77CD82AB6375A00DF0FC5 /* TeamsUseCaseMocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsUseCaseMocks.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -479,7 +484,6 @@
 			isa = PBXGroup;
 			children = (
 				D3C77CB22AB5CF3900DF0FC5 /* LeaguesRepositoryTests.swift */,
-				D3C77CD32AB6316400DF0FC5 /* TeamsRepositoryTests.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -534,6 +538,7 @@
 		D3C77CCB2AB62CD700DF0FC5 /* TeamsTests */ = {
 			isa = PBXGroup;
 			children = (
+				D3C77CDA2AB63C0200DF0FC5 /* Domain */,
 				D3C77CCC2AB62CE500DF0FC5 /* Data */,
 			);
 			path = TeamsTests;
@@ -552,6 +557,7 @@
 			isa = PBXGroup;
 			children = (
 				D3C77CCE2AB62E0000DF0FC5 /* TeamsRepositoryMocks.swift */,
+				D3C77CD82AB6375A00DF0FC5 /* TeamsUseCaseMocks.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -559,8 +565,17 @@
 		D3C77CD02AB630EA00DF0FC5 /* Repositoryies */ = {
 			isa = PBXGroup;
 			children = (
+				D3C77CD32AB6316400DF0FC5 /* TeamsRepositoryTests.swift */,
 			);
 			path = Repositoryies;
+			sourceTree = "<group>";
+		};
+		D3C77CDA2AB63C0200DF0FC5 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				D3C77CD62AB6373A00DF0FC5 /* TeamsUseCaseTests.swift */,
+			);
+			path = Domain;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -675,6 +690,7 @@
 			files = (
 				D386F5E92AAD2C61005BBCDB /* Preview Assets.xcassets in Resources */,
 				D3C77CB92AB5DFCE00DF0FC5 /* Leagues.geojson in Resources */,
+				D3C77CDB2AB63F3100DF0FC5 /* Teams.geojson in Resources */,
 				D386F5E62AAD2C61005BBCDB /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -741,7 +757,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3C77CD72AB6373A00DF0FC5 /* TeamsUseCaseTests.swift in Sources */,
 				D3C77CD42AB6316400DF0FC5 /* TeamsRepositoryTests.swift in Sources */,
+				D3C77CD92AB6375A00DF0FC5 /* TeamsUseCaseMocks.swift in Sources */,
 				D3C77CCF2AB62E0000DF0FC5 /* TeamsRepositoryMocks.swift in Sources */,
 				D3C77CCA2AB61ADE00DF0FC5 /* LeaguesUseCaseMocks.swift in Sources */,
 				D3C77CBF2AB5FCC500DF0FC5 /* MockCoreDataManager.swift in Sources */,
