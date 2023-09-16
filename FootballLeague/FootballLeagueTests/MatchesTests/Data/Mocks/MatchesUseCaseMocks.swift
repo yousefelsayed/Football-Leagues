@@ -8,7 +8,7 @@
 import Foundation
 @testable import FootballLeague
 
-class MatchesUseCaseMocks: FootballLeague.TeamMatchesDataRepository {
+class MatchesUseCaseMocks: FootballLeague.TeamMatchesDataUseCase {
     
     var matchesRepositoryMocks: MatchesRepositoryMocks
     

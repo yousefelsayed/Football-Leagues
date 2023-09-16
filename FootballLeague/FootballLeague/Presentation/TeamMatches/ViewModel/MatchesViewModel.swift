@@ -10,15 +10,16 @@ import Foundation
 class TeamMatchesViewModel: ObservableObject {
     
     
-    private let teamMatchesUseCase: TeamMatchesUseCase
+    private let teamMatchesUseCase: TeamMatchesDataUseCase
     
     @Published var matches: [TeamMatchesIModel] = []
     @Published var isLoading: Bool = false
     @Published var errorMessage: String = ""
     
     var team: LeagueTeamsIModel
-    
-    init(teamMatchUseCase: TeamMatchesUseCase, team: LeagueTeamsIModel) {
+    var sortedMatches: [TeamMatchesIModel] = []
+
+    init(teamMatchUseCase: TeamMatchesDataUseCase, team: LeagueTeamsIModel) {
         self.teamMatchesUseCase = teamMatchUseCase
         self.team = team
     }
@@ -60,7 +61,7 @@ class TeamMatchesViewModel: ObservableObject {
         
 
                 let sortedMatches = teamMatches?.sorted(by: {($0.matchDate.convertStringToDate() == $1.matchDate.convertStringToDate())})
-                
+                self.sortedMatches = sortedMatches ?? []
                 DispatchQueue.main.async {
                     self.matches = sortedMatches ?? []
                 }
@@ -90,6 +91,7 @@ class TeamMatchesViewModel: ObservableObject {
                 DispatchQueue.main.async {
                     self.matches = cachedMatches.sorted(by: {($0.matchDate.convertStringToDate() == $1.matchDate.convertStringToDate())})
                 }
+                self.sortedMatches = cachedMatches.sorted(by: {($0.matchDate.convertStringToDate() == $1.matchDate.convertStringToDate())})
             case .failure(let error):
                 print(error.localizedDescription)
             }

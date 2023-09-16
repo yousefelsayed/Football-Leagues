@@ -66,6 +66,7 @@
 		D3C77CE82AB6538900DF0FC5 /* MatchesRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C77CE72AB6538900DF0FC5 /* MatchesRepositoryTests.swift */; };
 		D3C77CEA2AB655B900DF0FC5 /* MatchesUseCaseMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C77CE92AB655B900DF0FC5 /* MatchesUseCaseMocks.swift */; };
 		D3C77CED2AB6568800DF0FC5 /* MatchesUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C77CEC2AB6568800DF0FC5 /* MatchesUseCaseTests.swift */; };
+		D3C77CF02AB6588300DF0FC5 /* MatchesViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C77CEF2AB6588300DF0FC5 /* MatchesViewModelTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -148,6 +149,7 @@
 		D3C77CE72AB6538900DF0FC5 /* MatchesRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesRepositoryTests.swift; sourceTree = "<group>"; };
 		D3C77CE92AB655B900DF0FC5 /* MatchesUseCaseMocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesUseCaseMocks.swift; sourceTree = "<group>"; };
 		D3C77CEC2AB6568800DF0FC5 /* MatchesUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesUseCaseTests.swift; sourceTree = "<group>"; };
+		D3C77CEF2AB6588300DF0FC5 /* MatchesViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesViewModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -604,6 +606,7 @@
 		D3C77CE12AB6435E00DF0FC5 /* MatchesTests */ = {
 			isa = PBXGroup;
 			children = (
+				D3C77CEE2AB6586700DF0FC5 /* Presentation */,
 				D3C77CEB2AB6567200DF0FC5 /* Domain */,
 				D3C77CE22AB6438D00DF0FC5 /* Data */,
 			);
@@ -642,6 +645,14 @@
 				D3C77CEC2AB6568800DF0FC5 /* MatchesUseCaseTests.swift */,
 			);
 			path = Domain;
+			sourceTree = "<group>";
+		};
+		D3C77CEE2AB6586700DF0FC5 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				D3C77CEF2AB6588300DF0FC5 /* MatchesViewModelTests.swift */,
+			);
+			path = Presentation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -834,6 +845,7 @@
 				D3C77CCA2AB61ADE00DF0FC5 /* LeaguesUseCaseMocks.swift in Sources */,
 				D3C77CE82AB6538900DF0FC5 /* MatchesRepositoryTests.swift in Sources */,
 				D3C77CBF2AB5FCC500DF0FC5 /* MockCoreDataManager.swift in Sources */,
+				D3C77CF02AB6588300DF0FC5 /* MatchesViewModelTests.swift in Sources */,
 				D3C77CB32AB5CF3900DF0FC5 /* LeaguesRepositoryTests.swift in Sources */,
 				D3C77CBD2AB5E67B00DF0FC5 /* MockNetworkService.swift in Sources */,
 				D3C77CC82AB61A4100DF0FC5 /* LeaguesViewModelTests.swift in Sources */,
