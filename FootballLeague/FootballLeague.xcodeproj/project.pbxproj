@@ -60,6 +60,7 @@
 		D3C77CD72AB6373A00DF0FC5 /* TeamsUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C77CD62AB6373A00DF0FC5 /* TeamsUseCaseTests.swift */; };
 		D3C77CD92AB6375A00DF0FC5 /* TeamsUseCaseMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C77CD82AB6375A00DF0FC5 /* TeamsUseCaseMocks.swift */; };
 		D3C77CDB2AB63F3100DF0FC5 /* Teams.geojson in Resources */ = {isa = PBXBuildFile; fileRef = D3C77CD52AB631F700DF0FC5 /* Teams.geojson */; };
+		D3C77CDE2AB63FB500DF0FC5 /* TeamsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C77CDD2AB63FB500DF0FC5 /* TeamsViewModelTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -136,6 +137,7 @@
 		D3C77CD52AB631F700DF0FC5 /* Teams.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = Teams.geojson; sourceTree = "<group>"; };
 		D3C77CD62AB6373A00DF0FC5 /* TeamsUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsUseCaseTests.swift; sourceTree = "<group>"; };
 		D3C77CD82AB6375A00DF0FC5 /* TeamsUseCaseMocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsUseCaseMocks.swift; sourceTree = "<group>"; };
+		D3C77CDD2AB63FB500DF0FC5 /* TeamsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsViewModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -538,6 +540,7 @@
 		D3C77CCB2AB62CD700DF0FC5 /* TeamsTests */ = {
 			isa = PBXGroup;
 			children = (
+				D3C77CDC2AB63F9600DF0FC5 /* Presentation */,
 				D3C77CDA2AB63C0200DF0FC5 /* Domain */,
 				D3C77CCC2AB62CE500DF0FC5 /* Data */,
 			);
@@ -576,6 +579,14 @@
 				D3C77CD62AB6373A00DF0FC5 /* TeamsUseCaseTests.swift */,
 			);
 			path = Domain;
+			sourceTree = "<group>";
+		};
+		D3C77CDC2AB63F9600DF0FC5 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				D3C77CDD2AB63FB500DF0FC5 /* TeamsViewModelTests.swift */,
+			);
+			path = Presentation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -759,6 +770,7 @@
 			files = (
 				D3C77CD72AB6373A00DF0FC5 /* TeamsUseCaseTests.swift in Sources */,
 				D3C77CD42AB6316400DF0FC5 /* TeamsRepositoryTests.swift in Sources */,
+				D3C77CDE2AB63FB500DF0FC5 /* TeamsViewModelTests.swift in Sources */,
 				D3C77CD92AB6375A00DF0FC5 /* TeamsUseCaseMocks.swift in Sources */,
 				D3C77CCF2AB62E0000DF0FC5 /* TeamsRepositoryMocks.swift in Sources */,
 				D3C77CCA2AB61ADE00DF0FC5 /* LeaguesUseCaseMocks.swift in Sources */,
