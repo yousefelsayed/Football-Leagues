@@ -79,7 +79,7 @@ struct LeagueRaw: View {
                 ) {
                     EmptyView()
                 }
-            }} 
+            }}
     
     }
     

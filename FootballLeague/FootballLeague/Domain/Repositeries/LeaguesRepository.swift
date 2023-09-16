@@ -12,10 +12,10 @@ import CoreData
 class LeaguesRepository: LeaguesDataRepository {
     
     private let networkService: NetworkService
-    private let coreDataManager: CoreDataManager
+    private let coreDataManager: CoreDataManagerProtocol
 
     
-    init(networkService: NetworkService, coreDataManager: CoreDataManager) {
+    init(networkService: NetworkService, coreDataManager: CoreDataManagerProtocol) {
         self.networkService = networkService
         self.coreDataManager = coreDataManager
     }

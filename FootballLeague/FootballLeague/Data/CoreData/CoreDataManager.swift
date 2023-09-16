@@ -8,6 +8,12 @@
 import Foundation
 import CoreData
 
+protocol CoreDataManagerProtocol {
+    var managedObjectContext: NSManagedObjectContext { get }
+    func saveContext()
+}
+
+
 enum CachDataError: Error {
     case onSaveError(Error)
     case onReadError(Error)
@@ -26,7 +32,7 @@ enum CachDataError: Error {
         }
 }
 
-class CoreDataManager {
+class CoreDataManager: CoreDataManagerProtocol {
     static let shared = CoreDataManager() // Singleton instance
 
     private init() {} // Private init to ensure it's a singleton

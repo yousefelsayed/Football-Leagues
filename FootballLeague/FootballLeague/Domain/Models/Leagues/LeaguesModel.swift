@@ -39,6 +39,17 @@ struct League : Codable,Hashable,Identifiable {
     var numberOfTeams: String
     var numberOfGames: String
     
+    init(leagueId: Int, leagueName: String, leagueLogo: String, leagueCode: String, leagueAreaName: String, numberOfTeams: String, numberOfGames: String) throws {
+     
+        self.leagueId = leagueId
+        self.leagueName = leagueName
+        self.leagueCode = leagueCode
+        self.leagueLogo = leagueLogo
+        self.leagueAreaName = leagueAreaName
+        self.numberOfTeams = numberOfTeams
+        self.numberOfGames = numberOfGames
+    }
+    
     init(_ entity: LeaguesEntity) {
         self.leagueId = Int(entity.id)
         self.leagueName = entity.name ?? ""
