@@ -33,7 +33,7 @@ class MatchesRepositoryMocks: TeamMatchesDataRepository {
             let matches = [TeamMatchesIModel(match: MatchesModel(id: 123, score: Score(fullTime: Time(home: 2, away: 3)), matchday: 12, homeTeam: Team(id: 32, crest: "crest", name: "name", shortName: "short name", tla: "tla"), lastUpdated: "last updated", competition: Competition(code: "BRA", id: 123, emblem: "emblem", name: "name", type: "type"), area: Area(code: "code", id: 12, flag: "flag", name: "name"), stage: "stage", odds: Odds(msg: "message"), season: Season(id: 34, startDate: "start", endDate: "end", currentMatchday: 2), awayTeam: Team(id: 32, crest: "crest", name: "name", shortName: "short name", tla: "tla"), utcDate: "date", status: "status"))]
             return .success(matches)
         } else {
-            return .failure(FootballLeague.CachDataError.onError("No Cached data for team Id "))
+            return .failure(FootballLeague.CachDataError.onError("No Cached data for team id"))
         }
 
     }

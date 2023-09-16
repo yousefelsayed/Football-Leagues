@@ -65,6 +65,7 @@
 		D3C77CE62AB643E800DF0FC5 /* MatchesRepositoryMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C77CE52AB643E800DF0FC5 /* MatchesRepositoryMocks.swift */; };
 		D3C77CE82AB6538900DF0FC5 /* MatchesRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C77CE72AB6538900DF0FC5 /* MatchesRepositoryTests.swift */; };
 		D3C77CEA2AB655B900DF0FC5 /* MatchesUseCaseMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C77CE92AB655B900DF0FC5 /* MatchesUseCaseMocks.swift */; };
+		D3C77CED2AB6568800DF0FC5 /* MatchesUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C77CEC2AB6568800DF0FC5 /* MatchesUseCaseTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -146,6 +147,7 @@
 		D3C77CE52AB643E800DF0FC5 /* MatchesRepositoryMocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesRepositoryMocks.swift; sourceTree = "<group>"; };
 		D3C77CE72AB6538900DF0FC5 /* MatchesRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesRepositoryTests.swift; sourceTree = "<group>"; };
 		D3C77CE92AB655B900DF0FC5 /* MatchesUseCaseMocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesUseCaseMocks.swift; sourceTree = "<group>"; };
+		D3C77CEC2AB6568800DF0FC5 /* MatchesUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesUseCaseTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -602,6 +604,7 @@
 		D3C77CE12AB6435E00DF0FC5 /* MatchesTests */ = {
 			isa = PBXGroup;
 			children = (
+				D3C77CEB2AB6567200DF0FC5 /* Domain */,
 				D3C77CE22AB6438D00DF0FC5 /* Data */,
 			);
 			path = MatchesTests;
@@ -631,6 +634,14 @@
 				D3C77CE92AB655B900DF0FC5 /* MatchesUseCaseMocks.swift */,
 			);
 			path = Mocks;
+			sourceTree = "<group>";
+		};
+		D3C77CEB2AB6567200DF0FC5 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				D3C77CEC2AB6568800DF0FC5 /* MatchesUseCaseTests.swift */,
+			);
+			path = Domain;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -814,6 +825,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D3C77CD72AB6373A00DF0FC5 /* TeamsUseCaseTests.swift in Sources */,
+				D3C77CED2AB6568800DF0FC5 /* MatchesUseCaseTests.swift in Sources */,
 				D3C77CD42AB6316400DF0FC5 /* TeamsRepositoryTests.swift in Sources */,
 				D3C77CDE2AB63FB500DF0FC5 /* TeamsViewModelTests.swift in Sources */,
 				D3C77CD92AB6375A00DF0FC5 /* TeamsUseCaseMocks.swift in Sources */,

@@ -68,7 +68,7 @@ final class TeamsUseCaseTests: XCTestCase {
     }
     
     
-    func test_getLeaguesCachedData_Should_Return_Failure() async throws {
+    func test_getTeamsCachedData_Should_Return_Failure() async throws {
         repository.isSuccess = false
         
         let result = try await sut.getCachedLeagueTeams("BRA")
@@ -82,7 +82,7 @@ final class TeamsUseCaseTests: XCTestCase {
         }
     }
     
-    func test_cacheLeagues_OnSucess() async throws {
+    func test_cacheTeam_OnSucess() async throws {
        
         repository.isSuccess = true
         
@@ -96,7 +96,7 @@ final class TeamsUseCaseTests: XCTestCase {
             try sut.cacheLeagueTeamsData(LeagueTeams(teams: teams), leagueCode: "BRA")
             XCTAssertTrue(repository.cacheTeamsDataCalled)
         case .failure(_):
-            XCTFail("Caching leagues should not throw an error")
+            XCTFail("Caching teams should not throw an error")
             
         }
     }
@@ -108,7 +108,7 @@ final class TeamsUseCaseTests: XCTestCase {
         switch result {
             
         case .success(_):
-            XCTFail("Caching leagues should not enter success")
+            XCTFail("Caching teams should not enter success")
         case .failure(_):
             XCTAssertFalse(repository.cacheTeamsDataCalled)
             
