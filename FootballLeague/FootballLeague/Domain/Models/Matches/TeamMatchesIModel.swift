@@ -9,11 +9,11 @@ import Foundation
 import CoreData
 
 struct TeamMatches {
-    var teams: [TeamMatchesIModel]
+    var matches: [TeamMatchesIModel]
     
     func toEntity(in context: NSManagedObjectContext) -> TeamMatchesEntity {
         var entity: TeamMatchesEntity = .init(context: context)
-        teams.forEach({ model in
+        matches.forEach({ model in
             entity.matchId = Int32(model.matchId)
             entity.matchDate = model.matchDate
             entity.homeTeamName = model.homeTeamName

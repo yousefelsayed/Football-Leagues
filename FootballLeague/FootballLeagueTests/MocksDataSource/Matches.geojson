@@ -1,0 +1,217 @@
+{
+"filters" : {
+  "competitions" : "DFB,BL1",
+  "limit" : 100,
+  "permission" : "TIER_ONE"
+},
+"resultSet" : {
+  "played" : 3,
+  "losses" : 2,
+  "count" : 34,
+  "draws" : 32,
+  "last" : "2024-05-18",
+  "wins" : 1,
+  "competitions" : "BL1",
+  "first" : "2023-08-19"
+},
+"matches" : [
+  {
+    "id" : 441794,
+    "score" : {
+      "halfTime" : {
+        "home" : 2,
+        "away" : 0
+      },
+      "fullTime" : {
+        "home" : 2,
+        "away" : 0
+      },
+      "winner" : "HOME_TEAM",
+      "duration" : "REGULAR"
+    },
+    "matchday" : 1,
+    "homeTeam" : {
+      "id" : 11,
+      "crest" : "https:\/\/crests.football-data.org\/11.svg",
+      "name" : "VfL Wolfsburg",
+      "shortName" : "Wolfsburg",
+      "tla" : "WOB"
+    },
+    "lastUpdated" : "2023-08-31T15:20:03Z",
+    "competition" : {
+      "code" : "BL1",
+      "id" : 2002,
+      "emblem" : "https:\/\/crests.football-data.org\/BL1.png",
+      "name" : "Bundesliga",
+      "type" : "LEAGUE"
+    },
+    "area" : {
+      "code" : "DEU",
+      "id" : 2088,
+      "flag" : "https:\/\/crests.football-data.org\/759.svg",
+      "name" : "Germany"
+    },
+    "stage" : "REGULAR_SEASON",
+    "odds" : {
+      "msg" : "Activate Odds-Package in User-Panel to retrieve odds."
+    },
+    "referees" : [
+      {
+        "nationality" : "Germany",
+        "id" : 57518,
+        "name" : "Florian Badstübner",
+        "type" : "REFEREE"
+      }
+    ],
+    "season" : {
+      "id" : 1592,
+      "startDate" : "2023-08-18",
+      "endDate" : "2024-05-18",
+      "currentMatchday" : 4,
+      "winner" : null
+    },
+    "group" : null,
+    "awayTeam" : {
+      "id" : 44,
+      "crest" : "https:\/\/crests.football-data.org\/44.svg",
+      "name" : "1. FC Heidenheim 1846",
+      "shortName" : "Heidenheim",
+      "tla" : "HEI"
+    },
+    "utcDate" : "2023-08-19T13:30:00Z",
+    "status" : "FINISHED"
+  },
+  {
+    "id" : 441805,
+    "score" : {
+      "halfTime" : {
+        "home" : 1,
+        "away" : 0
+      },
+      "fullTime" : {
+        "home" : 2,
+        "away" : 3
+      },
+      "winner" : "AWAY_TEAM",
+      "duration" : "REGULAR"
+    },
+    "matchday" : 2,
+    "homeTeam" : {
+      "id" : 44,
+      "crest" : "https:\/\/crests.football-data.org\/44.svg",
+      "name" : "1. FC Heidenheim 1846",
+      "shortName" : "Heidenheim",
+      "tla" : "HEI"
+    },
+    "lastUpdated" : "2023-08-31T15:20:03Z",
+    "competition" : {
+      "code" : "BL1",
+      "id" : 2002,
+      "emblem" : "https:\/\/crests.football-data.org\/BL1.png",
+      "name" : "Bundesliga",
+      "type" : "LEAGUE"
+    },
+    "area" : {
+      "code" : "DEU",
+      "id" : 2088,
+      "flag" : "https:\/\/crests.football-data.org\/759.svg",
+      "name" : "Germany"
+    },
+    "stage" : "REGULAR_SEASON",
+    "odds" : {
+      "msg" : "Activate Odds-Package in User-Panel to retrieve odds."
+    },
+    "referees" : [
+      {
+        "nationality" : "Germany",
+        "id" : 57504,
+        "name" : "Robert Hartmann",
+        "type" : "REFEREE"
+      }
+    ],
+    "season" : {
+      "id" : 1592,
+      "startDate" : "2023-08-18",
+      "endDate" : "2024-05-18",
+      "currentMatchday" : 4,
+      "winner" : null
+    },
+    "group" : null,
+    "awayTeam" : {
+      "id" : 2,
+      "crest" : "https:\/\/crests.football-data.org\/2.png",
+      "name" : "TSG 1899 Hoffenheim",
+      "shortName" : "Hoffenheim",
+      "tla" : "TSG"
+    },
+    "utcDate" : "2023-08-26T13:30:00Z",
+    "status" : "FINISHED"
+  },
+  {
+    "id" : 441807,
+    "score" : {
+      "halfTime" : {
+        "home" : 2,
+        "away" : 0
+      },
+      "fullTime" : {
+        "home" : 2,
+        "away" : 2
+      },
+      "winner" : "DRAW",
+      "duration" : "REGULAR"
+    },
+    "matchday" : 3,
+    "homeTeam" : {
+      "id" : 4,
+      "crest" : "https:\/\/crests.football-data.org\/4.png",
+      "name" : "Borussia Dortmund",
+      "shortName" : "Dortmund",
+      "tla" : "BVB"
+    },
+    "lastUpdated" : "2023-09-02T00:20:02Z",
+    "competition" : {
+      "code" : "BL1",
+      "id" : 2002,
+      "emblem" : "https:\/\/crests.football-data.org\/BL1.png",
+      "name" : "Bundesliga",
+      "type" : "LEAGUE"
+    },
+    "area" : {
+      "code" : "DEU",
+      "id" : 2088,
+      "flag" : "https:\/\/crests.football-data.org\/759.svg",
+      "name" : "Germany"
+    },
+    "stage" : "REGULAR_SEASON",
+    "odds" : {
+      "msg" : "Activate Odds-Package in User-Panel to retrieve odds."
+    },
+    "referees" : [
+      {
+        "nationality" : "Germany",
+        "id" : 57512,
+        "name" : "Tobias Reichel",
+        "type" : "REFEREE"
+      }
+    ],
+    "season" : {
+      "id" : 1592,
+      "startDate" : "2023-08-18",
+      "endDate" : "2024-05-18",
+      "currentMatchday" : 4,
+      "winner" : null
+    },
+    "group" : null,
+    "awayTeam" : {
+      "id" : 44,
+      "crest" : "https:\/\/crests.football-data.org\/44.svg",
+      "name" : "1. FC Heidenheim 1846",
+      "shortName" : "Heidenheim",
+      "tla" : "HEI"
+    },
+    "utcDate" : "2023-09-01T18:30:00Z",
+    "status" : "FINISHED"
+  }
+]
+}

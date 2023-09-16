@@ -61,6 +61,9 @@
 		D3C77CD92AB6375A00DF0FC5 /* TeamsUseCaseMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C77CD82AB6375A00DF0FC5 /* TeamsUseCaseMocks.swift */; };
 		D3C77CDB2AB63F3100DF0FC5 /* Teams.geojson in Resources */ = {isa = PBXBuildFile; fileRef = D3C77CD52AB631F700DF0FC5 /* Teams.geojson */; };
 		D3C77CDE2AB63FB500DF0FC5 /* TeamsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C77CDD2AB63FB500DF0FC5 /* TeamsViewModelTests.swift */; };
+		D3C77CE02AB6435100DF0FC5 /* Matches.geojson in Resources */ = {isa = PBXBuildFile; fileRef = D3C77CDF2AB6431500DF0FC5 /* Matches.geojson */; };
+		D3C77CE62AB643E800DF0FC5 /* MatchesRepositoryMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C77CE52AB643E800DF0FC5 /* MatchesRepositoryMocks.swift */; };
+		D3C77CE82AB6538900DF0FC5 /* MatchesRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C77CE72AB6538900DF0FC5 /* MatchesRepositoryTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -138,6 +141,9 @@
 		D3C77CD62AB6373A00DF0FC5 /* TeamsUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsUseCaseTests.swift; sourceTree = "<group>"; };
 		D3C77CD82AB6375A00DF0FC5 /* TeamsUseCaseMocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsUseCaseMocks.swift; sourceTree = "<group>"; };
 		D3C77CDD2AB63FB500DF0FC5 /* TeamsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsViewModelTests.swift; sourceTree = "<group>"; };
+		D3C77CDF2AB6431500DF0FC5 /* Matches.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = Matches.geojson; sourceTree = "<group>"; };
+		D3C77CE52AB643E800DF0FC5 /* MatchesRepositoryMocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesRepositoryMocks.swift; sourceTree = "<group>"; };
+		D3C77CE72AB6538900DF0FC5 /* MatchesRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesRepositoryTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -319,6 +325,7 @@
 			isa = PBXGroup;
 			children = (
 				D3C77CB72AB5D18E00DF0FC5 /* MocksDataSource */,
+				D3C77CE12AB6435E00DF0FC5 /* MatchesTests */,
 				D3C77CCB2AB62CD700DF0FC5 /* TeamsTests */,
 				D3C77CC02AB606B200DF0FC5 /* LeaguesTests */,
 			);
@@ -503,9 +510,10 @@
 			isa = PBXGroup;
 			children = (
 				D3C77CB82AB5D1A800DF0FC5 /* Leagues.geojson */,
+				D3C77CD52AB631F700DF0FC5 /* Teams.geojson */,
+				D3C77CDF2AB6431500DF0FC5 /* Matches.geojson */,
 				D3C77CBC2AB5E67B00DF0FC5 /* MockNetworkService.swift */,
 				D3C77CBE2AB5FCC500DF0FC5 /* MockCoreDataManager.swift */,
-				D3C77CD52AB631F700DF0FC5 /* Teams.geojson */,
 			);
 			path = MocksDataSource;
 			sourceTree = "<group>";
@@ -587,6 +595,39 @@
 				D3C77CDD2AB63FB500DF0FC5 /* TeamsViewModelTests.swift */,
 			);
 			path = Presentation;
+			sourceTree = "<group>";
+		};
+		D3C77CE12AB6435E00DF0FC5 /* MatchesTests */ = {
+			isa = PBXGroup;
+			children = (
+				D3C77CE22AB6438D00DF0FC5 /* Data */,
+			);
+			path = MatchesTests;
+			sourceTree = "<group>";
+		};
+		D3C77CE22AB6438D00DF0FC5 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				D3C77CE42AB643B400DF0FC5 /* Mocks */,
+				D3C77CE32AB6439700DF0FC5 /* Repositories */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		D3C77CE32AB6439700DF0FC5 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				D3C77CE72AB6538900DF0FC5 /* MatchesRepositoryTests.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		D3C77CE42AB643B400DF0FC5 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				D3C77CE52AB643E800DF0FC5 /* MatchesRepositoryMocks.swift */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -699,6 +740,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3C77CE02AB6435100DF0FC5 /* Matches.geojson in Resources */,
 				D386F5E92AAD2C61005BBCDB /* Preview Assets.xcassets in Resources */,
 				D3C77CB92AB5DFCE00DF0FC5 /* Leagues.geojson in Resources */,
 				D3C77CDB2AB63F3100DF0FC5 /* Teams.geojson in Resources */,
@@ -773,7 +815,9 @@
 				D3C77CDE2AB63FB500DF0FC5 /* TeamsViewModelTests.swift in Sources */,
 				D3C77CD92AB6375A00DF0FC5 /* TeamsUseCaseMocks.swift in Sources */,
 				D3C77CCF2AB62E0000DF0FC5 /* TeamsRepositoryMocks.swift in Sources */,
+				D3C77CE62AB643E800DF0FC5 /* MatchesRepositoryMocks.swift in Sources */,
 				D3C77CCA2AB61ADE00DF0FC5 /* LeaguesUseCaseMocks.swift in Sources */,
+				D3C77CE82AB6538900DF0FC5 /* MatchesRepositoryTests.swift in Sources */,
 				D3C77CBF2AB5FCC500DF0FC5 /* MockCoreDataManager.swift in Sources */,
 				D3C77CB32AB5CF3900DF0FC5 /* LeaguesRepositoryTests.swift in Sources */,
 				D3C77CBD2AB5E67B00DF0FC5 /* MockNetworkService.swift in Sources */,

@@ -65,7 +65,7 @@ class TeamMatchesViewModel: ObservableObject {
                     self.matches = sortedMatches ?? []
                 }
 
-                try teamMatchesUseCase.cacheTeamMatches(TeamMatches(teams: sortedMatches ?? []), teamId: teamId)
+                try teamMatchesUseCase.cacheTeamMatches(TeamMatches(matches: sortedMatches ?? []), teamId: teamId)
                 
             case .failure(let error):
                 DispatchQueue.main.async {

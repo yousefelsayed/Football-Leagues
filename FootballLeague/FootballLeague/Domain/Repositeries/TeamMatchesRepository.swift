@@ -43,7 +43,7 @@ class TeamMatchesRepository: TeamMatchesDataRepository {
     //MARK: - Save new league Teams data
     func cacheTeamMatches(_ matches: TeamMatches?, teamId: Int) throws {
            try deleteAllTeams(teamId)
-           print("save data to cache", matches?.teams ?? [])
+           print("save data to cache", matches?.matches ?? [])
            let context = coreDataManager.managedObjectContext
            let _ =  matches?.toEntity(in: context)
            
