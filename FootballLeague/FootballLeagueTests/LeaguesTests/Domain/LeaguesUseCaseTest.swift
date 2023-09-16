@@ -108,8 +108,8 @@ final class LeaguesUseCaseTest: XCTestCase {
         
         switch result {
             
-        case .success(let leagues):
-            XCTFail("Caching leagues should not throw an error")
+        case .success(_):
+            XCTFail("Caching leagues should not enter success")
         case .failure(_):
             XCTAssertFalse(repository.cacheLeaguesDataCalled)
             

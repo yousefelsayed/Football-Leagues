@@ -66,7 +66,7 @@ class LeaguesRepositoryMocks: LeaguesDataRepository {
     func getCachedLeagues() async throws -> Result<[FootballLeague.League], FootballLeague.CachDataError> {
         if isSuccess {
             let league1 = League(
-                leagueId: 0,
+                leagueId: 123,
                 leagueName: "DummyLeague",
                 leagueLogo: "url", leagueCode: "DL",
                 leagueAreaName: "area",
@@ -101,7 +101,7 @@ class LeaguesRepositoryMocks: LeaguesDataRepository {
     
     func getCachedMockedLeagues() async throws -> Result<FootballLeague.Leagues, FootballLeague.CachDataError> {
         let league1 =  League(
-            leagueId: 0,
+            leagueId: 123,
             leagueName: "DummyLeague",
             leagueLogo: "url", leagueCode: "DL",
             leagueAreaName: "area",

@@ -16,7 +16,7 @@ class LeaguesViewModel: ObservableObject {
     @Published var leagues: [League] = []
     @Published var isLoading: Bool = false
     @Published var errorMessage: String = ""
-    
+    var sortedLeagues: [League]?
     init(leaguesUseCase: LeaguesDataUseCase) {
         self.leaguesUseCase = leaguesUseCase
     }
@@ -59,7 +59,8 @@ class LeaguesViewModel: ObservableObject {
                 DispatchQueue.main.async {
                     self.leagues = sortedLeagues
                 }
-                
+                self.sortedLeagues = sortedLeagues
+
                 try leaguesUseCase.saveCurrentLeagues(Leagues(leagues: sortedLeagues))
                 
             case .failure(let error):
@@ -78,6 +79,7 @@ class LeaguesViewModel: ObservableObject {
                 DispatchQueue.main.async {
                     self.leagues = cachedLeagues.filter({$0.leagueId != 0})
                 }
+                self.sortedLeagues = cachedLeagues.filter({$0.leagueId != 0})
             case .failure(let error):
                 print(error.localizedDescription)
             }
