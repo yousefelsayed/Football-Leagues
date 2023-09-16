@@ -1,0 +1,588 @@
+{
+"filters" : {
+  "season" : "2023"
+},
+"count" : 18,
+"competition" : {
+  "code" : "BL1",
+  "id" : 2002,
+  "emblem" : "https:\/\/crests.football-data.org\/BL1.png",
+  "name" : "Bundesliga",
+  "type" : "LEAGUE"
+},
+"season" : {
+  "id" : 1592,
+  "startDate" : "2023-08-18",
+  "endDate" : "2024-05-18",
+  "currentMatchday" : 4,
+  "winner" : null
+},
+"teams" : [
+  {
+    "id" : 1,
+    "crest" : "https:\/\/crests.football-data.org\/1.png",
+    "shortName" : "1. FC Köln",
+    "runningCompetitions" : [
+      {
+        "code" : "DFB",
+        "id" : 2011,
+        "emblem" : "https:\/\/crests.football-data.org\/DFB_CUP.png",
+        "name" : "DFB-Pokal",
+        "type" : "CUP"
+      },
+      {
+        "code" : "BL1",
+        "id" : 2002,
+        "emblem" : "https:\/\/crests.football-data.org\/BL1.png",
+        "name" : "Bundesliga",
+        "type" : "LEAGUE"
+      }
+    ],
+    "squad" : [
+      {
+        "dateOfBirth" : "1997-05-28",
+        "id" : 7015,
+        "nationality" : "Germany",
+        "name" : "Matthias Köbbing",
+        "position" : "Goalkeeper"
+      },
+      {
+        "dateOfBirth" : "1995-04-25",
+        "id" : 9957,
+        "nationality" : "Germany",
+        "name" : "Marvin Schwäbe",
+        "position" : "Goalkeeper"
+      },
+      {
+        "dateOfBirth" : "1985-05-01",
+        "id" : 10016,
+        "nationality" : "Germany",
+        "name" : "Philipp Pentke",
+        "position" : "Goalkeeper"
+      },
+      {
+        "dateOfBirth" : "2004-05-21",
+        "id" : 184977,
+        "nationality" : "Germany",
+        "name" : "Jonas Nickisch",
+        "position" : "Goalkeeper"
+      },
+      {
+        "dateOfBirth" : "1993-08-15",
+        "id" : 186,
+        "nationality" : "Germany",
+        "name" : "Dominique Heintz",
+        "position" : "Defence"
+      },
+      {
+        "dateOfBirth" : "1996-07-20",
+        "id" : 309,
+        "nationality" : "Germany",
+        "name" : "Timo Hübers",
+        "position" : "Defence"
+      },
+      {
+        "dateOfBirth" : "1998-02-12",
+        "id" : 7748,
+        "nationality" : "Germany",
+        "name" : "Julian Chabot",
+        "position" : "Defence"
+      },
+      {
+        "dateOfBirth" : "1994-11-17",
+        "id" : 9539,
+        "nationality" : "Germany",
+        "name" : "Benno Schmitz",
+        "position" : "Defence"
+      },
+      {
+        "dateOfBirth" : "1994-10-08",
+        "id" : 10053,
+        "nationality" : "Kosovo",
+        "name" : "Leart Paqarada",
+        "position" : "Defence"
+      },
+      {
+        "dateOfBirth" : "1999-09-01",
+        "id" : 75707,
+        "nationality" : "Germany",
+        "name" : "Luca Kilian",
+        "position" : "Defence"
+      },
+      {
+        "dateOfBirth" : "2001-04-13",
+        "id" : 99836,
+        "nationality" : "Germany",
+        "name" : "Noah Katterbach",
+        "position" : "Defence"
+      },
+      {
+        "dateOfBirth" : "2000-10-11",
+        "id" : 114759,
+        "nationality" : "Denmark",
+        "name" : "Rasmus Carstensen",
+        "position" : "Defence"
+      },
+      {
+        "dateOfBirth" : "2001-03-21",
+        "id" : 137059,
+        "nationality" : "Luxembourg",
+        "name" : "Mathias Olesen",
+        "position" : "Defence"
+      },
+      {
+        "dateOfBirth" : "2004-05-02",
+        "id" : 187998,
+        "nationality" : "Bosnia-Herzegovina",
+        "name" : "Rijad Smajic",
+        "position" : "Defence"
+      },
+      {
+        "dateOfBirth" : "2004-04-13",
+        "id" : 191221,
+        "nationality" : "Germany",
+        "name" : "Elias Bakatukanda",
+        "position" : "Defence"
+      },
+      {
+        "dateOfBirth" : "2004-03-27",
+        "id" : 214538,
+        "nationality" : "Germany",
+        "name" : "Max Finkgräfe",
+        "position" : "Defence"
+      },
+      {
+        "dateOfBirth" : "1999-06-23",
+        "id" : 327,
+        "nationality" : "Germany",
+        "name" : "Linton Maina",
+        "position" : "Midfield"
+      },
+      {
+        "dateOfBirth" : "1992-10-24",
+        "id" : 9453,
+        "nationality" : "Austria",
+        "name" : "Florian Kainz",
+        "position" : "Midfield"
+      },
+      {
+        "dateOfBirth" : "1997-10-08",
+        "id" : 10656,
+        "nationality" : "Austria",
+        "name" : "Dejan Ljubicic",
+        "position" : "Midfield"
+      },
+      {
+        "dateOfBirth" : "1998-08-03",
+        "id" : 58306,
+        "nationality" : "Germany",
+        "name" : "Florian Dietz",
+        "position" : "Midfield"
+      },
+      {
+        "dateOfBirth" : "2001-06-25",
+        "id" : 72537,
+        "nationality" : "Denmark",
+        "name" : "Jacob Christensen",
+        "position" : "Midfield"
+      },
+      {
+        "dateOfBirth" : "2001-07-03",
+        "id" : 150087,
+        "nationality" : "Germany",
+        "name" : "Denis Huseinbasic",
+        "position" : "Midfield"
+      },
+      {
+        "dateOfBirth" : "2002-04-29",
+        "id" : 152726,
+        "nationality" : "Germany",
+        "name" : "Eric Martel",
+        "position" : "Midfield"
+      },
+      {
+        "dateOfBirth" : "1991-08-24",
+        "id" : 319,
+        "nationality" : "Germany",
+        "name" : "Mark Uth",
+        "position" : "Offence"
+      },
+      {
+        "dateOfBirth" : "1996-05-19",
+        "id" : 6537,
+        "nationality" : "Germany",
+        "name" : "Gian-Luca Waldschmidt",
+        "position" : "Offence"
+      },
+      {
+        "dateOfBirth" : "1995-01-20",
+        "id" : 6570,
+        "nationality" : "Germany",
+        "name" : "Davie Selke",
+        "position" : "Offence"
+      },
+      {
+        "dateOfBirth" : "1993-05-23",
+        "id" : 10039,
+        "nationality" : "Armenia",
+        "name" : "Sargis Adamyan",
+        "position" : "Offence"
+      },
+      {
+        "dateOfBirth" : "1998-07-31",
+        "id" : 10561,
+        "nationality" : "Germany",
+        "name" : "Steffen Tigges",
+        "position" : "Offence"
+      },
+      {
+        "dateOfBirth" : "1998-05-27",
+        "id" : 43513,
+        "nationality" : "Greece",
+        "name" : "Dimitris Limnios",
+        "position" : "Offence"
+      },
+      {
+        "dateOfBirth" : "2001-07-18",
+        "id" : 128740,
+        "nationality" : "Germany",
+        "name" : "Faride Alidou",
+        "position" : "Offence"
+      },
+      {
+        "dateOfBirth" : "2002-05-26",
+        "id" : 137031,
+        "nationality" : "Germany",
+        "name" : "Jan Thielmann",
+        "position" : "Offence"
+      },
+      {
+        "dateOfBirth" : "2004-07-06",
+        "id" : 185185,
+        "nationality" : "Germany",
+        "name" : "Damion Downs",
+        "position" : "Offence"
+      },
+      {
+        "dateOfBirth" : "1996-02-23",
+        "id" : 217884,
+        "nationality" : "Japan",
+        "name" : "Seigo Hirakawa",
+        "position" : null
+      },
+      {
+        "dateOfBirth" : "1972-01-05",
+        "id" : 45595,
+        "nationality" : "Germany",
+        "name" : "Steffen Baumgart",
+        "position" : null
+      }
+    ],
+    "founded" : 1948,
+    "clubColors" : "Red \/ White",
+    "staff" : [
+
+    ],
+    "area" : {
+      "code" : "DEU",
+      "id" : 2088,
+      "flag" : "https:\/\/crests.football-data.org\/759.svg",
+      "name" : "Germany"
+    },
+    "tla" : "KOE",
+    "lastUpdated" : "2022-02-25T16:49:46Z",
+    "address" : "Franz-Kremer-Allee 1 Köln 50937",
+    "venue" : "RheinEnergieSTADION",
+    "coach" : {
+      "firstName" : "Steffen",
+      "id" : 45595,
+      "dateOfBirth" : "1972-01-05",
+      "nationality" : "Germany",
+      "contract" : {
+        "start" : "2021-07",
+        "until" : "2025-06"
+      },
+      "name" : "Steffen Baumgart",
+      "lastName" : "Baumgart"
+    },
+    "website" : "http:\/\/www.fc-koeln.de",
+    "name" : "1. FC Köln"
+  },
+  {
+    "id" : 2,
+    "crest" : "https:\/\/crests.football-data.org\/2.png",
+    "shortName" : "Hoffenheim",
+    "runningCompetitions" : [
+      {
+        "code" : "DFB",
+        "id" : 2011,
+        "emblem" : "https:\/\/crests.football-data.org\/DFB_CUP.png",
+        "name" : "DFB-Pokal",
+        "type" : "CUP"
+      },
+      {
+        "code" : "BL1",
+        "id" : 2002,
+        "emblem" : "https:\/\/crests.football-data.org\/BL1.png",
+        "name" : "Bundesliga",
+        "type" : "LEAGUE"
+      }
+    ],
+    "squad" : [
+      {
+        "dateOfBirth" : "1990-06-02",
+        "id" : 316,
+        "nationality" : "Germany",
+        "name" : "Oliver Baumann",
+        "position" : "Goalkeeper"
+      },
+      {
+        "dateOfBirth" : "2000-11-28",
+        "id" : 75703,
+        "nationality" : "Germany",
+        "name" : "Luca Philipp",
+        "position" : "Goalkeeper"
+      },
+      {
+        "dateOfBirth" : "2003-03-17",
+        "id" : 169319,
+        "nationality" : "Germany",
+        "name" : "Nahuel Noll",
+        "position" : "Goalkeeper"
+      },
+      {
+        "dateOfBirth" : "1991-09-23",
+        "id" : 314,
+        "nationality" : "Germany",
+        "name" : "Kevin Vogt",
+        "position" : "Defence"
+      },
+      {
+        "dateOfBirth" : "1995-04-19",
+        "id" : 315,
+        "nationality" : "Nigeria",
+        "name" : "Kevin Akpoguma",
+        "position" : "Defence"
+      },
+      {
+        "dateOfBirth" : "1992-04-25",
+        "id" : 317,
+        "nationality" : "Czech Republic",
+        "name" : "Pavel Kadeřábek",
+        "position" : "Defence"
+      },
+      {
+        "dateOfBirth" : "1993-01-28",
+        "id" : 9417,
+        "nationality" : "USA",
+        "name" : "John Brooks",
+        "position" : "Defence"
+      },
+      {
+        "dateOfBirth" : "2000-03-25",
+        "id" : 30548,
+        "nationality" : "Turkey",
+        "name" : "Ozan Kabak",
+        "position" : "Defence"
+      },
+      {
+        "dateOfBirth" : "1998-01-20",
+        "id" : 63207,
+        "nationality" : "Hungary",
+        "name" : "Attila Szalai",
+        "position" : "Defence"
+      },
+      {
+        "dateOfBirth" : "2002-05-28",
+        "id" : 136731,
+        "nationality" : "Netherlands",
+        "name" : "Melayro Bogarde",
+        "position" : "Defence"
+      },
+      {
+        "dateOfBirth" : "2002-04-02",
+        "id" : 150667,
+        "nationality" : "Germany",
+        "name" : "Marco John",
+        "position" : "Defence"
+      },
+      {
+        "dateOfBirth" : "1995-06-22",
+        "id" : 179901,
+        "nationality" : "Ghana",
+        "name" : "Kasim Adams",
+        "position" : "Defence"
+      },
+      {
+        "dateOfBirth" : "2004-07-26",
+        "id" : 189551,
+        "nationality" : "Germany",
+        "name" : "Joshua Quarshie",
+        "position" : "Defence"
+      },
+      {
+        "dateOfBirth" : "1999-04-09",
+        "id" : 203039,
+        "nationality" : "France",
+        "name" : "Stanley N'Soki",
+        "position" : "Defence"
+      },
+      {
+        "dateOfBirth" : "1994-04-23",
+        "id" : 326,
+        "nationality" : "Togo",
+        "name" : "Ihlas Bebou",
+        "position" : "Midfield"
+      },
+      {
+        "dateOfBirth" : "1998-06-10",
+        "id" : 399,
+        "nationality" : "Germany",
+        "name" : "Dennis Geiger",
+        "position" : "Midfield"
+      },
+      {
+        "dateOfBirth" : "1995-01-09",
+        "id" : 6836,
+        "nationality" : "Germany",
+        "name" : "Grischa Prömel",
+        "position" : "Midfield"
+      },
+      {
+        "dateOfBirth" : "1996-05-20",
+        "id" : 10195,
+        "nationality" : "Denmark",
+        "name" : "Robert Skov",
+        "position" : "Midfield"
+      },
+      {
+        "dateOfBirth" : "1996-01-11",
+        "id" : 15103,
+        "nationality" : "Mali",
+        "name" : "Diadié Samassékou",
+        "position" : "Midfield"
+      },
+      {
+        "dateOfBirth" : "1998-11-15",
+        "id" : 65843,
+        "nationality" : "Germany",
+        "name" : "Anton Stach",
+        "position" : "Midfield"
+      },
+      {
+        "dateOfBirth" : "1998-04-02",
+        "id" : 66288,
+        "nationality" : "Germany",
+        "name" : "Julian Justvan",
+        "position" : "Midfield"
+      },
+      {
+        "dateOfBirth" : "2000-06-08",
+        "id" : 116259,
+        "nationality" : "Germany",
+        "name" : "Finn Ole Becker",
+        "position" : "Midfield"
+      },
+      {
+        "dateOfBirth" : "2005-06-28",
+        "id" : 172574,
+        "nationality" : "Germany",
+        "name" : "Tom Bischof",
+        "position" : "Midfield"
+      },
+      {
+        "dateOfBirth" : "2003-07-07",
+        "id" : 177525,
+        "nationality" : "Germany",
+        "name" : "Bambase Conte",
+        "position" : "Midfield"
+      },
+      {
+        "dateOfBirth" : "1991-06-19",
+        "id" : 318,
+        "nationality" : "Croatia",
+        "name" : "Andrej Kramarić",
+        "position" : "Offence"
+      },
+      {
+        "dateOfBirth" : "1995-08-07",
+        "id" : 404,
+        "nationality" : "Austria",
+        "name" : "Florian Grillitsch",
+        "position" : "Offence"
+      },
+      {
+        "dateOfBirth" : "1992-08-07",
+        "id" : 7697,
+        "nationality" : "Netherlands",
+        "name" : "Wout Weghorst",
+        "position" : "Offence"
+      },
+      {
+        "dateOfBirth" : "1998-05-11",
+        "id" : 10724,
+        "nationality" : "Germany",
+        "name" : "Mërgim Berisha",
+        "position" : "Offence"
+      },
+      {
+        "dateOfBirth" : "1993-03-29",
+        "id" : 65441,
+        "nationality" : "Germany",
+        "name" : "Marius Bülter",
+        "position" : "Offence"
+      },
+      {
+        "dateOfBirth" : "2002-10-17",
+        "id" : 133903,
+        "nationality" : "Germany",
+        "name" : "Maximilian Beier",
+        "position" : "Offence"
+      },
+      {
+        "dateOfBirth" : "1977-11-28",
+        "id" : 10232,
+        "nationality" : "USA",
+        "name" : "Pellegrino Matarazzo",
+        "position" : null
+      },
+      {
+        "dateOfBirth" : "2004-08-11",
+        "id" : 182245,
+        "nationality" : "Germany",
+        "name" : "Umut Tohumcu",
+        "position" : "Midfielder"
+      }
+    ],
+    "founded" : 1921,
+    "clubColors" : "Blue \/ White",
+    "staff" : [
+
+    ],
+    "area" : {
+      "code" : "DEU",
+      "id" : 2088,
+      "flag" : "https:\/\/crests.football-data.org\/759.svg",
+      "name" : "Germany"
+    },
+    "tla" : "TSG",
+    "lastUpdated" : "2022-02-25T16:49:58Z",
+    "address" : "Horrenberger Straße 58 Zuzenhausen 74939",
+    "venue" : "PreZero Arena",
+    "coach" : {
+      "firstName" : "Pellegrino",
+      "id" : 10232,
+      "dateOfBirth" : "1977-11-28",
+      "nationality" : "USA",
+      "contract" : {
+        "start" : "2023-02",
+        "until" : "2025-06"
+      },
+      "name" : "Pellegrino Matarazzo",
+      "lastName" : "Matarazzo"
+    },
+    "website" : "http:\/\/www.achtzehn99.de",
+    "name" : "TSG 1899 Hoffenheim"
+  }
+]
+}

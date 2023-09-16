@@ -40,6 +40,7 @@ class TeamsRepositoryMocks: LeagueTeamsDataRepository {
             cacheTeamsDataCalled = true
         } else {
             cacheTeamsDataCalled = false
+            throw CachDataError.onError("Saving leagues failed")
         }
     }
     
