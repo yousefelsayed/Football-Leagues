@@ -87,7 +87,7 @@ final class MatchesViewModelTests: XCTestCase {
                                                                                   season: Season(id: 34, startDate: "start", endDate: "end", currentMatchday: 2),
                                                                                   awayTeam: Team(id: 32, crest: "crest", name: "name", shortName: "short name", tla: "tla"),
                                                                                   utcDate: "date",
-                                                                                  status: "status"))])
+                                                                                  status: "status"), teamID: 123)])
         
         try repository.cacheTeamMatches(matches, teamId: 123)
         
