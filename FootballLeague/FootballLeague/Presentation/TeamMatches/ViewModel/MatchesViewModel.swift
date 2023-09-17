@@ -56,7 +56,7 @@ class TeamMatchesViewModel: ObservableObject {
             case .success(let response):
                 
                 let teamMatches = response.matches?.compactMap({ match in
-                    return TeamMatchesIModel(match: match)
+                    return TeamMatchesIModel(match: match, teamID: teamId)
                 })
         
 

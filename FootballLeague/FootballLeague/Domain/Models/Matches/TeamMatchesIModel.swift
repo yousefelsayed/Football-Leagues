@@ -20,8 +20,9 @@ struct TeamMatches {
     var matches: [TeamMatchesIModel]
     
     func toEntity(in context: NSManagedObjectContext) -> TeamMatchesEntity {
-        let entity: TeamMatchesEntity = .init(context: context)
+        var entity: TeamMatchesEntity = .init(context: context)
         matches.forEach({ model in
+            entity = TeamMatchesEntity(context: context)
             entity.matchId = Int32(model.matchId)
             entity.matchDate = model.matchDate
             entity.homeTeamName = model.homeTeamName
@@ -31,6 +32,7 @@ struct TeamMatches {
             entity.awayTeamScore = model.awayTeamScore
             entity.awayTeamName = model.homeTeamName
             entity.matchStatus = model.matchStatus
+            entity.teamId = Int32(model.teamID)
             
         })
         return entity
@@ -51,9 +53,9 @@ struct TeamMatchesIModel: Codable,Hashable,Identifiable  {
     var awayTeamLogo: String
     var awayTeamScore: String
     var matchStatus: String
+    var teamID: Int
     
-    
-    init(_ entity: TeamMatchesEntity) {
+    init(_ entity: TeamMatchesEntity, teamID: Int) {
         self.matchId = Int(entity.matchId)
         self.matchDate = entity.matchDate ?? ""
         self.homeTeamName = entity.homeTeamName ?? ""
@@ -63,9 +65,10 @@ struct TeamMatchesIModel: Codable,Hashable,Identifiable  {
         self.awayTeamScore = entity.awayTeamScore ?? ""
         self.awayTeamName = entity.awayTeamName ?? ""
         self.matchStatus = entity.matchStatus ?? ""
+        self.teamID = teamID
     }
 
-    init (match: MatchesModel) {
+    init (match: MatchesModel, teamID: Int) {
         self.matchId = Int(match.id)
         self.matchDate = match.utcDate ?? ""
         self.homeTeamName = match.homeTeam.name
@@ -75,6 +78,7 @@ struct TeamMatchesIModel: Codable,Hashable,Identifiable  {
         self.awayTeamScore =  "\(match.score.fullTime?.away ?? 0)"
         self.awayTeamName = match.homeTeam.name
         self.matchStatus = match.status ?? ""
+        self.teamID  = teamID
     }
     
 }

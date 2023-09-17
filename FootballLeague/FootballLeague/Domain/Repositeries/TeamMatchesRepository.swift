@@ -29,7 +29,7 @@ class TeamMatchesRepository: TeamMatchesDataRepository {
             let cachedTeamMatches = try coreDataManager.managedObjectContext.fetch(request)
             print("cached data retrieved", cachedTeamMatches)
             
-            return .success(cachedTeamMatches.map({TeamMatchesIModel($0)}).sorted(by:{$0.matchDate.convertStringToDate() < $1.matchDate.convertStringToDate()} ))
+            return .success(cachedTeamMatches.map({TeamMatchesIModel($0,teamID: teamId)}).sorted(by:{$0.matchDate.convertStringToDate() < $1.matchDate.convertStringToDate()} ))
             
         } catch {
             return .failure(CachDataError.onReadError(error))
