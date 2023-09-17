@@ -11,21 +11,10 @@ struct TeamMatchesResponse: Codable {
     let matches: [MatchesModel]?
 }
 
-
-//struct MatchesModel: Codable {
-//    let id: Int?
-//    let utcDate: String?
-//    let status: String?
-//    let homeTeam: TeamsModel?
-//    let awayTeam: TeamsModel?
-//    let score: Score?
-//}
-
 // MARK: - Score
 struct Score: Codable {
     let fullTime: Time?
 }
-
 
 // MARK: - MatchesModel
 struct MatchesModel: Codable {

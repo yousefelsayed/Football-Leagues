@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 protocol LeaguesDataRepository {
     func getLeagues() async throws -> ResultCallback<LeaguesResponse>
     func getCachedLeagues() async throws -> Result<[League], CachDataError>

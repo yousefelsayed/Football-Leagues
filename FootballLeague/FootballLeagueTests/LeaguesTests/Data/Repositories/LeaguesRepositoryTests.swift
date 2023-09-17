@@ -17,6 +17,7 @@ final class LeaguesRepositoryTests: XCTestCase {
         let result = try await sut.getLeagues()
         
         switch result {
+            
         case let .success(leagues):
             XCTAssertNotNil(leagues)
         default:
@@ -29,6 +30,7 @@ final class LeaguesRepositoryTests: XCTestCase {
         let result = try await sut.getFailedLeagues()
         
         switch result {
+            
         case .failure(let error):
             XCTAssertEqual(error.localizedDescription, FootballLeague.NetworkError.invalidResponse.localizedDescription)
         default:
@@ -42,6 +44,7 @@ final class LeaguesRepositoryTests: XCTestCase {
         let result = try await sut.getCachedLeagues()
         
         switch result {
+            
         case let .success(leagues):
             XCTAssertNotNil(leagues)
         default:
@@ -54,6 +57,7 @@ final class LeaguesRepositoryTests: XCTestCase {
         let result = try await sut.getFailedCachedLeagues()
         
         switch result {
+            
         case .failure(let error):
             XCTAssertEqual(error.localizedDescription, "No data found")
         default:

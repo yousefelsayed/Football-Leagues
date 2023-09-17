@@ -10,8 +10,7 @@ import Foundation
 class EndPoint {
     static let shared = EndPoint()
     
-    private init() {
-    }
+    private init() {}
     
     static let baseURL = "https://api.football-data.org/v4/"
     static let header: [String: String] = ["X-Auth-Token":"90deab14f2c8494396b2ba6ebf0dc2ac"]
@@ -23,7 +22,7 @@ class EndPoint {
         guard let url = components?.url else {
             throw NetworkError.invalidURL
         }
-        print("Call End Point: ",url.absoluteString)
+        
         var request = URLRequest(url: url)
         request.httpMethod = method.rawValue
         request.allHTTPHeaderFields = EndPoint.header

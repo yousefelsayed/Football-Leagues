@@ -7,11 +7,13 @@
 
 import Foundation
 
+//MARK: - Leagues response
 struct LeagueTeamsResponse: Codable {
     let teams: [TeamsModel]?
     let competition: CompetitionModel?
 }
 
+//MARK: - Team Model
 struct TeamsModel: Codable {
     let id: Int?
     let shortName,crest,tla,name: String?

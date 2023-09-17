@@ -17,31 +17,26 @@ class LeaguesRepositoryMocks: LeaguesDataRepository {
             if  let leaguesResponse = self.getMocksData() {
                 return .success(leaguesResponse)
             }
-        }
-        else {
+        } else {
             return .failure(FootballLeague.NetworkError.invalidResponse)
         }
         return .failure(FootballLeague.NetworkError.invalidResponse)
-
     }
     
     func getFailedLeagues() async throws -> ResultCallback<LeaguesResponse> {
         return .failure(FootballLeague.NetworkError.invalidResponse)
     }
     
- 
-    
-
     //MARK: - Save data success
     func cacheLeaguesDataSuccess() async throws {
         // Create a mock leagues object
         let leagues = try await getCachedMockedLeagues()
-      
+        
         // Create a mock CoreDataManager
         let mockNetworkService = MockNetworkService<FootballLeague.Leagues>()
         // Initialize the repository with the mock CoreDataManager
         let mockCoreDataManager = MockCoreDataManager()
-
+        
         let _ = LeaguesRepository(networkService: mockNetworkService, coreDataManager: mockCoreDataManager)
         
         switch leagues {
@@ -76,7 +71,7 @@ class LeaguesRepositoryMocks: LeaguesDataRepository {
         } else {
             return .failure(CachDataError.onError("No Data Found"))
         }
-    
+        
     }
     
     func cacheLeaguesData(_ leagues: FootballLeague.Leagues?) throws {
@@ -111,7 +106,6 @@ class LeaguesRepositoryMocks: LeaguesDataRepository {
         let leagues = Leagues(leagues: [league1])
         
         return .success(leagues)
-        
     }
     
     private func parseJSONData(data: Data) ->  LeaguesResponse? {

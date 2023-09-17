@@ -8,7 +8,6 @@
 import XCTest
 @testable import FootballLeague
 
-
 final class LeaguesUseCaseTest: XCTestCase {
 
     var sut: LeaguesUseCase!
@@ -27,7 +26,6 @@ final class LeaguesUseCaseTest: XCTestCase {
 
     
     func test_getLeaguesData_Should_Return_Success() async throws {
-        
         repository.isSuccess = true
 
         let result = try await sut.fetchData()
@@ -42,7 +40,6 @@ final class LeaguesUseCaseTest: XCTestCase {
 
     
     func test_getLeaguesData_Should_Return_Failure() async throws {
-        
         repository.isSuccess = false
         
         let result = try await sut.fetchData()
@@ -85,7 +82,6 @@ final class LeaguesUseCaseTest: XCTestCase {
     }
     
     func test_cacheLeagues_OnSucess() async throws {
-       
         repository.isSuccess = true
         let result = try await repository.getCachedLeagues()
         

@@ -6,8 +6,8 @@
 //
 
 import Foundation
-
 @testable import FootballLeague
+
 class TeamsRepositoryMocks: LeagueTeamsDataRepository {
     var cacheTeamsDataCalled = false
     var isSuccess: Bool = true
@@ -17,12 +17,10 @@ class TeamsRepositoryMocks: LeagueTeamsDataRepository {
             if  let teamsResponse = self.getMocksData() {
                 return .success(teamsResponse)
             }
-        }
-        else {
+        } else {
             return .failure(FootballLeague.NetworkError.invalidResponse)
         }
         return .failure(FootballLeague.NetworkError.invalidResponse)
-        
     }
     
     func getCachedLeagueTeams(_ leagueCode: String) async throws -> Result<[FootballLeague.LeagueTeamsIModel], FootballLeague.CachDataError> {

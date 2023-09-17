@@ -24,7 +24,6 @@ class LeaguesUseCase: LeaguesDataUseCase {
         self.repository = repository
     }
     
-    
     func fetchData() async throws -> ResultCallback<LeaguesResponse> {
         return try await repository.getLeagues()
     }

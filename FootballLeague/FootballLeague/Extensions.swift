@@ -7,9 +7,11 @@
 
 import Foundation
 
+//MARK: - String extension for converting string to date
 extension String {
+    
     func convertStringToDate() -> Date {
-        // Create a date formatter
+        // Create a date formatter "yyyy-MM-dd'T'HH:mm:ss'Z'"
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss'Z'"
 
@@ -32,6 +34,7 @@ extension String {
     }
 }
 
+//MARK: - For printing data as JSON string
 extension Data {
     var prettyPrintedJSONString: NSString? { 
         guard let object = try? JSONSerialization.jsonObject(with: self, options: []),

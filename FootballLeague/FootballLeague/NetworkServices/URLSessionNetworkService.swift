@@ -17,7 +17,6 @@ class URLSessionNetworkService: NetworkService {
     
     func performRequest<T: Decodable>(endPoint: String, method: HTTPMethod) async throws -> Result<T, NetworkError> {
         
-        
         let request = try EndPoint.shared.createCustomURL(path: endPoint, method: method)
         
         return try await withCheckedThrowingContinuation { continuation in
@@ -45,11 +44,7 @@ class URLSessionNetworkService: NetworkService {
                     continuation.resume(with: .failure(NetworkError.requestFailed(error)))
                 }
             }
-            
             task.resume()
         }
-        
     }
-    
-
 }

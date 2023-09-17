@@ -8,11 +8,19 @@
 import Foundation
 import CoreData
 
+//MARK: - Current match status
+enum MatchStatus: String {
+    case scheduled = "SCHEDULED"
+    case played = "FINISHED"
+    case timed = "TIMED"
+}
+
+//MARK: - Team Matches
 struct TeamMatches {
     var matches: [TeamMatchesIModel]
     
     func toEntity(in context: NSManagedObjectContext) -> TeamMatchesEntity {
-        var entity: TeamMatchesEntity = .init(context: context)
+        let entity: TeamMatchesEntity = .init(context: context)
         matches.forEach({ model in
             entity.matchId = Int32(model.matchId)
             entity.matchDate = model.matchDate
@@ -29,12 +37,7 @@ struct TeamMatches {
     }
 }
 
-enum MatchStatus: String {
-    case scheduled = "SCHEDULED"
-    case played = "FINISHED"
-    case timed = "TIMED"
-}
-
+//MARK: - Team Match IModel
 struct TeamMatchesIModel: Codable,Hashable,Identifiable  {
     
     var id = UUID()

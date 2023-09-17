@@ -17,28 +17,24 @@ struct TeamMatchesView: View {
     }
     
     var body: some View {
-            List {
-                Section {
-                    TeamRaw(team: team,isSelectable: false)
-                }
-                
-                Section(header: Text("Matches")) {
-                    ForEach(viewModel.matches, id:\.id){ match in
-                        TeamMatchesRaw(match: match)
-
-                    }
-                }
-                if (viewModel.isLoading && viewModel.matches.isEmpty) {
-                    ProgressView()
+        List {
+            Section {
+                TeamRaw(team: team,isSelectable: false)
+            }
+            
+            Section(header: Text("Matches")) {
+                ForEach(viewModel.matches, id:\.id){ match in
+                    TeamMatchesRaw(match: match)
+                    
                 }
             }
-
-            .onAppear {
-                viewModel.getTeamMatches()
+            
+            if (viewModel.isLoading && viewModel.matches.isEmpty) {
+                ProgressView()
             }
+        }
         
-            .navigationTitle(team.teamShortName)
-
-
+        .onAppear { viewModel.getTeamMatches() }
+        .navigationTitle(team.teamShortName)
     }
 }

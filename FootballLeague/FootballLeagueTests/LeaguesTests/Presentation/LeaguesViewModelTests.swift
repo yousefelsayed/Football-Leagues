@@ -70,8 +70,6 @@ final class LeaguesViewModelTests: XCTestCase {
         func test_getCachedLeagues_Failure() async throws {
             repository.isSuccess = false
 
-            // Simulate failure in fetching cached leagues
-
             // Call the function to fetch cached leagues
             await sut.getCachedLeagues()
 

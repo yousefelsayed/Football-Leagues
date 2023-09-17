@@ -11,7 +11,7 @@ import Kingfisher
 struct TeamRaw: View {
     let team: LeagueTeamsIModel
     @State var isSelectable: Bool = true
-
+    
     var body: some View {
         ZStack {
             HStack{
@@ -37,6 +37,7 @@ struct TeamRaw: View {
                 Spacer()
                 
             }
+            
             if isSelectable {
                 NavigationLink(
                     destination: TeamMatchesCoordinator.destinationForTappedTeam(team: team)
@@ -44,7 +45,5 @@ struct TeamRaw: View {
                     EmptyView()
                 }
             }}
-        }
-        
-     
+    }
 }

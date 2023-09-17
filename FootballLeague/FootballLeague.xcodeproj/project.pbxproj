@@ -29,7 +29,6 @@
 		D386F5E62AAD2C61005BBCDB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D386F5E52AAD2C61005BBCDB /* Assets.xcassets */; };
 		D386F5E92AAD2C61005BBCDB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D386F5E82AAD2C61005BBCDB /* Preview Assets.xcassets */; };
 		D386F5EE2AAD2C61005BBCDB /* FootballLeague.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D386F5EC2AAD2C61005BBCDB /* FootballLeague.xcdatamodeld */; };
-		D386F5F82AAD2C61005BBCDB /* FootballLeagueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D386F5F72AAD2C61005BBCDB /* FootballLeagueTests.swift */; };
 		D386F6022AAD2C61005BBCDB /* FootballLeagueUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D386F6012AAD2C61005BBCDB /* FootballLeagueUITests.swift */; };
 		D386F6042AAD2C61005BBCDB /* FootballLeagueUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D386F6032AAD2C61005BBCDB /* FootballLeagueUITestsLaunchTests.swift */; };
 		D386F6172AAD3345005BBCDB /* LeaguesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D386F6162AAD3345005BBCDB /* LeaguesView.swift */; };
@@ -111,7 +110,6 @@
 		D386F5E82AAD2C61005BBCDB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D386F5ED2AAD2C61005BBCDB /* FootballLeague.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FootballLeague.xcdatamodel; sourceTree = "<group>"; };
 		D386F5F32AAD2C61005BBCDB /* FootballLeagueTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FootballLeagueTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D386F5F72AAD2C61005BBCDB /* FootballLeagueTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FootballLeagueTests.swift; sourceTree = "<group>"; };
 		D386F5FD2AAD2C61005BBCDB /* FootballLeagueUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FootballLeagueUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D386F6012AAD2C61005BBCDB /* FootballLeagueUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FootballLeagueUITests.swift; sourceTree = "<group>"; };
 		D386F6032AAD2C61005BBCDB /* FootballLeagueUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FootballLeagueUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -309,12 +307,11 @@
 				D386F6132AAD301C005BBCDB /* Presentation */,
 				D3A9C80A2AAE5B9A0080CF0E /* Data */,
 				D386F6102AAD2FDF005BBCDB /* Coordinator */,
-				D386F5E12AAD2C60005BBCDB /* FootballLeagueApp.swift */,
 				D386F6152AAD30BC005BBCDB /* Resources */,
-				D386F5EC2AAD2C61005BBCDB /* FootballLeague.xcdatamodeld */,
 				D386F5E72AAD2C61005BBCDB /* Preview Content */,
 				D373F2E82AB2775D005C5621 /* Extensions.swift */,
 				D3B5179B2AB51159002BB9FB /* SplashView.swift */,
+				D386F5E12AAD2C60005BBCDB /* FootballLeagueApp.swift */,
 			);
 			path = FootballLeague;
 			sourceTree = "<group>";
@@ -433,7 +430,7 @@
 		D3A9C80A2AAE5B9A0080CF0E /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				D3A9C8202AAFB3580080CF0E /* Entities */,
+				D3C77CF12AB677E700DF0FC5 /* Entities */,
 				D386F6112AAD2FF3005BBCDB /* CoreData */,
 			);
 			path = Data;
@@ -477,13 +474,6 @@
 				D373F2C12AB1098D005C5621 /* Leagues */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		D3A9C8202AAFB3580080CF0E /* Entities */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Entities;
 			sourceTree = "<group>";
 		};
 		D3C77CAE2AB5C94800DF0FC5 /* Data */ = {
@@ -530,7 +520,6 @@
 				D3C77CC62AB61A2900DF0FC5 /* Presentation */,
 				D3C77CC12AB6071600DF0FC5 /* Domain */,
 				D3C77CAE2AB5C94800DF0FC5 /* Data */,
-				D386F5F72AAD2C61005BBCDB /* FootballLeagueTests.swift */,
 			);
 			path = LeaguesTests;
 			sourceTree = "<group>";
@@ -653,6 +642,14 @@
 				D3C77CEF2AB6588300DF0FC5 /* MatchesViewModelTests.swift */,
 			);
 			path = Presentation;
+			sourceTree = "<group>";
+		};
+		D3C77CF12AB677E700DF0FC5 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				D386F5EC2AAD2C61005BBCDB /* FootballLeague.xcdatamodeld */,
+			);
+			path = Entities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -850,7 +847,6 @@
 				D3C77CBD2AB5E67B00DF0FC5 /* MockNetworkService.swift in Sources */,
 				D3C77CC82AB61A4100DF0FC5 /* LeaguesViewModelTests.swift in Sources */,
 				D3C77CB62AB5D0BC00DF0FC5 /* LeaguesRepositoryMocks.swift in Sources */,
-				D386F5F82AAD2C61005BBCDB /* FootballLeagueTests.swift in Sources */,
 				D3C77CC52AB60B4900DF0FC5 /* LeaguesUseCaseTest.swift in Sources */,
 				D3C77CEA2AB655B900DF0FC5 /* MatchesUseCaseMocks.swift in Sources */,
 			);

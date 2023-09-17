@@ -6,7 +6,6 @@
 //
 
 import Foundation
-
 @testable import FootballLeague
 
 class TeamsUseCaseMocks: FootballLeague.LeagueTeamsDataUseCase {

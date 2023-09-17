@@ -31,6 +31,7 @@ final class TeamsUseCaseTests: XCTestCase {
         let result = try await sut.getLeagueTeams("BRA")
         
         switch result {
+            
         case .success(let teamsResponse):
             XCTAssertNotNil(teamsResponse)
         case .failure:
@@ -40,12 +41,12 @@ final class TeamsUseCaseTests: XCTestCase {
 
     
     func test_getLeagueTeamsData_Should_Return_Failure() async throws {
-        
         repository.isSuccess = false
         
         let result = try await sut.getLeagueTeams("BRA")
         
         switch result {
+            
         case .success:
             XCTFail("Expected failure, got success")
         case .failure(let error):
@@ -60,6 +61,7 @@ final class TeamsUseCaseTests: XCTestCase {
         
         
         switch result {
+            
         case .success(let teams):
             XCTAssert(teams.count > 0)
         case .failure:
@@ -75,6 +77,7 @@ final class TeamsUseCaseTests: XCTestCase {
 
         
         switch result {
+            
         case .success:
             XCTFail("Expected failure, got success")
         case .failure(let error):
@@ -83,10 +86,7 @@ final class TeamsUseCaseTests: XCTestCase {
     }
     
     func test_cacheTeam_OnSucess() async throws {
-       
         repository.isSuccess = true
-        
-      
         
         let result = try await repository.getCachedLeagueTeams("BRA")
         

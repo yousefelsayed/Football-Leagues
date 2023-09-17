@@ -11,7 +11,7 @@ import XCTest
 final class MatchesUseCaseTests: XCTestCase {
     var sut: TeamMatchesUseCase!
     var repository: MatchesRepositoryMocks!
-
+    
     override func setUpWithError() throws {
         repository = MatchesRepositoryMocks()
         sut = TeamMatchesUseCase(repository: repository)
@@ -26,7 +26,7 @@ final class MatchesUseCaseTests: XCTestCase {
     func test_getMatchesData_Should_Return_Success() async throws {
         
         repository.isSuccess = true
-
+        
         let result = try await sut.getTeamMatches(123)
         
         switch result {
@@ -36,7 +36,7 @@ final class MatchesUseCaseTests: XCTestCase {
             XCTFail("Expected success, got failure")
         }
     }
-
+    
     
     func test_getTeamMatchesData_Should_Return_Failure() async throws {
         
@@ -71,9 +71,9 @@ final class MatchesUseCaseTests: XCTestCase {
         repository.isSuccess = false
         
         let result = try await sut.getCachedTeamMatches(123)
-
         
         switch result {
+            
         case .success:
             XCTFail("Expected failure, got success")
         case .failure(let error):
@@ -82,10 +82,7 @@ final class MatchesUseCaseTests: XCTestCase {
     }
     
     func test_cacheTeamMatches_OnSucess() async throws {
-       
         repository.isSuccess = true
-        
-      
         
         let result = try await repository.getCachedTeamMatches(123)
         
@@ -102,8 +99,9 @@ final class MatchesUseCaseTests: XCTestCase {
     
     func test_cacheLeagues_OnFailure() async throws {
         repository.isSuccess = false
-
+        
         let result = try await repository.getCachedTeamMatches(123)
+        
         switch result {
             
         case .success(_):
@@ -113,5 +111,4 @@ final class MatchesUseCaseTests: XCTestCase {
             
         }
     }
-
 }

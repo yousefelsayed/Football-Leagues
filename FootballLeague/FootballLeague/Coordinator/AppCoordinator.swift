@@ -8,7 +8,24 @@
 import Foundation
 import SwiftUI
 
+final class LeaguesCoordinator {
+    
+    public static func destinationForTappedLeague(league: League) -> some View {
+        return LeagueTeamsConfugurator.configureLeagueTeamsView(league: league)
+    }
+}
 
+final class LeagueTeamsConfugurator {
+    
+    public static func configureLeagueTeamsView(league: League) -> TeamsView {
+        
+        let repo = LeagueTeamsRepository(networkService: URLSessionNetworkService(), coreDataManager: CoreDataManager.shared)
+        let useCase = LeagueTeamsUseCase(repository: repo)
+        let leagueTeamsViewModel = LeagueTeamsViewModel(leaguesUseCase: useCase, league: league)
+        
+        return TeamsView(league: league, viewModel: leagueTeamsViewModel)
+    }
+}
 
 final class LeaguesConfugurator {
     
@@ -22,30 +39,10 @@ final class LeaguesConfugurator {
     }
 }
 
-final class LeaguesCoordinator {
-    
-    public static func destinationForTappedLeague(league: League) -> some View {
-        return LeagueTeamsConfugurator.configureLeagueTeamsView(league: league)
-    }
-}
-
 final class TeamMatchesCoordinator {
     
     public static func destinationForTappedTeam(team: LeagueTeamsIModel) -> some View {
         return TeamMatchesConfugurator.configureTeamMatchesView(team: team)
-    }
-}
-
-
-final class LeagueTeamsConfugurator {
-    
-    public static func configureLeagueTeamsView(league: League) -> TeamsView {
-        
-        let repo = LeagueTeamsRepository(networkService: URLSessionNetworkService(), coreDataManager: CoreDataManager.shared)
-        let useCase = LeagueTeamsUseCase(repository: repo)
-        let leagueTeamsViewModel = LeagueTeamsViewModel(leaguesUseCase: useCase, league: league)
-        
-        return TeamsView(league: league, viewModel: leagueTeamsViewModel)
     }
 }
 
@@ -60,3 +57,5 @@ final class TeamMatchesConfugurator {
         return TeamMatchesView(team: team, viewModel: teamMatchesViewModel)
     }
 }
+
+

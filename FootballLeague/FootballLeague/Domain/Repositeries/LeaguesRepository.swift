@@ -13,7 +13,7 @@ class LeaguesRepository: LeaguesDataRepository {
     
     private let networkService: NetworkService
     private let coreDataManager: CoreDataManagerProtocol
-
+    
     
     init(networkService: NetworkService, coreDataManager: CoreDataManagerProtocol) {
         self.networkService = networkService
@@ -46,9 +46,9 @@ class LeaguesRepository: LeaguesDataRepository {
         } catch {
             return .failure(CachDataError.onReadError(error))
         }
-      
+        
     }
-
+    
     //MARK: - Save new leagues data
     func cacheLeaguesData(_ leagues: Leagues?) throws {
         try deleteAllLeagues()
@@ -62,7 +62,8 @@ class LeaguesRepository: LeaguesDataRepository {
             throw CachDataError.onSaveError(error)
         }
     }
-
+    
+    //MARK: - Delete old leagues from entity
     func deleteAllLeagues() throws {
         let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "LeaguesEntity")
         let batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
@@ -74,5 +75,4 @@ class LeaguesRepository: LeaguesDataRepository {
             throw CachDataError.onDeleteError(error)
         }
     }
-
 }

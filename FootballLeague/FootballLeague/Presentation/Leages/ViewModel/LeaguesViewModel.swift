@@ -10,17 +10,15 @@ import Foundation
 
 class LeaguesViewModel: ObservableObject {
     
-    
     private let leaguesUseCase: LeaguesDataUseCase
-    
     @Published var leagues: [League] = []
     @Published var isLoading: Bool = false
     @Published var errorMessage: String = ""
     var sortedLeagues: [League]?
+    
     init(leaguesUseCase: LeaguesDataUseCase) {
         self.leaguesUseCase = leaguesUseCase
     }
-    
     
     func getLeagues() {
         Task {
@@ -29,7 +27,7 @@ class LeaguesViewModel: ObservableObject {
                 self.isLoading = true
             }
             
-            // First, try to fetch cached leagues
+            // try to fetch cached leagues
             await getCachedLeagues()
             
             // If there are no cached leagues, fetch from the server
@@ -40,13 +38,13 @@ class LeaguesViewModel: ObservableObject {
             DispatchQueue.main.async {
                 self.isLoading = false
             }
-            
         }
     }
     
     func getLeaguesFromServer() async {
         do {
             let resultResponse = try await leaguesUseCase.fetchData()
+            
             switch resultResponse {
                 
             case .success(let response):
@@ -54,11 +52,13 @@ class LeaguesViewModel: ObservableObject {
                 let leagues = response.competitions?.compactMap({ competition in
                     return League(competition)
                 })
+                
                 let sortedLeagues = leagues?.sorted{ $0.leagueName < $1.leagueName} ?? []
 
                 DispatchQueue.main.async {
                     self.leagues = sortedLeagues
                 }
+                
                 self.sortedLeagues = sortedLeagues
 
                 try leaguesUseCase.saveCurrentLeagues(Leagues(leagues: sortedLeagues))
@@ -74,6 +74,7 @@ class LeaguesViewModel: ObservableObject {
     func getCachedLeagues() async {
         do {
             let result =  try await leaguesUseCase.getCachedLeagues()
+            
             switch result {
             case .success(let cachedLeagues):
                 DispatchQueue.main.async {
@@ -83,12 +84,9 @@ class LeaguesViewModel: ObservableObject {
             case .failure(let error):
                 print(error.localizedDescription)
             }
-        }
-        catch {
+        } catch {
             print(error.localizedDescription)
         }
     }
-    
-    
 }
 

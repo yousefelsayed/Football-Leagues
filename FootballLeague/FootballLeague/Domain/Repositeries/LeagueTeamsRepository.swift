@@ -19,7 +19,6 @@ class LeagueTeamsRepository: LeagueTeamsDataRepository {
         self.coreDataManager = coreDataManager
     }
     
-    
     //MARK: - Get leagues data from entity
     private func fetchCachedLeagueTeamsData(_ leagueCode: String) throws -> Result<[LeagueTeamsIModel], CachDataError> {
         let request = NSFetchRequest<LeagueTeamsEntity>(entityName: "LeagueTeamsEntity")

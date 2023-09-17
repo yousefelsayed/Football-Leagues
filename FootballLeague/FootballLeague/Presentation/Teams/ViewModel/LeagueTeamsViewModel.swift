@@ -7,12 +7,9 @@
 
 import Foundation
 
-
 class LeagueTeamsViewModel: ObservableObject {
     
-    
     private let leagueTeamUseCase: LeagueTeamsDataUseCase
-    
     @Published var teams: [LeagueTeamsIModel] = []
     @Published var isLoading: Bool = false
     @Published var errorMessage: String = ""
@@ -26,9 +23,7 @@ class LeagueTeamsViewModel: ObservableObject {
     
     
     func getLeagueTeams() {
-        if self.teams.isEmpty {
-            teams =  [LeagueTeamsIModel]()
-        }
+        
         Task {
             // Show the progress indicator
             DispatchQueue.main.async {
@@ -41,18 +36,17 @@ class LeagueTeamsViewModel: ObservableObject {
             // If there are no cached leagues, fetch from the server
             await getLeagueTeamsFromServer(self.league?.leagueCode ?? "")
             
-            
             // Hide the progress indicator
             DispatchQueue.main.async {
                 self.isLoading = false
             }
-            
         }
     }
     
     func getLeagueTeamsFromServer(_ leagueCode: String) async {
         do {
             let resultResponse = try await leagueTeamUseCase.getLeagueTeams(leagueCode)
+            
             switch resultResponse {
                 
             case .success(let response):
@@ -60,12 +54,14 @@ class LeagueTeamsViewModel: ObservableObject {
                 let teams = response.teams?.compactMap({ team in
                     return LeagueTeamsIModel(team,competition: response.competition)
                 })
+                
                 let sortedTeams = teams?.sorted{($0.teamName.lowercased()) < ($1.teamName.lowercased())} ?? []
-               
-
+                
+                
                 DispatchQueue.main.async {
                     self.teams = sortedTeams
                 }
+                
                 self.sortedTeams = sortedTeams
                 try leagueTeamUseCase.cacheLeagueTeamsData( LeagueTeams(teams: teams ?? []), leagueCode: leagueCode)
                 
@@ -96,12 +92,9 @@ class LeagueTeamsViewModel: ObservableObject {
             case .failure(let error):
                 print(error.localizedDescription)
             }
-        }
-        catch {
+        } catch {
             print(error.localizedDescription)
         }
     }
-    
-    
 }
 

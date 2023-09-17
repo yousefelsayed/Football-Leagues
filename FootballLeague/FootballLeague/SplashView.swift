@@ -16,11 +16,9 @@ struct SplashView: View {
                 LeaguesConfugurator.configureLeaguesView()
                 
             } else {
-       
                 Image("splashIcon")
                     .scaledToFill()
                     .edgesIgnoringSafeArea(.all)
-                
             }
         }
         .onAppear{
@@ -30,6 +28,5 @@ struct SplashView: View {
                 }
             }
         }
-        
     }
 }

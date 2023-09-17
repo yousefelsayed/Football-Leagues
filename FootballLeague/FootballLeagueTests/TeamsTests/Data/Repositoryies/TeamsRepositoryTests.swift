@@ -27,6 +27,7 @@ final class TeamsRepositoryTests: XCTestCase {
         let result = try await sut.getLeagueTeams("BRA")
         
         switch result {
+            
         case let .success(teams):
             XCTAssertNotNil(teams)
         default:
@@ -40,6 +41,7 @@ final class TeamsRepositoryTests: XCTestCase {
         let result = try await sut.getLeagueTeams("BRA")
         
         switch result {
+            
         case .failure(let error):
             XCTAssertEqual(error.localizedDescription, FootballLeague.NetworkError.invalidResponse.localizedDescription)
         default:
@@ -55,6 +57,7 @@ final class TeamsRepositoryTests: XCTestCase {
         let result = try await sut.getCachedLeagueTeams("BRA")
         
         switch result {
+            
         case let .success(teams):
             XCTAssertNotNil(teams)
         default:
@@ -68,6 +71,7 @@ final class TeamsRepositoryTests: XCTestCase {
         let result = try await sut.getCachedLeagueTeams("BRA")
 
         switch result {
+            
         case .failure(let error):
             XCTAssertEqual(error.localizedDescription, "No Cached data for league code for this team")
         default:
@@ -79,7 +83,8 @@ final class TeamsRepositoryTests: XCTestCase {
     func test_cacheTeams_OnSucess() async throws {
         sut.isSuccess = true
         
-        let teams = LeagueTeamsIModel(TeamsModel(id: 123, shortName: "short name", crest: "url", tla: "tla", name: "name"), competition: CompetitionModel(id: 12, name: "name test", code: "code", emblem: "emblem", area: AreaModel(id: 123, name: "area", flag: "flag"), currentSeason: CurrentSeasonModel(id: 123, startDate: "start date", endDate: "end date", currentMatchday: 45), numberOfAvailableSeasons: 33))
+        let teams = LeagueTeamsIModel(TeamsModel(id: 123,shortName: "short name",crest: "url", tla: "tla",name: "name"),
+                                      competition: CompetitionModel(id: 12, name: "name test", code: "code", emblem: "emblem", area: AreaModel(id: 123, name: "area", flag: "flag"), currentSeason: CurrentSeasonModel(id: 123, startDate: "start date", endDate: "end date", currentMatchday: 45), numberOfAvailableSeasons: 33))
         
         do {
             try sut.cacheLeagueTeamsData(LeagueTeams(teams: [teams]), leagueCode: "BRA")
@@ -93,11 +98,8 @@ final class TeamsRepositoryTests: XCTestCase {
         sut.isSuccess = false
         
         let teams = LeagueTeamsIModel(TeamsModel(id: 123, shortName: "short name", crest: "url", tla: "tla", name: "name"), competition: CompetitionModel(id: 12, name: "name test", code: "code", emblem: "emblem", area: AreaModel(id: 123, name: "area", flag: "flag"), currentSeason: CurrentSeasonModel(id: 123, startDate: "start date", endDate: "end date", currentMatchday: 45), numberOfAvailableSeasons: 33))
-        
-        
-        
+    
         XCTAssertThrowsError(try sut.cacheLeagueTeamsData(LeagueTeams(teams: [teams]), leagueCode: "BRA"), "Cache teams should throw an error")
-        
-        
+ 
     }
 }

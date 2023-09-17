@@ -13,16 +13,13 @@ protocol TeamMatchesDataUseCase {
     func cacheTeamMatches(_ matches: TeamMatches?, teamId: Int) throws
 }
 
-
 class TeamMatchesUseCase: TeamMatchesDataUseCase {
- 
  
     private let repository: TeamMatchesDataRepository
     
     init(repository: TeamMatchesDataRepository) {
         self.repository = repository
     }
-    
     
     func getTeamMatches(_ teamId: Int) async throws -> ResultCallback<TeamMatchesResponse> {
         return try await repository.getTeamMatches(teamId)
@@ -35,6 +32,4 @@ class TeamMatchesUseCase: TeamMatchesDataUseCase {
     func cacheTeamMatches(_ matches: TeamMatches?, teamId: Int) throws {
         try self.repository.cacheTeamMatches(matches, teamId: teamId)
     }
-    
-    
 }

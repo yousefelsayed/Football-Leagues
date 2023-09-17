@@ -13,7 +13,6 @@ protocol CoreDataManagerProtocol {
     func saveContext()
 }
 
-
 enum CachDataError: Error {
     case onSaveError(Error)
     case onReadError(Error)
@@ -21,22 +20,22 @@ enum CachDataError: Error {
     case onError(String)
     
     var localizedDescription: String {
-            switch self {
-            case .onSaveError(let error),
-                 .onReadError(let error),
-                 .onDeleteError(let error):
-                return error.localizedDescription
-            case .onError(let message):
-                return message
-            }
+        switch self {
+        case .onSaveError(let error),
+                .onReadError(let error),
+                .onDeleteError(let error):
+            return error.localizedDescription
+        case .onError(let message):
+            return message
         }
+    }
 }
 
 class CoreDataManager: CoreDataManagerProtocol {
     static let shared = CoreDataManager() // Singleton instance
-
+    
     private init() {} // Private init to ensure it's a singleton
-
+    
     lazy var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "FootballLeague")
         container.loadPersistentStores { (_, error) in
@@ -46,11 +45,11 @@ class CoreDataManager: CoreDataManagerProtocol {
         }
         return container
     }()
-
+    
     var managedObjectContext: NSManagedObjectContext {
         return persistentContainer.viewContext
     }
-
+    
     func saveContext() {
         let context = managedObjectContext
         if context.hasChanges {

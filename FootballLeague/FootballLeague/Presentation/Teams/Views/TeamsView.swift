@@ -10,35 +10,31 @@ import SwiftUI
 struct TeamsView: View {
     var league: League
     @StateObject var viewModel: LeagueTeamsViewModel
+    
     init(league: League, viewModel: LeagueTeamsViewModel) {
         _viewModel = StateObject(wrappedValue: viewModel)
         self.league = league
     }
     
     var body: some View {
-            List {
-                Section {
-                    LeagueRaw(league: league,isSelectable: false)
-                }
-                
-                Section(header: Text("Teams")) {
-                    ForEach(viewModel.teams, id:\.id){ team in
-                        TeamRaw(team: team)
-
-                    }
-                }
-                if (viewModel.isLoading && viewModel.teams.isEmpty) {
-                    ProgressView()
+        List {
+            Section {
+                LeagueRaw(league: league,isSelectable: false)
+            }
+            
+            Section(header: Text("Teams")) {
+                ForEach(viewModel.teams, id:\.id){ team in
+                    TeamRaw(team: team)
                 }
             }
-
-            .onAppear {
-                viewModel.getLeagueTeams()
+            
+            if (viewModel.isLoading && viewModel.teams.isEmpty) {
+                ProgressView()
             }
-        
-            .navigationTitle(league.leagueName)
-
+        }
+        .onAppear { viewModel.getLeagueTeams() }
+        .navigationTitle(league.leagueName)
     }
 }
-    
+
 
