@@ -1,45 +1,65 @@
-**Edit a file, create a new file, and clone from Bitbucket in under 2 minutes**
+# Football Leagues App
 
-When you're done, you can delete the content in this README and update the file with details for others getting started with your repository.
+This project implements an iOS application utilizing Clean Architecture, MVVM-C pattern, SwiftUI, async/await, and various technologies for effective data management and network communication.
 
-*We recommend that you open this README in another tab as you perform the tasks below. You can [watch our video](https://youtu.be/0ocf7u76WSo) for a full demo of all the steps in this tutorial. Open the video in a new tab to avoid leaving Bitbucket.*
+## Table of Contents
 
----
+- [Introduction](#introduction)
+- [Key Features](#key-features)
+- [Requirements](#requirements)
+- [Architecture and Design](#architecture-and-design)
+- [Technologies Used](#technologies-used)
+- [Getting Started](#getting-started)
 
-## Edit a file
+## Introduction
 
-You’ll start by editing this README file to learn how to edit a file in Bitbucket.
+This iOS application follows Clean Architecture principles, MVVM-C pattern, and leverages SwiftUI, async/await, and Combine for efficient UI development, concurrent programming, and reactive programming. Key features include data persistence using Core Data, asynchronous updates from web APIs, and manual dependency injection using dependency containers.
 
-1. Click **Source** on the left side.
-2. Click the README.md link from the list of files.
-3. Click the **Edit** button.
-4. Delete the following text: *Delete this line to make a change to the README from Bitbucket.*
-5. After making your change, click **Commit** and then **Commit** again in the dialog. The commit page will open and you’ll see the change you just made.
-6. Go back to the **Source** page.
+## Key Features
 
----
+- **Clean Architecture**: Organized codebase following clean architecture principles.
+- **MVVM-C Pattern**: Utilizes Model-View-ViewModel-Coordinator pattern for presentation.
+- **SwiftUI**: Modern UI framework for building declarative and reactive interfaces.
+- **async/await**: Utilizes async functions and await to handle asynchronous tasks elegantly.
+- **Combine Framework**: Leverages Combine for reactive programming and event handling.
+- **Core Data**: Implements data persistence using Core Data framework.
+- **Network Communication**: Uses URLSession for network communication and Codable for JSON decoding.
 
-## Create a file
+## Requirements
 
-Next, you’ll add a new file to this repository.
+- iOS 14+
+- Xcode 12+
+- Swift 5
 
-1. Click the **New file** button at the top of the **Source** page.
-2. Give the file a filename of **contributors.txt**.
-3. Enter your name in the empty file space.
-4. Click **Commit** and then **Commit** again in the dialog.
-5. Go back to the **Source** page.
+## Architecture and Design
 
-Before you move on, go ahead and explore the repository. You've already seen the **Source** page, but check out the **Commits**, **Branches**, and **Settings** pages.
+The application is structured following Clean Architecture and MVVM-C pattern, ensuring separation of concerns, maintainability, and testability.
 
----
+- **Clean Architecture Layers**:
+  - **Entities**: Represent domain models.
+  - **Use Cases**: Contains business logic.
+  - **Repositories**: Abstract interfaces for data operations.
+  - **Dependency Injection**: Manages dependencies and their injection.
 
-## Clone a repository
+- **MVVM-C Pattern**:
+  - **Model**: Represents the data and business logic.
+  - **View**: Responsible for UI and UI-related logic.
+  - **ViewModel**: Mediates communication between Model and View.
+  - **Coordinator**: Handles navigation flow.
 
-Use these steps to clone from SourceTree, our client for using the repository command-line free. Cloning allows you to work on your files locally. If you don't yet have SourceTree, [download and install first](https://www.sourcetreeapp.com/). If you prefer to clone from the command line, see [Clone a repository](https://confluence.atlassian.com/x/4whODQ).
+## Technologies Used
 
-1. You’ll see the clone button under the **Source** heading. Click that button.
-2. Now click **Check out in SourceTree**. You may need to create a SourceTree account or log in.
-3. When you see the **Clone New** dialog in SourceTree, update the destination path and name if you’d like to and then click **Clone**.
-4. Open the directory you just created to see your repository’s files.
+- Swift
+- SwiftUI
+- async/await
+- Combine
+- Core Data
+- URLSession
+- Codable
 
-Now that you're more familiar with your Bitbucket repository, go ahead and add a new file locally. You can [push your change back to Bitbucket with SourceTree](https://confluence.atlassian.com/x/iqyBMg), or you can [add, commit,](https://confluence.atlassian.com/x/8QhODQ) and [push from the command line](https://confluence.atlassian.com/x/NQ0zDQ).
+## Getting Started
+
+1. Clone the repository.
+2. Open the Xcode project.
+3. Build and run the application on an iOS 14+ simulator or device.
+
